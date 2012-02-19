@@ -1,0 +1,38 @@
+# List directory each time directory is changed (run `ls -la` after each `cd`)
+function chpwd() {
+    emulate -L zsh
+    ls -la
+}
+
+# Processes
+alias tu='top -o cpu' # cpu
+alias tm='top -o size' # memory
+
+# Navigation
+alias ..='cd ..'
+alias cdd='cd -'
+
+# List files/dirs
+alias ls='ls -G'
+alias l='ls -lF'
+alias la='ls -lAGh'
+
+# Editing
+alias brel='source ~/.zshrc'
+alias ea='vim ~/bin/dotfiles/zsh/includes/aliases && brel'
+
+alias h='history'
+
+# Git shortcuts
+alias s='git status '
+alias a='git add '
+alias b='git branch '
+alias c='git commit'
+alias d='git diff'
+alias go='git checkout '
+alias lg='git log -p'
+alias lol='git log --graph --decorate --pretty=oneline --abbrev-commit'
+alias lola='git log --graph --decorate --pretty=oneline --abbrev-commit --all'
+# Show files ignore by git
+alias ign='git ls-files -o -i --exclude-standard'
+

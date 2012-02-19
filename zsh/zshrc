@@ -1,0 +1,3 @@
+. ~/bin/dotfiles/zsh/includes/env
+. ~/bin/dotfiles/zsh/includes/config
+. ~/bin/dotfiles/zsh/includes/aliases
