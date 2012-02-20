@@ -13,3 +13,18 @@ set t_Co=256 " if working via putty use set &t_Co=256
 " Set Coloscheme
 set background=dark
 colorscheme solarized
+
+" Indent
+set tabstop=3 " number of spaces when TAB pressed
+set shiftwidth=3
+set smartindent
+set autoindent
+
+" Autocompletion
+set wildmode=list:longest
+
+set foldenable
+
+" UI stuff
+set guifont=Courier:h15
+set number " Show line numbers
