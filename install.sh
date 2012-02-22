@@ -1,10 +1,9 @@
 #!/bin/bash
 ############################
 # install.sh
-# This script creates symlinks from the home directory to dotfiles in ~/bin/dotfiles
-# It doesn't do any installations, just copies the configuration files for
-# ZSH, OH-MY-ZSH, VIM, GIT, ROXTERM and only if they are used.
-# Old installation files are backed up in ~/bin/dotfiles_old
+# This script doesn't do any installations, it only creates symlinks/copies dotfiles for
+# ZSH, OH-MY-ZSH, VIM, GIT, ROXTERM and only if they are used and have their configuration files present.
+# Old configuration files are backed up in ~/bin/dotfiles_old
 ############################
 
 ########## Variables
@@ -72,8 +71,12 @@ then
 	echo "Backing up GIT --global config file"
 	mv ~/.gitconfig $olddir/
 	echo "...done"
-	echo "Creating symlink to new GIT --global config file"
-	ln -s $dir/gitconfig ~/.gitconfig
+	echo "Creating new GIT --global config file"
+	# because .gitconfig usually (and this is normal case)
+	# contains personal credentials (user.name & user.email)
+	# we better copy template to $HOME dir and let user modify it there
+	# without affecting the repo itself
+	cp $dir/git/gitconfig ~/.gitconfig
 	echo "...done"
 fi
 
