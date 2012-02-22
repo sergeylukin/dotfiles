@@ -1,30 +1,60 @@
 set nocompatible " must be the first line
 syntax on
-filetype on
-filetype indent on
-filetype plugin on
+
+" UTF-8
+set encoding=utf-8
+if has("multi_byte")
+	if &termencoding == ""
+		let &termencoding = &encoding
+	endif
+   set encoding=utf-8                     " better default than latin1
+   setglobal fileencoding=utf-8           " change default file encoding when writing new files
+endif
+
+" Move around
 set backspace=2 " make backspace work like most other apps
+set linebreak
 set laststatus=2
 set statusline=%<%f\%h%m%r%=%-20.(line=%l\ \ col=%c%V\ \ totlin=%L%)\ \ \%h%m%r%=%-40(bytval=0x%B,%n%Y%)\%P
 
 " Enable 256 colors mode
 set t_Co=256 " if working via putty use set &t_Co=256
 
-" Set Coloscheme
-set background=dark
-colorscheme solarized
-
-" Indent
+" Indentation
 set tabstop=3 " number of spaces when TAB pressed
 set shiftwidth=3
 set smartindent
 set autoindent
+
+" Enable filetype detection and file-type specific plugins
+filetype on
+filetype indent on
+filetype plugin on
 
 " Autocompletion
 set wildmode=list:longest
 
 set foldenable
 
+" Keep current screen unmoved when creating new split screen
+set splitbelow
+set splitright
+
 " UI stuff
-set guifont=Courier:h15
+set background=dark
+colorscheme solarized " Set colorscheme from ~/.vim/colors/
+set guifont=*
 set number " Show line numbers
+
+" Override <leader> defaults
+let mapleader = ","
+
+" Map NERDTreeToggle to convenient key
+nmap <leader>n :NERDTreeToggle<cr>
+
+" NERDTree config
+let NERDTreeChDirMode=2
+let NERDTreeIgnore=['\env','\.vim$', '\~$', '\.pyc$', '\.swp$', '\.egg-info$', '^dist$', '^build$']
+let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\~$']
+let NERDTreeShowBookmarks=1
+let NERDTreeHightlightCursorline=1
