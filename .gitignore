@@ -1,0 +1,14 @@
+# Ignore VIM generated history file #
+#####################################
+.netrwhist
+
+# Generic files to ignore #
+###########################
+.DS_Store
+ehthumbs.db
+Icon?
+Thumbs.db
+*.lock
+*.out
+*.swp
+*~
