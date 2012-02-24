@@ -46,6 +46,9 @@ colorscheme solarized " Set colorscheme from ~/.vim/colors/
 set guifont=*
 set number " Show line numbers
 
+" Filetypes
+au BufNewFile,BufRead *.less set filetype=css " Recognize .less files as .css
+
 " Override <leader> defaults
 let mapleader = ","
 
