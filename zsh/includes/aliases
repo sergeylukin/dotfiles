@@ -24,15 +24,20 @@ alias ea='vim ~/bin/dotfiles/zsh/includes/aliases && brel'
 alias h='history'
 
 # Git shortcuts
-alias s='git status '
+alias s='git status --short --branch '
+alias ss='git status '
 alias a='git add '
 alias b='git branch '
-alias c='git commit'
-alias d='git diff'
+alias c='git commit '
+alias t='git tag -n1'
+alias di='git diff'
+alias dw='git diff --color-words' # show modified words
+alias df='git diff --name-only' # show modified filenames
 alias go='git checkout '
 alias lg='git log -p'
 alias lol='git log --graph --decorate --pretty=oneline --abbrev-commit'
 alias lola='git log --graph --decorate --pretty=oneline --abbrev-commit --all'
-# Show files ignore by git
+# Show files ignored by git
 alias ign='git ls-files -o -i --exclude-standard'
-
+# Show useful info about any remote (pass remote name like argument)
+alias inf='git remote show '
