@@ -20,6 +20,7 @@ alias la='ls -lAGh'
 # Editing
 alias brel='source ~/.zshrc'
 alias ea='vim ~/bin/dotfiles/zsh/includes/aliases && brel'
+alias vi='vim'
 
 alias h='history'
 
