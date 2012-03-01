@@ -73,6 +73,9 @@ if has("autocmd")
 	autocmd! bufwritepost .vimrc source %
 endif
 
+" Load Pathogen to manage plugins
+call pathogen#infect()
+
 " NERDTree config
 let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\env','\.vim$', '\~$', '\.pyc$', '\.swp$', '\.egg-info$', '^dist$', '^build$']
@@ -84,5 +87,10 @@ let NERDTreeShowHidden=1 " Show hidden files
 nmap <leader>n :NERDTreeToggle<cr>
 
 " ZENCODING
-" Change zen coding expand key to SHIFT+Tab
-let g:user_zen_expandabbr_key = '<S-tab>'
+let g:sparkup = 'sparkup'
+let g:sparkupArgs = '--no-last-newline'
+let g:sparkupExecuteMapping = '<C-e>'
+let g:sparkupNextMapping = '<C-n>'
+
+filetype off
+filetype indent plugin on
