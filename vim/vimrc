@@ -16,8 +16,10 @@ set backspace=2 " make backspace work like most other apps
 set linebreak
 set laststatus=2
 set statusline=%{fugitive#statusline()}
-nnoremap j gj
+nnoremap j gj " make sure we can navigate huge line of text
 nnoremap k gk
+vnoremap < <gv " make sure we can indent blocks easily
+vnoremap > >gv
 
 " Enable 256 colors mode
 set t_Co=256 " if working via putty use set &t_Co=256
