@@ -55,6 +55,7 @@ au BufNewFile,BufRead *.less set filetype=css " Recognize .less files as .css
 
 " Override <leader> defaults
 let mapleader = ","
+let maplocalleader = ","
 
 " Abbreviations
 " Open current file in Firefox - syntax may differ from one OS to another
@@ -82,7 +83,7 @@ endif
 " Load Pathogen to manage plugins
 call pathogen#infect()
 
-" NERDTree config
+" PLUGIN - NERDTree
 let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\env','\.vim$', '\~$', '\.pyc$', '\.swp$', '\.egg-info$', '^dist$', '^build$']
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\~$']
@@ -92,11 +93,14 @@ let NERDTreeShowHidden=1 " Show hidden files
 " Map NERDTreeToggle to convenient key
 nmap <leader>n :NERDTreeToggle<cr>
 
-" ZENCODING
+" PLUGIN - Sparkup (zencoding)
 let g:sparkup = 'sparkup'
 let g:sparkupArgs = '--no-last-newline'
 let g:sparkupExecuteMapping = '<C-e>'
 let g:sparkupNextMapping = '<C-n>'
+
+" PLUGIN - tComment
+map <leader>c <C-_><C-_>
 
 filetype off
 filetype indent plugin on
