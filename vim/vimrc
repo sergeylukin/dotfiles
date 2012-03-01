@@ -82,6 +82,7 @@ endif
 
 " Load Pathogen to manage plugins
 call pathogen#infect()
+call pathogen#helptags()
 
 " PLUGIN - NERDTree
 let NERDTreeChDirMode=2
@@ -102,5 +103,6 @@ let g:sparkupNextMapping = '<C-n>'
 " PLUGIN - tComment
 map <leader>c <C-_><C-_>
 
+" Make Vim reload filetype stuff after loading the config. Necessary.
 filetype off
 filetype indent plugin on
