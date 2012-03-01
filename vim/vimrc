@@ -67,6 +67,8 @@ imap <leader>e <esc>
 nmap <space> :
 " fast .VIMRC edit
 nmap <leader>ev :tabedit $MYVIMRC<cr>
+" Markdown to HTML - make sure to download Markdown.pl to /usr/local/bin
+nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags<cr>
 
 " Auto-refresh VIMRC after save
 if has("autocmd")
