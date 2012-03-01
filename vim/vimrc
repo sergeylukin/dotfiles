@@ -52,8 +52,26 @@ au BufNewFile,BufRead *.less set filetype=css " Recognize .less files as .css
 " Override <leader> defaults
 let mapleader = ","
 
-" Map NERDTreeToggle to convenient key
-nmap <leader>n :NERDTreeToggle<cr>
+" Abbreviations
+" Open current file in Firefox - syntax may differ from one OS to another
+abbrev ff :!firefox % &<cr>
+" Shortcut for ESC
+abbrev <leader>e <esc>
+
+" Abbreviations for INSERT mode
+" Shortcut for ESC
+imap <leader>e <esc>
+
+" Nmaps
+" space is a shortcut for colon, I know it's funny but I like it:)
+nmap <space> :
+" fast .VIMRC edit
+nmap <leader>ev :tabedit $MYVIMRC<cr>
+
+" Auto-refresh VIMRC after save
+if has("autocmd")
+	autocmd! bufwritepost .vimrc source %
+endif
 
 " NERDTree config
 let NERDTreeChDirMode=2
@@ -61,3 +79,10 @@ let NERDTreeIgnore=['\env','\.vim$', '\~$', '\.pyc$', '\.swp$', '\.egg-info$', '
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\~$']
 let NERDTreeShowBookmarks=1
 let NERDTreeHightlightCursorline=1
+let NERDTreeShowHidden=1 " Show hidden files
+" Map NERDTreeToggle to convenient key
+nmap <leader>n :NERDTreeToggle<cr>
+
+" ZENCODING
+" Change zen coding expand key to SHIFT+Tab
+let g:user_zen_expandabbr_key = '<S-tab>'
