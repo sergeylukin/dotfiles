@@ -82,7 +82,6 @@ endif
 
 " Load Pathogen to manage plugins
 call pathogen#infect()
-call pathogen#helptags()
 
 " PLUGIN - NERDTree
 let NERDTreeChDirMode=2
