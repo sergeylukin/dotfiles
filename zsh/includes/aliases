@@ -11,6 +11,7 @@ alias tm='top -o size' # memory
 # Navigation
 alias ..='cd ..'
 alias cdd='cd -'
+alias code='cd ~/code' # Go to code dir quickly
 
 # List files/dirs
 alias ls='ls -G'
