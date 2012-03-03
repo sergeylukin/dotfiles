@@ -74,6 +74,8 @@ nmap <space> :
 nmap <leader>ev :tabedit $MYVIMRC<cr>
 " Markdown to HTML - make sure to download Markdown.pl to /usr/local/bin
 nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags<cr>
+" Quicly cancel highligh selection
+nmap <leader>h :nohlsearch<cr>
 
 " Auto-refresh VIMRC after save
 if has("autocmd")
