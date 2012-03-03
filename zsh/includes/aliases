@@ -9,9 +9,10 @@ alias tu='top -o cpu' # cpu
 alias tm='top -o size' # memory
 
 # Navigation
-alias ..='cd ..'
-alias cdd='cd -'
-alias code='cd ~/code' # Go to code dir quickly
+alias ..='cd ..' # Go Up
+alias cdd='cd -' # Go Back
+alias code='cd ~/code' # Shortcut to code dir
+alias dotfiles='cd ~/bin/dotfiles' # Shortcut to dotfiles dir
 
 # List files/dirs
 alias ls='ls -G'
