@@ -35,7 +35,7 @@ set hidden
 " Apply new configuration after .VIMRC is saved
 autocmd! bufwritepost .vimrc source %
 " Automatically change current directory to that of the file in the buffer
-autocmd BufEnter * cd %:p:h
+autocmd BufEnter * silent! lcd %:p:h " Better alternative to `autochdir`
 " Delete all buffers
 nmap <silent> <leader>da :exec "1," . bufnr('$') . "bd"<cr>
 
@@ -101,7 +101,7 @@ nnoremap <leader>f Vatzf
 " Code completion
 "----------------------"
 imap <leader><tab> <C-x><C-o>
-" Autocompletion
+" Activate TAB auto-completion for file paths
 set wildmode=list:longest
 " http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
 set completeopt=longest,menuone
