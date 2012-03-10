@@ -181,6 +181,10 @@ let g:sparkupNextMapping = '<C-n>'
 "----------------------"
 map <leader>c <C-_><C-_>
 
+"PLUGIN - taglist
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+let Tlist_Inc_Winwidth=0
+
 " Reload filetype stuff after loading the config. Necessary.
 filetype off
 filetype indent plugin on
