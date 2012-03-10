@@ -37,11 +37,15 @@ alias t='git tag -n1'
 alias di='git diff'
 alias dw='git diff --color-words' # show modified words
 alias df='git diff --name-only' # show modified filenames
+alias m='git merge --no-ff' # Non-Fast-Forward merge
+alias mf='git merge --ff-only' # Fast-Forward merge
 alias go='git checkout '
+alias pull='git pull '
+alias push='git push '
 alias lg='git log -p'
 alias lol='git log --graph --decorate --pretty=oneline --abbrev-commit'
 alias lola='git log --graph --decorate --pretty=oneline --abbrev-commit --all'
 # Show files ignored by git
 alias ign='git ls-files -o -i --exclude-standard'
-# Show useful info about any remote (pass remote name like argument)
+# Show useful info about any remote (pass remote name as argument)
 alias inf='git remote show '
