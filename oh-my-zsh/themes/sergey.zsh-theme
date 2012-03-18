@@ -27,7 +27,7 @@ function put_spacing() {
 
 function precmd() {
 print -rP '
-$fg[cyan]%n: $fg[yellow]$(get_pwd)$(put_spacing)$(git_prompt_info)'
+$fg[cyan]%n@%m: $fg[yellow]$(get_pwd)$(put_spacing)$(git_prompt_info)'
 }
 
 PROMPT='%{$reset_color%}→ '
