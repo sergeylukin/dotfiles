@@ -1,7 +1,9 @@
-# Ignore VIM generated history file #
+# Ignore VIM generated files #
 #####################################
 .netrwhist
-
+vim/view/*
+# Don't ignore .vimrc VIEW file (it includes folds)
+!vim/view/~=+.vimrc=
 # Generic files to ignore #
 ###########################
 .DS_Store

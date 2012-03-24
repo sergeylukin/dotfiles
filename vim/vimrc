@@ -1,10 +1,13 @@
+"----------------------"
+" Look & Feel
+"----------------------"
 " Forget compatibility with VI - must be the first line
 set nocompatible
 
 " Enable 256 colors mode
 set t_Co=256
 
-" UTF-8
+" Encoding
 set encoding=utf-8
 if has("multi_byte")
 	if &termencoding == ""
@@ -14,16 +17,17 @@ if has("multi_byte")
    setglobal fileencoding=utf-8           " change default file encoding when writing new files
 endif
 
-" Enable filetype detection and file-type specific plugins
+
+"----------------------"
+" Filetype
+"----------------------"
 filetype on
 filetype indent on
 filetype plugin on
 syntax on
-
-"----------------------"
 " Custom Filetypes
-"----------------------"
 au BufNewFile,BufRead *.less set filetype=css " Recognize .less files as .css
+
 
 "----------------------"
 " Files & Buffers
@@ -38,6 +42,7 @@ autocmd! bufwritepost .vimrc source %
 autocmd BufEnter * silent! lcd %:p:h " Better alternative to `autochdir`
 " Delete all buffers
 nmap <silent> <leader>da :exec "1," . bufnr('$') . "bd"<cr>
+
 
 "----------------------"
 " UI stuff
@@ -80,9 +85,10 @@ vnoremap > >gv
 " Hard-wrap paragraphs of text - very useful when pasting long lines
 nnoremap <leader>q gqip
 " Indentation
-set tabstop=3 " number of spaces when TAB pressed
-set shiftwidth=3
-set softtabstop=3
+set expandtab " insert space characters whenever TAB pressed (use Ctrl-V<Tab> to insert real TAB)
+set tabstop=2 " number of spaces when TAB pressed
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 set smartindent
 set autoindent
@@ -94,8 +100,68 @@ set wrapmargin=0
 set linebreak
 " Enable code folding
 set foldenable
-" Shortcut to fold tags, use l to unfold
-nnoremap <leader>f Vatzf
+" Override ToggleFold()
+" inspired by Max Ischenko's http://www.vim.org/tips/tip.php?tip_id=108
+function! ToggleFold()
+  if foldlevel('.') == 0
+     " No fold exists at the current line,
+     " so create a fold based on indentation
+
+     let l_min = line('.')   " the current line number
+     let l_max = line('$')   " the last line number
+     let i_min = indent('.') " the indentation of the current line
+     let l = l_min + 1
+
+     " Search downward for the last line whose indentation > i_min
+     while l <= l_max
+        " if this line is not blank ...
+        if strlen(getline(l)) > 0 && getline(l) !~ '^\s*$'
+           if indent(l) <= i_min
+              " we've gone too far
+              let l = l - 1    " backtrack one line
+              break
+           endif
+        endif
+        let l = l + 1
+     endwhile
+
+     " Clamp l to the last line
+     if l > l_max
+        let l = l_max
+     endif
+
+     " Backtrack to the last non-blank line
+     while l > l_min
+        if strlen(getline(l)) > 0 && getline(l) !~ '^\s*$'
+           break
+        endif
+        let l = l - 1
+     endwhile
+
+     "execute "normal i" . l_min . "," . l . " fold"   " print debug info
+
+     if l > l_min
+        " Create the fold from l_min to l
+        execute l_min . "," . l . " fold"
+     endif
+  else
+     " Delete the fold on the current line
+     normal zd
+  endif
+endfunction
+" Shortcut to toggle folding
+vmap <space> zf
+nmap <space> :call ToggleFold()<CR>
+" Customize the look of collapsed folds
+highlight Folded ctermfg=yellow ctermbg=NONE
+set foldtext=getline(v:foldstart)
+" Auto-save the folds when saving file
+au BufWinLeave * silent! mkview
+" Auto-load the fold when opening file
+au BufWinEnter * silent! loadview
+" Save only fold info in views
+set viewoptions=folds
+
 
 "----------------------"
 " Code completion
@@ -134,7 +200,7 @@ imap jj <esc>
 " NMAPS - Normal Mode shortcuts
 " -------------------------------
 " set space as a shortcut for colon - very useful
-nmap <space> :
+nmap ; :
 " fast .VIMRC edit
 nmap <leader>ev :tabedit $MYVIMRC<cr>
 " Markdown to HTML - make sure to download Markdown.pl to /usr/local/bin
@@ -185,6 +251,8 @@ map <leader>c <C-_><C-_>
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 let Tlist_Inc_Winwidth=0
 
-" Reload filetype stuff after loading the config. Necessary.
-filetype off
-filetype indent plugin on
+
+" Any local customizations should be made in ~/.vimrc.local
+if filereadable(expand('~/.vimrc.local'))
+  source ~/.vimrc.local
+endif
