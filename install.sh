@@ -24,7 +24,7 @@ mkdir -p $olddir
 echo "...done"
 
 # INSTALL ZSH DOTFILES
-if [[ -f ~/.zshrc ]]
+if command -v zsh > /dev/null 2>&1
 then
 	echo "Backing up old ZSH files"
 	mv ~/.zshrc $olddir/
@@ -36,7 +36,7 @@ then
 fi
 
 # INSTALL OH-MY-ZSH
-if [ -f ~/.zshrc ] && [ -d ~/.oh-my-zsh ] # install oh-my-zsh files only if user already uses it and has ZSH installed
+if command -v zsh > /dev/null 2>&1 && -d ~/.oh-my-zsh # install oh-my-zsh files only if user already uses it and has ZSH installed
 then
 	echo "Backing up old OH-MY-ZSH files"
 	cp -pR ~/.oh-my-zsh $olddir/
@@ -53,7 +53,7 @@ then
 fi
 
 # INSTALL VIM DOTFILES
-if [[ -d ~/.vim ]]
+if command -v vim > /dev/null 2>&1
 then
 	echo "Backing up VIM files"
 	mv ~/.vim $olddir/
@@ -66,7 +66,7 @@ then
 fi
 
 # INSTALL GIT DOTFILES
-if [[ -f ~/.gitconfig ]]
+if command -v git > /dev/null 2>&1
 then
 	echo "Backing up GIT --global config file"
 	mv ~/.gitconfig $olddir/
@@ -81,7 +81,7 @@ then
 fi
 
 # INSTALL ROXTERM DOTFILES
-if [[ -d ~/.config/roxterm.sourceforge.net ]]
+if command -v roxterm > /dev/null 2>&1
 then
 	echo "Backing up ROXTERM files"
 	mv ~/.config/roxterm.sourceforge.net $olddir/
