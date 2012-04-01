@@ -36,7 +36,7 @@ then
 fi
 
 # INSTALL OH-MY-ZSH
-if command -v zsh > /dev/null 2>&1 && -d ~/.oh-my-zsh # install oh-my-zsh files only if user already uses it and has ZSH installed
+if command -v zsh > /dev/null 2>&1 && [ -d ~/.oh-my-zsh ] # install oh-my-zsh files only if user already uses it and has ZSH installed
 then
 	echo "Backing up old OH-MY-ZSH files"
 	cp -pR ~/.oh-my-zsh $olddir/
