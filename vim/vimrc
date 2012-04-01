@@ -252,7 +252,9 @@ let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 let Tlist_Inc_Winwidth=0
 
 
-" Any local customizations should be made in ~/.vimrc.local
-if filereadable(expand('~/.vimrc.local'))
-  source ~/.vimrc.local
+" Any local customizations should be made in .vimrc.local file
+" you would most likely create .vimrc.local in the same dir with your $MYVIMRC file
+let $VIMHOME=expand('<sfile>:p:h')
+if filereadable(expand('$VIMHOME/.vimrc.local'))
+  source $VIMHOME/.vimrc.local
 endif
