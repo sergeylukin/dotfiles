@@ -1,7 +1,6 @@
 Quick Start
 ===========
 
-I recommend that you install ZSH, OH-MY-ZSH, VIM and ROXTERM on your unix machine before continue.
 
 ``` html
 $ git clone git://github.com/sergeylukin/dotfiles.git ~/bin/dotfiles
@@ -9,14 +8,14 @@ $ cd ~/bin/dotfiles
 $ source install.sh
 ```
 
-Note that if you had ~/.gitconfig present, you would need to change your GIT credentials:
+Installation script installs only dotfiles for the components that are installed on
+your system. Here is the full list of components:
 
-``` html
-$ git config --global user.name "Your Name"
-$ git config --global user.email "your@email"
-```
-
-You're done.
+* ZSH
+* OH-MY-ZSH
+* VIM
+* GIT
+* ROXTERM
 
 Screenshots
 ===========

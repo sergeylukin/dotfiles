@@ -77,14 +77,15 @@ fi
 if command -v git > /dev/null 2>&1
 then
 	echo "Backing up GIT --global config file"
-	mv ~/.gitconfig $olddir/
+  # we are copying and not moving because we want to keep personal credentials
+  # if they exist
+	cp ~/.gitconfig $olddir/
 	echo "...done"
 	echo "Creating new GIT --global config file"
-	# because .gitconfig usually (and this is normal case)
-	# contains personal credentials (user.name & user.email)
-	# we better copy template to $HOME dir and let user modify it there
-	# without affecting the repo itself
-	cp $dir/git/gitconfig ~/.gitconfig
+
+  # replace my credentials with current global credentials (usually set in
+  # ~/.gitconfig
+  sed "s|Sergey Lukin|`git config --global user.name`|;s|contact@sergeylukin.com|`git config --global user.email`|" < $dir/git/gitconfig > ~/.gitconfig
 	echo "...done"
 fi
 
