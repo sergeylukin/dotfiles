@@ -52,6 +52,14 @@ then
 	echo "...done"
 fi
 
+# Local ZSH settings
+if command -v zsh > /dev/null 2>&1 && [ -f ~/.zshrc.local ]
+then
+	echo "Adding local ZSH settings link to ~/.zshrc"
+	echo ". ~/.zshrc.local" >> ~/.zshrc
+	echo "...done"
+fi
+
 # INSTALL VIM DOTFILES
 if command -v vim > /dev/null 2>&1
 then
