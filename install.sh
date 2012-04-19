@@ -53,8 +53,12 @@ then
 fi
 
 # Local ZSH settings
-if command -v zsh > /dev/null 2>&1 && [ -f ~/.zshrc.local ]
+if command -v zsh > /dev/null 2>&1
 then
+  if [ ! -f ~/.zshrc.local ]
+  then
+    touch ~/.zshrc.local
+  fi
 	echo "Adding local ZSH settings link to ~/.zshrc"
 	echo ". ~/.zshrc.local" >> ~/.zshrc
 	echo "...done"
