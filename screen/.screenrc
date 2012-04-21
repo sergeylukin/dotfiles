@@ -1,0 +1,28 @@
+
+# screen config file; ~/.screenrc
+#
+
+### Custom changes ###
+# term
+term "screen-256color"
+#term xterm-256color
+#term rxvt-256color
+
+# encoding
+encoding UTF-8
+
+# fix residual editor text
+altscreen on
+
+# main options
+attrcolor b ".I"
+defbce "on"
+vbell off
+startup_message off
+defscrollback 5000
+bufferfile "$HOME/.screen/exchange"
+hardcopydir "$HOME/.screen/hardcopy"
+sorendition dY
+hardstatus alwayslastline
+hardstatus string '%{= dW}%-Lw%{= dY}%50> %n*%f %t%{= dW}%+Lw%< %{= dW}%-=%D %m/%d/%y %C %A %1`%{-}'
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
