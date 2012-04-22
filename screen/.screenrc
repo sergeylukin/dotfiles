@@ -10,6 +10,7 @@ term "screen-256color"
 
 # encoding
 encoding UTF-8
+defutf8 on
 
 # fix residual editor text
 altscreen on
