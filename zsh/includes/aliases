@@ -8,6 +8,9 @@ function chpwd() {
 alias tu='top -o cpu' # cpu
 alias tm='top -o size' # memory
 
+# Screen
+alias sc='screen -U' # run in UTF-8 mode
+
 # Navigation
 alias ..='cd ..' # Go Up
 alias cdd='cd -' # Go Back
