@@ -251,6 +251,9 @@ map <leader>c <C-_><C-_>
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 let Tlist_Inc_Winwidth=0
 
+"PLUGIN - RSpec
+map <leader>r :RunSpec<cr>
+
 
 " Any local customizations should be made in .vimrc.local file
 " you would most likely create .vimrc.local in the same dir with your $MYVIMRC file
