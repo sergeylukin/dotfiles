@@ -29,6 +29,39 @@ syntax on
 au BufNewFile,BufRead *.less set filetype=css " Recognize .less files as .css
 
 
+"-----------------------------"
+" Abbreviations and Shortcuts
+"-----------------------------"
+" Override <leader> defaults
+let mapleader = ","
+let maplocalleader = ","
+" Lower the timeout after typing the leader key + command
+set timeoutlen=500
+
+" ABBREVIATIONS - commands typed in CLI (after colon)
+" -------------------------------
+" Open current file in Firefox - syntax may differ from one OS to another
+abbrev ff :!firefox % &<cr>
+
+" IMAPS - Insert mode shortcuts
+" -------------------------------
+" Shortcut for ESC
+imap jj <esc>
+
+" NMAPS - Normal Mode shortcuts
+" -------------------------------
+" set space as a shortcut for colon - very useful
+nmap ; :
+" fast .VIMRC edit
+nmap <leader>ev :tabedit $MYVIMRC<cr>
+" Markdown to HTML - make sure to download Markdown.pl to /usr/local/bin
+nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags<cr>
+" Quicly cancel highlighted selection
+nmap <leader>h :nohlsearch<cr>
+" Reload files
+nmap <leader>r :checktime<cr>
+
+
 "----------------------"
 " Files & Buffers
 "----------------------"
@@ -178,37 +211,6 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 
-"-----------------------------"
-" Abbreviations and Shortcuts
-"-----------------------------"
-" Override <leader> defaults
-let mapleader = ","
-let maplocalleader = ","
-" Lower the timeout after typing the leader key + command
-set timeoutlen=500
-
-" ABBREVIATIONS - commands typed in CLI (after colon)
-" -------------------------------
-" Open current file in Firefox - syntax may differ from one OS to another
-abbrev ff :!firefox % &<cr>
-
-" IMAPS - Insert mode shortcuts
-" -------------------------------
-" Shortcut for ESC
-imap jj <esc>
-
-" NMAPS - Normal Mode shortcuts
-" -------------------------------
-" set space as a shortcut for colon - very useful
-nmap ; :
-" fast .VIMRC edit
-nmap <leader>ev :tabedit $MYVIMRC<cr>
-" Markdown to HTML - make sure to download Markdown.pl to /usr/local/bin
-nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags<cr>
-" Quicly cancel highlighted selection
-nmap <leader>h :nohlsearch<cr>
-
-
 "---------------------------"
 " Pathogen - Plugins manager
 "---------------------------"
@@ -247,12 +249,16 @@ let g:sparkupNextMapping = '<C-n>'
 "----------------------"
 map <leader>c <C-_><C-_>
 
-"PLUGIN - taglist
+"----------------------"
+" PLUGIN - taglist
+"----------------------"
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 let Tlist_Inc_Winwidth=0
 
-"PLUGIN - RSpec
-map <leader>r :RunSpec<cr>
+"----------------------"
+" PLUGIN - RSpec
+"----------------------"
+map <leader>s :RunSpec<cr>
 
 
 " Any local customizations should be made in .vimrc.local file
