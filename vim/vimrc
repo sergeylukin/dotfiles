@@ -1,13 +1,9 @@
-"----------------------"
-" Look & Feel
-"----------------------"
 " Forget compatibility with VI - must be the first line
 set nocompatible
 
-" Enable 256 colors mode
-set t_Co=256
-
+"----------------------"
 " Encoding
+"----------------------"
 set encoding=utf-8
 if has("multi_byte")
 	if &termencoding == ""
@@ -50,13 +46,11 @@ imap jj <esc>
 
 " NMAPS - Normal Mode shortcuts
 " -------------------------------
-" set space as a shortcut for colon - very useful
+" let semi-colon function as colon (switch to command mode)
 nmap ; :
 " fast .VIMRC edit
 nmap <leader>ev :tabedit $MYVIMRC<cr>
-" Markdown to HTML - make sure to download Markdown.pl to /usr/local/bin
-nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags<cr>
-" Quicly cancel highlighted selection
+" Quickly cancel highlighted selection
 nmap <leader>h :nohlsearch<cr>
 " Reload files
 nmap <leader>r :checktime<cr>
@@ -80,6 +74,7 @@ nmap <silent> <leader>da :exec "1," . bufnr('$') . "bd"<cr>
 "----------------------"
 " UI stuff
 "----------------------"
+set t_Co=256 " Enable 256 colors mode
 set background=dark " Used by some colorschemes (for example Solarized theme may be 'dark' or 'light')
 colorscheme solarized " Select colorscheme from ~/.vim/colors/
 set guifont=*
@@ -105,7 +100,7 @@ set mousehide
 
 
 "----------------------"
-" Move around
+" Indentation & Wrap
 "----------------------"
 set backspace=2 " make backspace work like most other apps
 " make sure we can navigate very long lines as expected
@@ -127,11 +122,16 @@ set smartindent
 set autoindent
 " Line wrapping
 set wrap
-set textwidth=79 " Limit line length to 79 characters
-set formatoptions=cqt
+set textwidth=0
+set formatoptions=cqtl
 set wrapmargin=0
 set linebreak
-" Enable code folding
+set nolist
+
+
+"----------------------"
+" Folding
+"----------------------"
 set foldenable
 " Override ToggleFold()
 " inspired by Max Ischenko's http://www.vim.org/tips/tip.php?tip_id=108
@@ -235,6 +235,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * call StartUp()
 " Map NERDTreeToggle to convenient key
 nmap <leader>n :NERDTreeToggle<cr>
+nmap <silent> <F3> :NERDTreeToggle<cr>
 
 "----------------------"
 " PLUGIN - Sparkup (zencoding)
@@ -259,6 +260,12 @@ let Tlist_Inc_Winwidth=0
 " PLUGIN - RSpec
 "----------------------"
 map <leader>s :RunSpec<cr>
+
+"----------------------"
+" Markdown
+"----------------------"
+" Markdown to HTML - make sure to download Markdown.pl to /usr/local/bin
+nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags<cr>
 
 
 " Any local customizations should be made in .vimrc.local file
