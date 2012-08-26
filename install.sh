@@ -103,3 +103,14 @@ then
 	ln -s $dir/roxterm ~/.config/roxterm.sourceforge.net
 	echo "...done"
 fi
+
+# INSTALL TMUX DOTFILES
+if command -v tmux > /dev/null 2>&1
+then
+	echo "Backing up TMUX files"
+	mv ~/.tmux.conf $olddir/
+	echo "...done"
+	echo "Creating symlink to new TMUX files"
+	ln -s $dir/tmux/tmuxrc ~/.tmux.conf
+	echo "...done"
+fi
