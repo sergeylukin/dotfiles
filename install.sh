@@ -27,7 +27,7 @@ echo "...done"
 if command -v zsh > /dev/null 2>&1
 then
 	echo "Backing up old ZSH files"
-	mv ~/.zshrc $olddir/
+	mv ~/.zshrc $olddir/ > /dev/null 2>&1
 	echo "...done"
 	echo "Creating symlink to new ZSH files"
 	touch ~/.zshrc
@@ -68,8 +68,8 @@ fi
 if command -v vim > /dev/null 2>&1
 then
 	echo "Backing up VIM files"
-	mv ~/.vim $olddir/
-	mv ~/.vimrc $olddir/
+	mv ~/.vim $olddir/ > /dev/null 2>&1
+	mv ~/.vimrc $olddir/ > /dev/null 2>&1
 	echo "...done"
 	echo "Creating symlink to new VIM files"
 	ln -s $dir/vim ~/.vim
@@ -83,7 +83,12 @@ then
 	echo "Backing up GIT --global config file"
   # we are copying and not moving because we want to keep personal credentials
   # if they exist
-	cp ~/.gitconfig $olddir/
+  if [ ! -f ~/.gitconfig ]
+  then
+    touch ~/.gitconfig
+  else
+    cp ~/.gitconfig $olddir/
+  fi
 	echo "...done"
 	echo "Creating new GIT --global config file"
 
@@ -97,7 +102,7 @@ fi
 if command -v roxterm > /dev/null 2>&1
 then
 	echo "Backing up ROXTERM files"
-	mv ~/.config/roxterm.sourceforge.net $olddir/
+	mv ~/.config/roxterm.sourceforge.net $olddir/ > /dev/null 2>&1
 	echo "...done"
 	echo "Creating symlink to new ROXTERM files"
 	ln -s $dir/roxterm ~/.config/roxterm.sourceforge.net
@@ -108,7 +113,7 @@ fi
 if command -v tmux > /dev/null 2>&1
 then
 	echo "Backing up TMUX files"
-	mv ~/.tmux.conf $olddir/
+	mv ~/.tmux.conf $olddir/ > /dev/null 2>&1
 	echo "...done"
 	echo "Creating symlink to new TMUX files"
 	ln -s $dir/tmux/tmuxrc ~/.tmux.conf
@@ -119,7 +124,7 @@ fi
 if command -v screen > /dev/null 2>&1
 then
 	echo "Backing up SCREEN files"
-	mv ~/.screenrc $olddir/
+	mv ~/.screenrc $olddir/ > /dev/null 2>&1
 	echo "...done"
 	echo "Creating symlink to new SCREEN files"
 	ln -s $dir/screen/screenrc ~/.screenrc
