@@ -3,8 +3,8 @@ Quick Start
 
 
 ``` html
-$ git clone git://github.com/sergeylukin/dotfiles.git ~/bin/dotfiles
-$ cd ~/bin/dotfiles
+$ git clone git://github.com/sergeylukin/dotfiles.git ~/dotfiles
+$ cd ~/dotfiles
 $ source install.sh
 ```
 
@@ -16,6 +16,8 @@ your system. Here is the full list of components:
 * VIM
 * GIT
 * ROXTERM
+* SCREEN
+* TMUX
 
 Screenshots
 ===========
