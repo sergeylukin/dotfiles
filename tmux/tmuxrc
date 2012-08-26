@@ -16,6 +16,29 @@ bind k select-pane -U
 bind l select-pane -R
 bind h select-pane -L
 
+# v - vertical pane split
+# h - horizontal pane split
+unbind %
+bind H split-window -v
+unbind '"'
+bind V split-window -h
+
+# Resize panes
+bind-key C-h    resize-pane -L 5
+bind-key C-l    resize-pane -R 5
+bind-key C-j    resize-pane -D 5
+bind-key C-k    resize-pane -U 5
+
+# Rename Window like in Screen
+unbind ,
+bind A command-prompt "rename-window %%"
+
+# Navigate between Next/Prev windows with Space/Backspace
+unbind n
+bind " " next-window
+unbind p
+bind BSpace previous-window
+
 # Sane scrolling
 set -g mode-mouse on
 
