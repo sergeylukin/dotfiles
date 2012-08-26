@@ -114,3 +114,14 @@ then
 	ln -s $dir/tmux/tmuxrc ~/.tmux.conf
 	echo "...done"
 fi
+
+# INSTALL SCREEN DOTFILES
+if command -v screen > /dev/null 2>&1
+then
+	echo "Backing up SCREEN files"
+	mv ~/.screenrc $olddir/
+	echo "...done"
+	echo "Creating symlink to new SCREEN files"
+	ln -s $dir/screen/screenrc ~/.screenrc
+  echo "...done"
+fi
