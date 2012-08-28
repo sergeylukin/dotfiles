@@ -8,8 +8,8 @@ function chpwd() {
 alias tu='top -o cpu' # cpu
 alias tm='top -o size' # memory
 
-# Screen
-alias sc='screen -U' # run in UTF-8 mode
+# Tmux
+alias sc='tmux'
 
 # Navigation
 alias ..='cd ..' # Go Up
