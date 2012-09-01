@@ -90,11 +90,22 @@ then
     cp ~/.gitconfig $olddir/
   fi
 	echo "...done"
-	echo "Creating new GIT --global config file"
 
+  if [ -f ~/.gitignore_global ]
+  then
+    echo "Backing up GIT --global .gitignore file"
+    mv ~/.gitignore_global $olddir/
+    echo "...done"
+  fi
+
+	echo "Creating symlink to new --global .gitignore file"
+	ln -s $dir/git/gitignore_global ~/.gitignore_global
+  echo "...done"
+
+  echo "Creating new GIT --global config file"
   # replace my credentials with current global credentials (usually set in
   # ~/.gitconfig
-  sed "s|Sergey Lukin|`git config --global user.name`|;s|contact@sergeylukin.com|`git config --global user.email`|" < $dir/git/gitconfig > ~/.gitconfig
+  sed "s|Sergey Lukin|`git config --global user.name`|;s|contact@sergeylukin.com|`git config --global user.email`|;s|sergey|`whoami`|" < $dir/git/gitconfig > ~/.gitconfig
 	echo "...done"
 fi
 

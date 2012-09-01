@@ -20,3 +20,5 @@
   added = yellow
   changed = green
   untracked = cyan
+[core]
+  excludesfile = /home/sergey/.gitignore_global
