@@ -39,6 +39,9 @@ bind " " next-window
 unbind p
 bind BSpace previous-window
 
+# Move window to the beginning
+bind-key T swap-window -t 0
+
 # Sane scrolling
 set -g mode-mouse on
 
