@@ -22,7 +22,8 @@ filetype indent on
 filetype plugin on
 syntax on
 " Custom Filetypes
-au BufNewFile,BufRead *.less set filetype=css " Recognize .less files as .css
+au BufNewFile,BufRead *.less, set filetype=css " Recognize .less files as .css
+au BufNewFile,BufRead *.scss set filetype=css " Recognize .scss files as .css
 
 
 "-----------------------------"

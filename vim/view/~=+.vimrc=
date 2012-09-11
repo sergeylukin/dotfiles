@@ -11,58 +11,63 @@ setlocal fen
 silent! normal! zE
 5,14fold
 18,25fold
-29,56fold
-60,71fold
-75,99fold
-105,127fold
-103,129fold
-133,196fold
-200,209fold
-200,211fold
-215,217fold
-220,237fold
-240,245fold
-248,250fold
-253,256fold
-259,261fold
-264,267fold
+18,26fold
+30,57fold
+61,72fold
+76,100fold
+106,128fold
+104,130fold
+134,197fold
+201,210fold
+201,212fold
+216,218fold
+221,238fold
+241,246fold
+249,251fold
+254,257fold
+260,262fold
+265,268fold
 5
 normal zc
 18
-normal zc
-29
-normal zc
-60
-normal zc
-75
-normal zc
-103
 normal zo
-105
+18
 normal zo
-103
+18
 normal zc
-133
+30
 normal zc
-200
+61
+normal zc
+76
+normal zc
+104
 normal zo
-200
+106
 normal zo
-200
+104
 normal zc
-215
+134
 normal zc
-220
+201
+normal zo
+201
 normal zc
-240
+201
+normal zo
+216
 normal zc
-248
+221
 normal zc
-253
+241
 normal zc
-259
+249
 normal zc
-264
+254
+normal zc
+260
+normal zc
+265
 normal zc
 lcd ~/
 let &so = s:so_save | let &siso = s:siso_save
