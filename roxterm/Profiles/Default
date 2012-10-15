@@ -1,5 +1,6 @@
 
 [roxterm profile]
-background_type=0
+background_type=2
 login_shell=1
 font=Monospace 11
+saturation=0.134483
