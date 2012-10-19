@@ -16,6 +16,7 @@ your system. Here is the full list of components:
 * VIM
 * GIT
 * ROXTERM
+* Xfce Terminal Emulator
 * SCREEN
 * TMUX
 

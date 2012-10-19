@@ -2,7 +2,7 @@
 ############################
 # install.sh
 # This script doesn't do any installations, it only creates symlinks/copies dotfiles for
-# ZSH, OH-MY-ZSH, VIM, GIT, ROXTERM etc. and only if they are used and have their configuration files present.
+# ZSH, OH-MY-ZSH, VIM, GIT, ROXTERM, Xfce Terminal etc. and only if they are installed and have their configuration files present.
 # Old configuration files are backed up in ~/dotfiles_old
 ############################
 
@@ -117,6 +117,17 @@ then
 	echo "...done"
 	echo "Creating symlink to new ROXTERM files"
 	ln -s $dir/roxterm ~/.config/roxterm.sourceforge.net
+	echo "...done"
+fi
+
+# INSTALL Xfce Terminal DOTFILES
+if command -v terminal > /dev/null 2>&1
+then
+	echo "Backing up Xfce Terminal files"
+	mv ~/.config/Terminal $olddir/ > /dev/null 2>&1
+	echo "...done"
+	echo "Creating symlink to new Xfce Terminal files"
+	ln -s $dir/xfce-terminal ~/.config/Terminal
 	echo "...done"
 fi
 
