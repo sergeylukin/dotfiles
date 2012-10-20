@@ -52,3 +52,8 @@ alias lola='git log --graph --decorate --pretty=oneline --abbrev-commit --all'
 alias ign='git ls-files -o -i --exclude-standard'
 # Show useful info about any remote (pass remote name as argument)
 alias inf='git remote show '
+
+# Additional binaries
+
+# Todo App (todotxt.org)
+alias t='~/bin/todo.txt_cli-2.9/todo.sh'
