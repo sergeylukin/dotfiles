@@ -22,7 +22,7 @@ silent! normal! zE
 201,212fold
 216,218fold
 221,238fold
-241,246fold
+242,247fold
 249,251fold
 254,257fold
 260,262fold
@@ -32,9 +32,9 @@ normal zc
 18
 normal zo
 18
-normal zo
-18
 normal zc
+18
+normal zo
 30
 normal zc
 61
@@ -59,7 +59,7 @@ normal zo
 normal zc
 221
 normal zc
-241
+242
 normal zc
 249
 normal zc
