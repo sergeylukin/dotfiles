@@ -4,15 +4,8 @@ set nocompatible
 "----------------------"
 " Encoding
 "----------------------"
-set encoding=utf-8
-set fileencoding=utf-8
-if has("multi_byte")
-	if &termencoding == ""
-		let &termencoding = &encoding
-	endif
-   set encoding=utf-8                     " better default than latin1
-   setglobal fileencoding=utf-8           " change default file encoding when writing new files
-endif
+set encoding=utf-8 " encoding for editing a file
+set fileencoding=utf-8 " encoding for writing to a file
 
 
 "----------------------"
@@ -22,9 +15,6 @@ filetype on
 filetype indent on
 filetype plugin on
 syntax on
-" Custom Filetypes
-au BufNewFile,BufRead *.less, set filetype=css " Recognize .less files as .css
-au BufNewFile,BufRead *.scss set filetype=css " Recognize .scss files as .css
 
 
 "-----------------------------"
@@ -65,26 +55,32 @@ nmap <leader>r :checktime<cr>
 set autowrite
 " Switch between buffers without saving
 set hidden
+" No swap files
+set noswapfile
 " Apply new configuration after .VIMRC is saved
 autocmd! bufwritepost .vimrc source %
 " Automatically change current directory to that of the file in the buffer
 autocmd BufEnter * silent! lcd %:p:h " Better alternative to `autochdir`
-" Delete all buffers
+" Custom Filetypes
+au BufNewFile,BufRead *.less, set filetype=css " Recognize .less files as .css
+au BufNewFile,BufRead *.scss set filetype=css " Recognize .scss files as .css
+" Shortcut for deleting all buffers
 nmap <silent> <leader>da :exec "1," . bufnr('$') . "bd"<cr>
-" No swap files
-set noswapfile
 
 
 "----------------------"
 " UI stuff
 "----------------------"
 set t_Co=256 " Enable 256 colors mode
+" Select colorscheme from ~/.vim/colors/
+colorscheme solarized 
 set background=dark " Used by some colorschemes (for example Solarized theme may be 'dark' or 'light')
-colorscheme solarized " Select colorscheme from ~/.vim/colors/
-set guifont=Lucida_Console:h11
-set number " Show lines numbers
-" show tabs and line endings characters
+" Show lines numbers
+set number
+" show whitespace characters (tabs and line endings)
 set list
+" customize the way whitespace characters are shown
+set listchars=tab:»\ ,eol:¶
 "set relativenumber " Relative line numbering, works in VIM version 7.3 and higher
 set linespace=3 " Higher line height - works only in GUI mode, not in terminal..
 set laststatus=2 " Show status line
@@ -108,14 +104,17 @@ set gdefault
 set incsearch
 " Highlight search - looks like it is enabled by default, but anyways
 set hlsearch " use :nohlsearch to cancel highlighted selection
-" Hide MacVim toolbar
-set go-=T
 " Hide mouse when typing
 set mousehide
 " Flash screen instead of beeping
 set visualbell
 " Highlight current line
 set cursorline
+
+" Hide MacVim toolbar
+set go-=T
+" Set font for graphical vim
+set guifont=Lucida_Console:h11
 " Remove all toolbars/scrollbars from GUI version
 set guioptions=aAc
 set guioptions-=Be
@@ -141,7 +140,8 @@ vnoremap > >gv
 " Hard-wrap paragraphs of text - very useful when pasting long lines
 nnoremap <leader>q gqip
 " Indentation
-set expandtab " insert space characters whenever TAB pressed (use Ctrl-V<Tab> to insert real TAB)
+" Insert space characters whenever TAB pressed (use Ctrl-V<Tab> to insert real TAB)
+set expandtab 
 set tabstop=2 " number of spaces when TAB pressed
 set shiftwidth=2
 set softtabstop=2
@@ -272,7 +272,7 @@ nmap <silent> <F3> :NERDTreeToggle<cr>
 let g:sparkup = 'sparkup'
 let g:sparkupArgs = '--no-last-newline'
 let g:sparkupExecuteMapping = '<leader>e'
-" let g:sparkupNextMapping = '<C-n>'
+let g:sparkupNextMapping = '<C-n>'
 
 "----------------------"
 " PLUGIN - tComment
@@ -303,3 +303,4 @@ let $VIMHOME=expand('<sfile>:p:h')
 if filereadable(expand('$VIMHOME/.vimrc.local'))
   source $VIMHOME/.vimrc.local
 endif
+
