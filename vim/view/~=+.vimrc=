@@ -1,6 +1,6 @@
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 argglobal
-setlocal fdm=manual
+setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
@@ -8,25 +8,40 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-silent! normal! zE
-11,17fold
-69,96fold
-102,127fold
-133,197fold
-201,212fold
-221,238fold
-11
+5
+normal zc
+13
+normal zc
+23
+normal zc
+55
+normal zc
+76
+normal zc
+135
+normal zc
+166
 normal zo
-69
+171
 normal zo
-102
-normal zo
-133
-normal zo
+166
+normal zc
+183
+normal zc
 201
-normal zo
-221
-normal zo
+normal zc
+207
+normal zc
+220
+normal zc
+229
+normal zc
+235
+normal zc
+242
+normal zc
+248
+normal zc
 lcd ~/
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost

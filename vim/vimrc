@@ -2,23 +2,25 @@
 set nocompatible
 
 "----------------------"
-" Encoding
+" Encoding {{{
 "----------------------"
 set encoding=utf-8 " encoding for editing a file
 set fileencoding=utf-8 " encoding for writing to a file
+" }}}
 
 
 "----------------------"
-" Filetype
+" Filetype {{{
 "----------------------"
 filetype on
 filetype indent on
 filetype plugin on
 syntax on
+" }}}
 
 
 "-----------------------------"
-" Abbreviations and Shortcuts
+" Abbreviations and Shortcuts {{{
 "-----------------------------"
 " Override <leader> defaults
 let mapleader = ","
@@ -46,10 +48,11 @@ nmap <leader>ev :tabedit $MYVIMRC<cr>
 nmap <leader>h :nohlsearch<cr>
 " Reload files
 nmap <leader>r :checktime<cr>
+" }}}
 
 
 "----------------------"
-" Files & Buffers
+" Files & Buffers {{{
 "----------------------"
 " Write the old file when switching between files
 set autowrite
@@ -66,10 +69,11 @@ au BufNewFile,BufRead *.less, set filetype=css " Recognize .less files as .css
 au BufNewFile,BufRead *.scss set filetype=css " Recognize .scss files as .css
 " Shortcut for deleting all buffers
 nmap <silent> <leader>da :exec "1," . bufnr('$') . "bd"<cr>
+" }}}
 
 
 "----------------------"
-" UI stuff
+" UI stuff {{{
 "----------------------"
 set t_Co=256 " Enable 256 colors mode
 " Select colorscheme from ~/.vim/colors/
@@ -124,10 +128,11 @@ set winwidth=84
 set winheight=5
 set winminheight=5
 set winheight=999
+" }}}
 
 
 "----------------------"
-" Indentation & Wrap
+" Indentation & Wrap {{{
 "----------------------"
 set backspace=2 " make backspace work like most other apps
 " make sure we can navigate very long lines as expected
@@ -154,77 +159,28 @@ set textwidth=0
 set formatoptions=cqtl
 set wrapmargin=0
 set linebreak
+" }}}
 
 
 "----------------------"
-" Folding
+" Folding {{{
 "----------------------"
 set foldenable
-" Override ToggleFold()
-" inspired by Max Ischenko's http://www.vim.org/tips/tip.php?tip_id=108
-function! ToggleFold()
-  if foldlevel('.') == 0
-     " No fold exists at the current line,
-     " so create a fold based on indentation
-
-     let l_min = line('.')   " the current line number
-     let l_max = line('$')   " the last line number
-     let i_min = indent('.') " the indentation of the current line
-     let l = l_min + 1
-
-     " Search downward for the last line whose indentation > i_min
-     while l <= l_max
-        " if this line is not blank ...
-        if strlen(getline(l)) > 0 && getline(l) !~ '^\s*$'
-           if indent(l) <= i_min
-              " we've gone too far
-              let l = l - 1    " backtrack one line
-              break
-           endif
-        endif
-        let l = l + 1
-     endwhile
-
-     " Clamp l to the last line
-     if l > l_max
-        let l = l_max
-     endif
-
-     " Backtrack to the last non-blank line
-     while l > l_min
-        if strlen(getline(l)) > 0 && getline(l) !~ '^\s*$'
-           break
-        endif
-        let l = l - 1
-     endwhile
-
-     "execute "normal i" . l_min . "," . l . " fold"   " print debug info
-
-     if l > l_min
-        " Create the fold from l_min to l
-        execute l_min . "," . l . " fold"
-     endif
-  else
-     " Delete the fold on the current line
-     normal zd
-  endif
-endfunction
-" Shortcut to toggle folding
-vmap <space> zf
-nmap <space> :call ToggleFold()<CR>
-" Customize the look of collapsed folds
-highlight Folded ctermfg=yellow ctermbg=NONE
+" Use fold-marker method
+set foldmethod=marker
+set foldmarker={{{,}}}
 set foldtext=getline(v:foldstart)
+" Save only fold info in views
+set viewoptions=folds
 " Auto-save the folds when saving file
 au BufWinLeave * silent! mkview
 " Auto-load the fold when opening file
 au BufWinEnter * silent! loadview
-" Save only fold info in views
-set viewoptions=folds
+" }}}
 
 
 "----------------------"
-" Code completion
+" Code completion {{{
 "----------------------"
 imap <Tab> <C-n>
 imap <S-Tab> <C-p>
@@ -238,15 +194,17 @@ imap <S-Tab> <C-p>
 "   \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 " inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
 "   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+" }}}
 
 
 "---------------------------"
-" Pathogen - Plugins manager
+" Pathogen - Plugins manager {{{
 "---------------------------"
 call pathogen#infect()
+" }}}
 
 "----------------------"
-" PLUGIN - NERDTree
+" PLUGIN - NERDTree {{{
 "----------------------"
 let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\env','\.vim$', '\~$', '\.pyc$', '\.swp$', '\.egg-info$', '^dist$', '^build$']
@@ -256,36 +214,42 @@ let NERDTreeHightlightCursorline=1
 let NERDTreeShowHidden=1 " Show hidden files
 " Map NERDTreeToggle to convenient key
 nmap <leader>n :NERDTreeToggle<cr>
+" }}}
 
 "----------------------"
-" PLUGIN - Sparkup (zencoding)
+" PLUGIN - Sparkup (zencoding) {{{
 "----------------------"
 let g:sparkup = 'sparkup'
 let g:sparkupArgs = '--no-last-newline'
 let g:sparkupExecuteMapping = '<leader>e'
 let g:sparkupNextMapping = '<C-n>'
+" }}}
 
 "----------------------"
-" PLUGIN - tComment
+" PLUGIN - tComment {{{
 "----------------------"
 map <leader>c <C-_><C-_>
+" }}}
 
 "----------------------"
-" PLUGIN - taglist
+" PLUGIN - taglist {{{
 "----------------------"
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 let Tlist_Inc_Winwidth=0
+" }}}
 
 "----------------------"
-" PLUGIN - RSpec
+" PLUGIN - RSpec {{{
 "----------------------"
 map <leader>s :RunSpec<cr>
+" }}}
 
 "----------------------"
-" Markdown
+" Markdown {{{
 "----------------------"
 " Markdown to HTML - make sure to download Markdown.pl to /usr/local/bin
 nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags<cr>
+" }}}
 
 
 " Any local customizations should be made in .vimrc.local file
