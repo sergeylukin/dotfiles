@@ -1,10 +1,11 @@
-" Forget compatibility with VI - must be the first line
+" Forget compatibility with VI 
 set nocompatible
 
 "----------------------"
 " Encoding
 "----------------------"
 set encoding=utf-8
+set fileencoding=utf-8
 if has("multi_byte")
 	if &termencoding == ""
 		let &termencoding = &encoding
@@ -70,6 +71,8 @@ autocmd! bufwritepost .vimrc source %
 autocmd BufEnter * silent! lcd %:p:h " Better alternative to `autochdir`
 " Delete all buffers
 nmap <silent> <leader>da :exec "1," . bufnr('$') . "bd"<cr>
+" No swap files
+set noswapfile
 
 
 "----------------------"
@@ -78,8 +81,10 @@ nmap <silent> <leader>da :exec "1," . bufnr('$') . "bd"<cr>
 set t_Co=256 " Enable 256 colors mode
 set background=dark " Used by some colorschemes (for example Solarized theme may be 'dark' or 'light')
 colorscheme solarized " Select colorscheme from ~/.vim/colors/
-set guifont=*
+set guifont=Lucida_Console:h11
 set number " Show lines numbers
+" show tabs and line endings characters
+set list
 "set relativenumber " Relative line numbering, works in VIM version 7.3 and higher
 set linespace=3 " Higher line height - works only in GUI mode, not in terminal..
 set laststatus=2 " Show status line
@@ -90,6 +95,15 @@ set showcmd
 " Keep current screen unmoved when creating new split screen
 set splitbelow
 set splitright
+" Highlight the paired characters if one of them is under the cursor (like
+" braces)
+set showmatch
+" Ignore case sensitivity when searching
+set ignorecase
+" Don't ignore case sensitivity when search pattern contains capital letters
+set smartcase
+" Add /g flag in search and replace by default
+set gdefault
 " Set incremental search - search when you type, very cool
 set incsearch
 " Highlight search - looks like it is enabled by default, but anyways
@@ -98,6 +112,19 @@ set hlsearch " use :nohlsearch to cancel highlighted selection
 set go-=T
 " Hide mouse when typing
 set mousehide
+" Flash screen instead of beeping
+set visualbell
+" Highlight current line
+set cursorline
+" Remove all toolbars/scrollbars from GUI version
+set guioptions=aAc
+set guioptions-=Be
+
+" Resize windows when switching between them
+set winwidth=84
+set winheight=5
+set winminheight=5
+set winheight=999
 
 
 "----------------------"
@@ -105,11 +132,11 @@ set mousehide
 "----------------------"
 set backspace=2 " make backspace work like most other apps
 " make sure we can navigate very long lines as expected
-nnoremap j gj 
+nnoremap j gj
 nnoremap k gk
 " make sure we can indent blocks easily, enter Visual mode, select text block
 " and press '>' and '<' as much as you need to indent it
-vnoremap < <gv 
+vnoremap < <gv
 vnoremap > >gv
 " Hard-wrap paragraphs of text - very useful when pasting long lines
 nnoremap <leader>q gqip
@@ -127,7 +154,6 @@ set textwidth=0
 set formatoptions=cqtl
 set wrapmargin=0
 set linebreak
-set nolist
 
 
 "----------------------"
