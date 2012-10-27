@@ -9,8 +9,6 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-5,14fold
-18,25fold
 18,26fold
 30,57fold
 61,72fold
@@ -27,12 +25,6 @@ silent! normal! zE
 254,257fold
 260,262fold
 265,268fold
-5
-normal zc
-18
-normal zo
-18
-normal zc
 18
 normal zo
 30
@@ -40,7 +32,7 @@ normal zc
 61
 normal zc
 76
-normal zc
+normal zo
 104
 normal zo
 106
@@ -48,7 +40,7 @@ normal zo
 104
 normal zc
 134
-normal zc
+normal zo
 201
 normal zo
 201
@@ -58,7 +50,7 @@ normal zo
 216
 normal zc
 221
-normal zc
+normal zo
 242
 normal zc
 249

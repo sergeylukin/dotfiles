@@ -226,16 +226,18 @@ set viewoptions=folds
 "----------------------"
 " Code completion
 "----------------------"
-imap <leader><tab> <C-x><C-o>
+imap <Tab> <C-n>
+imap <S-Tab> <C-p>
+" imap <leader><tab> <C-x><C-o>
 " Activate TAB auto-completion for file paths
-set wildmode=list:longest
+" set wildmode=list:longest
 " http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
-set completeopt=longest,menuone
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
-  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
-  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+" set completeopt=longest,menuone
+" inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+"   \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+" inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+"   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 
 "---------------------------"
@@ -270,7 +272,7 @@ nmap <silent> <F3> :NERDTreeToggle<cr>
 let g:sparkup = 'sparkup'
 let g:sparkupArgs = '--no-last-newline'
 let g:sparkupExecuteMapping = '<leader>e'
-let g:sparkupNextMapping = '<C-n>'
+" let g:sparkupNextMapping = '<C-n>'
 
 "----------------------"
 " PLUGIN - tComment
