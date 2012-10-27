@@ -254,17 +254,8 @@ let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\~$']
 let NERDTreeShowBookmarks=1
 let NERDTreeHightlightCursorline=1
 let NERDTreeShowHidden=1 " Show hidden files
-" autoopen NERDTree but ONLY if no file was requested
-function! StartUp()
-    if !exists("s:std_in") && 0 == argc()
-        NERDTree
-    end
-endfunction
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * call StartUp()
 " Map NERDTreeToggle to convenient key
 nmap <leader>n :NERDTreeToggle<cr>
-nmap <silent> <F3> :NERDTreeToggle<cr>
 
 "----------------------"
 " PLUGIN - Sparkup (zencoding)
