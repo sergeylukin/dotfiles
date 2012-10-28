@@ -18,29 +18,9 @@ normal zc
 normal zc
 76
 normal zc
-135
-normal zc
-166
+167
 normal zo
-171
-normal zo
-166
-normal zc
-183
-normal zc
-201
-normal zc
-207
-normal zc
-220
-normal zc
-229
-normal zc
-235
-normal zc
-242
-normal zc
-248
+167
 normal zc
 lcd ~/
 let &so = s:so_save | let &siso = s:siso_save

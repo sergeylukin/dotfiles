@@ -115,13 +115,14 @@ set visualbell
 " Highlight current line
 set cursorline
 
-" Hide MacVim toolbar
-set go-=T
 " Set font for graphical vim
 set guifont=Lucida_Console:h11
 " Remove all toolbars/scrollbars from GUI version
 set guioptions=aAc
 set guioptions-=Be
+set guioptions-=T
+" Non-blinking, block cursor
+set guicursor=a:blinkwait0,a:block-cursor
 
 " Resize windows when switching between them
 set winwidth=84
