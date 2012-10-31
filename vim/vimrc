@@ -60,6 +60,12 @@ set autowrite
 set hidden
 " No swap files
 set noswapfile
+" File names auto-completion
+"   first TAB completes as much as possible
+"   second TAB provides a list
+"   third and subsequent will cycle through completion options
+set wildmode=longest,list,full
+set wildmenu
 " Apply new configuration after .VIMRC is saved
 autocmd! bufwritepost .vimrc source %
 " Automatically change current directory to that of the file in the buffer
@@ -186,8 +192,6 @@ au BufWinEnter * silent! loadview
 imap <Tab> <C-n>
 imap <S-Tab> <C-p>
 " imap <leader><tab> <C-x><C-o>
-" Activate TAB auto-completion for file paths
-" set wildmode=list:longest
 " http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
 " set completeopt=longest,menuone
 " inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
