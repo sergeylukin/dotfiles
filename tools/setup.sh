@@ -152,3 +152,11 @@ then
 	ln -s $dir/screen/screenrc ~/.screenrc
   echo "...done"
 fi
+
+echo "     _                  _ "
+echo "  __| | ___  _ __   ___| |"
+echo " / _  |/ _ \|  _ \ / _ \ |"
+echo "| (_| | (_) | | | |  __/_|"
+echo " \__,_|\___/|_| |_|\___(_)"
+echo "                          "
+
