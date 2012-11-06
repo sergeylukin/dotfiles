@@ -3,9 +3,9 @@ Quick Start
 
 
 ``` html
-$ git clone git://github.com/sergeylukin/dotfiles.git ~/dotfiles
+$ cd && git clone git://github.com/sergeylukin/dotfiles.git
 $ cd ~/dotfiles
-$ source install.sh
+$ source tools/setup.sh
 ```
 
 Installation script installs only dotfiles for the components that are installed on
