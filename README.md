@@ -1,11 +1,14 @@
 Quick Start
 ===========
 
+``` html
+curl -L https://github.com/sergeylukin/dotfiles/raw/master/tools/install.sh | sh
+```
+
+or
 
 ``` html
-$ cd && git clone git://github.com/sergeylukin/dotfiles.git
-$ cd ~/dotfiles
-$ source tools/setup.sh
+wget --no-check-certificate https://github.com/sergeylukin/dotfiles/raw/master/tools/install.sh -O - | sh
 ```
 
 Installation script installs only dotfiles for the components that are installed on
