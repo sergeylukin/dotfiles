@@ -16,4 +16,4 @@ hash git >/dev/null && /usr/bin/env git clone https://github.com/sergeylukin/dot
 }
 
 # Run setup script
-source ~/.dotfiles/tools/setup.sh
+. ~/.dotfiles/tools/setup.sh
