@@ -16,6 +16,7 @@ alias ..='cd ..' # Go Up
 alias cdd='cd -' # Go Back
 alias code='cd ~/code' # Shortcut to code dir
 alias dotfiles='cd ~/.dotfiles' # Shortcut to dotfiles dir
+alisa configfiles='cd ~/.config' # Shortcut to ~/.config dir
 
 # List files/dirs
 alias ls='ls -G'
