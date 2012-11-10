@@ -9,7 +9,7 @@ then
   exit
 fi
 
-# Close repository
+# Clone repository
 hash git >/dev/null && /usr/bin/env git clone https://github.com/sergeylukin/dotfiles.git ~/.dotfiles || {
   echo "git not installed"
   exit
