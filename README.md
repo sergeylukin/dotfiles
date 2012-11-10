@@ -18,15 +18,15 @@ your system. Here is the full list of components:
 * OH-MY-ZSH
 * VIM
 * GIT
-* ROXTERM
-* Xfce Terminal Emulator
 * SCREEN
 * TMUX
 
 Screenshots
 ===========
 
-Below are some screenshots of how your environment should look after setting up the dotfiles. I made these screenshots while working via PUTTY remotely, but when working locally, ROXTERM looks exactly the same.
+Below are some screenshots of how your environment should look after setting
+up the dotfiles. Make sure to apply Solarized theme to your terminal in order
+to get similar effect.
 
 ZSH + GIT
 ----------
