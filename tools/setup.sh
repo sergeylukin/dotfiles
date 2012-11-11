@@ -8,25 +8,25 @@
 ########## Variables
 
 dir=~/.dotfiles                    # dotfiles directory
-olddir=~/.dotfiles_old             # old dotfiles backup directory
+backup_dir=$dir/backup             # old dotfiles backup directory
 
 ##########
 
-echo "Creating $olddir for backup of any existing dotfiles in ~"
+echo "Creating $backup_dir for backup of any existing dotfiles in ~"
 # First - remove if it exists
-if [[ -d $olddir ]]
+if [[ -d $backup_dir ]]
 then
-	rm -fr $olddir
+	rm -fr $backup_dir
 fi
 # Now - create fresh one
-mkdir -p $olddir
+mkdir -p $backup_dir
 echo "...done"
 
 # INSTALL ZSH DOTFILES
 if command -v zsh > /dev/null 2>&1
 then
 	echo "Backing up old ZSH files"
-	mv ~/.zshrc $olddir/ > /dev/null 2>&1
+	mv ~/.zshrc $backup_dir/ > /dev/null 2>&1
 	echo "...done"
 	echo "Creating symlink to new ZSH files"
 	touch ~/.zshrc
@@ -38,7 +38,7 @@ fi
 if command -v zsh > /dev/null 2>&1 && [ -d ~/.oh-my-zsh ] # install oh-my-zsh files only if user already uses it and has ZSH installed
 then
 	echo "Backing up old OH-MY-ZSH files"
-	cp -pR ~/.oh-my-zsh $olddir/
+	cp -pR ~/.oh-my-zsh $backup_dir/
 	echo "...done"
 	echo "Overwriting old OH-MY-ZSH files with new files"
 	cp -pr $dir/oh-my-zsh/. ~/.oh-my-zsh
@@ -67,8 +67,8 @@ fi
 if command -v vim > /dev/null 2>&1
 then
 	echo "Backing up VIM files"
-	mv ~/.vim $olddir/ > /dev/null 2>&1
-	mv ~/.vimrc $olddir/ > /dev/null 2>&1
+	mv ~/.vim $backup_dir/ > /dev/null 2>&1
+	mv ~/.vimrc $backup_dir/ > /dev/null 2>&1
 	echo "...done"
 	echo "Creating symlink to new VIM files"
 	ln -s $dir/vim ~/.vim
@@ -86,14 +86,14 @@ then
   then
     touch ~/.gitconfig
   else
-    cp ~/.gitconfig $olddir/
+    cp ~/.gitconfig $backup_dir/
   fi
 	echo "...done"
 
   if [ -f ~/.gitignore_global ]
   then
     echo "Backing up GIT --global .gitignore file"
-    mv ~/.gitignore_global $olddir/
+    mv ~/.gitignore_global $backup_dir/
     echo "...done"
   fi
 
@@ -112,7 +112,7 @@ fi
 if command -v tmux > /dev/null 2>&1
 then
 	echo "Backing up TMUX files"
-	mv ~/.tmux.conf $olddir/ > /dev/null 2>&1
+	mv ~/.tmux.conf $backup_dir/ > /dev/null 2>&1
 	echo "...done"
 	echo "Creating symlink to new TMUX files"
 	ln -s $dir/tmux/tmuxrc ~/.tmux.conf
@@ -123,7 +123,7 @@ fi
 if command -v screen > /dev/null 2>&1
 then
 	echo "Backing up SCREEN files"
-	mv ~/.screenrc $olddir/ > /dev/null 2>&1
+	mv ~/.screenrc $backup_dir/ > /dev/null 2>&1
 	echo "...done"
 	echo "Creating symlink to new SCREEN files"
 	ln -s $dir/screen/screenrc ~/.screenrc
