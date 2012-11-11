@@ -12,6 +12,12 @@ backup_dir=$dir/backup             # old dotfiles backup directory
 
 ##########
 
+# Make sure ~/bin directory exists
+if [ ! -d ~/bin ]
+then
+  mkdir ~/bin
+fi
+
 # INSTALL ZSH DOTFILES
 if command -v zsh > /dev/null 2>&1
 then
