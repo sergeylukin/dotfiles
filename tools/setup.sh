@@ -12,16 +12,6 @@ backup_dir=$dir/backup             # old dotfiles backup directory
 
 ##########
 
-echo "Creating $backup_dir for backup of any existing dotfiles in ~"
-# First - remove if it exists
-if [[ -d $backup_dir ]]
-then
-	rm -fr $backup_dir
-fi
-# Now - create fresh one
-mkdir -p $backup_dir
-echo "...done"
-
 # INSTALL ZSH DOTFILES
 if command -v zsh > /dev/null 2>&1
 then
