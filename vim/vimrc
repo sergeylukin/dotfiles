@@ -183,6 +183,8 @@ set viewoptions=folds
 au BufWinLeave * silent! mkview
 " Auto-load the fold when opening file
 au BufWinEnter * silent! loadview
+" Fold GPG entries by default
+autocmd BufWinEnter,BufReadPre,FileReadPre      *.gpg normal zM
 " }}}
 
 
