@@ -47,8 +47,8 @@ alias go='git checkout '
 alias pull='git pull '
 alias push='git push '
 alias lg='git log -p'
-alias lol='git log --graph --decorate --pretty=oneline --abbrev-commit'
-alias lola='git log --graph --decorate --pretty=oneline --abbrev-commit --all'
+alias lol='git log --graph --decorate --abbrev-commit --pretty=format:"%C(yellow)%h%Creset %Cblue%an%Creset%Cred%d%Creset %s"'
+alias lola='git log --graph --decorate --abbrev-commit --pretty=format:"%C(yellow)%h%Creset %Cblue%an%Creset%Cred%d%Creset %s" --all'
 # Show files ignored by git
 alias ign='git ls-files -o -i --exclude-standard'
 # Show useful info about any remote (pass remote name as argument)
