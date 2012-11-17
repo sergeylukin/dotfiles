@@ -1,7 +1,7 @@
 # List directory each time directory is changed (run `ls -la` after each `cd`)
 function chpwd() {
     emulate -L zsh
-    ls -lAGh
+    ls -lF
 }
 
 # Processes
