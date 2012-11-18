@@ -53,6 +53,8 @@ alias lola='git log --graph --decorate --abbrev-commit --pretty=format:"%C(yello
 alias ign='git ls-files -o -i --exclude-standard'
 # Show useful info about any remote (pass remote name as argument)
 alias inf='git remote show '
+# Export current commit changes against ref to patch file
+alias gfp='git format-patch --stdout > patch'
 
 # Additional binaries
 
