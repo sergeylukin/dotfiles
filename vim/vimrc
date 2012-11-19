@@ -162,7 +162,7 @@ set smartindent
 set autoindent
 " Line wrapping
 set wrap
-set textwidth=0
+set textwidth=79
 set formatoptions=cqtl
 set wrapmargin=0
 set linebreak
