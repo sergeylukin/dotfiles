@@ -84,7 +84,7 @@ nmap <silent> <leader>da :exec "1," . bufnr('$') . "bd"<cr>
 set t_Co=256 " Enable 256 colors mode
 " Select colorscheme from ~/.vim/colors/
 colorscheme solarized 
-set background=dark " Used by some colorschemes (for example Solarized theme may be 'dark' or 'light')
+set background=light " Used by some colorschemes (for example Solarized theme may be 'dark' or 'light')
 " Show lines numbers
 set number
 " show whitespace characters (tabs and line endings)
