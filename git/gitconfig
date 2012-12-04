@@ -22,3 +22,4 @@
   untracked = cyan
 [core]
   excludesfile = /home/sergey/.gitignore_global
+  filemode = false
