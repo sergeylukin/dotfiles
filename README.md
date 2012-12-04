@@ -1,6 +1,10 @@
 Quick Start
 ===========
 
+Install ZSH and OH-MY-ZSH (make sure to switch your default shell to ZSH).
+
+..and then..
+
 ``` html
 curl -L https://github.com/sergeylukin/dotfiles/raw/master/tools/install.sh | sh
 ```
