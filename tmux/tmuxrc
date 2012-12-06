@@ -47,3 +47,12 @@ set -g mode-mouse on
 
 # colors
 set -g default-terminal "screen-256color"
+
+# adjust copy/paste keystrokes
+# read more at http://jasonwryan.com/blog/2011/06/07/copy-and-paste-in-tmux/
+unbind [
+bind Escape copy-mode
+unbind p
+bind p paste-buffer
+bind-key -t vi-copy 'v' begin-selection
+bind-key -t vi-copy 'y' copy-selection
