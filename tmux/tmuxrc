@@ -42,8 +42,11 @@ bind BSpace previous-window
 # Move window to the beginning
 bind-key T swap-window -t 0
 
-# Sane scrolling
+# Enable mouse pointer actions
 set -g mode-mouse on
+set -g mouse-resize-pane on
+set -g mouse-select-pane on
+set -g mouse-select-window on
 
 # colors
 set -g default-terminal "screen-256color"
