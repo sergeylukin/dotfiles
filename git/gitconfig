@@ -23,3 +23,5 @@
 [core]
   excludesfile = /home/sergey/.gitignore_global
   filemode = false
+[branch]
+  autosetuprebase = always
