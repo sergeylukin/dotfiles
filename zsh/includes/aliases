@@ -21,6 +21,10 @@ alias guifiles='cd ~/.dotfiles-xfce' # Shortcut to GUI dotfiles dir
 alias ls='ls -G'
 alias l='ls -lF'
 alias la='ls -lAGh'
+# list only unhidden directories
+alias ld='ls -lF | grep "^d"'
+# list all directories
+alias lad='ls -la | grep "^d"'
 
 # `cat` with beautiful colors. requires Pygments installed
 # inspired by [Paul Irish](https://github.com/paulirish/dotfiles)
