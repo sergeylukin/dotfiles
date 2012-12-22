@@ -1,6 +1,6 @@
 export EDITOR=vim
 export TERM=xterm-256color
-export PATH=$PATH:~/bin
+export PATH=$PATH:~/bin:~/code/git-achievements
 
 # Vim gpg encryption
 GPG_TTY=`tty`
