@@ -1,6 +1,6 @@
 [user]
-	name = Sergey Lukin
-	email = contact@sergeylukin.com
+  name = Sergey Lukin
+  email = contact@sergeylukin.com
 [color]
   ui = true
   interactive = true
@@ -25,3 +25,7 @@
   filemode = false
 [branch]
   autosetuprebase = always
+# Any GitHub repo with my username should be checked out r/w by default
+# http://rentzsch.tumblr.com/post/564806957/public-but-hackable-git-submodules
+[url "git@github.com:yourname/"]
+  insteadOf = "git://github.com/yourname/"
