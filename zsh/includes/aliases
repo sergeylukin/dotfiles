@@ -49,6 +49,8 @@ alias mf='git merge --ff-only' # Fast-Forward merge
 alias go='git checkout '
 alias pull='git pull '
 alias push='git push '
+# Undo a `git push`
+alias undopush="git push -f origin HEAD~:master"
 alias lg='git log -p'
 alias lol='git log --graph --decorate --abbrev-commit --date=relative --pretty=format:"%C(yellow)%h%C(reset) %C(black)%ad%C(reset) %C(blue)%an%C(reset)%C(red)%d%C(reset) %s"'
 alias lola='lol --all'
