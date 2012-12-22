@@ -22,6 +22,10 @@ alias ls='ls -G'
 alias l='ls -lF'
 alias la='ls -lAGh'
 
+# `cat` with beautiful colors. requires Pygments installed
+# inspired by [Paul Irish](https://github.com/paulirish/dotfiles)
+alias v='pygmentize -O style=default -f console256 -g'
+
 # Editing
 alias brel='source ~/.zshrc'
 alias ea='vim ~/.dotfiles/zsh/includes/aliases && brel'
