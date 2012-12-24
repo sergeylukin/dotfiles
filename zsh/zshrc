@@ -2,6 +2,11 @@
 . ~/.dotfiles/zsh/includes/aliases
 . ~/.dotfiles/zsh/includes/config
 
+# Run z https://github.com/rupa/z
+if [ -f ~/code/z/z.sh ]; then
+  . ~/code/z/z.sh
+fi
+
 # Add colors to man pages
 man() {
   env \
