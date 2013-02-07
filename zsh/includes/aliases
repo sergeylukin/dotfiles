@@ -3,6 +3,9 @@ function chpwd() {
     ls -lF
 }
 
+# Cute git push alternative:) Execute: "nasa launch rocket" and git push will be called
+nasa() { if [[ $@ == "launch rocket" ]]; then command git push; else command echo "common launch it"; fi; }
+
 # Processes
 alias tu='top -o cpu' # cpu
 alias tm='top -o size' # memory
