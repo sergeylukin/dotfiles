@@ -1,6 +1,6 @@
 export EDITOR=vim
 export TERM=xterm-256color
-export PATH=$PATH:~/bin:./node_modules/.bin
+export PATH=./node_modules/.bin:~/bin:$PATH
 
 # Vim gpg encryption
 GPG_TTY=`tty`
