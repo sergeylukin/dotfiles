@@ -98,4 +98,4 @@ bind - \
   kill-window -t tmux-zoom
 
 # Add rainbarf panel
-set -g status-right '#(rainbarf)'
+set -g status-right '#(rainbarf --rgb)'
