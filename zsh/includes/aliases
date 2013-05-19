@@ -72,3 +72,6 @@ alias gfp='git format-patch --stdout > patch'
 
 # Todo App (todotxt.org)
 alias t='~/bin/todo.txt_cli-2.9/todo.sh'
+
+# IRSSI draw fix - http://www.mindfuzz.net/?p=393
+alias irssi='TERM=screen-256color irssi'
