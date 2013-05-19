@@ -1,5 +1,5 @@
 export EDITOR=vim
-export TERM=screen-256color
+export TERM=xterm-256color
 export GRAILS_HOME=~/bin/grails-2.2.1
 export PATH=/usr/local/heroku/bin:./node_modules/.bin:~/bin:$GRAILS_HOME/bin:$PATH
 
