@@ -1,3 +1,5 @@
+set-option -g status-utf8 on
+
 # use vi mode
 setw -g mode-keys vi
 
@@ -94,3 +96,6 @@ bind - \
   last-window \;\
   swap-pane -s tmux-zoom.0 \;\
   kill-window -t tmux-zoom
+
+# Add rainbarf panel
+set -g status-right '#(rainbarf)'
