@@ -12,10 +12,20 @@ backup_dir=$dir/backup             # old dotfiles backup directory
 
 ##########
 
-# Make sure ~/bin directory exists
-if [ ! -d ~/bin ]
+# Install BIN directories
+if [ -d ~/bin ]
 then
-  mkdir ~/bin
+  # Make sure we don't get error on backing up current bin directory
+  rm -fr $backup_dir/bin > /dev/null 2>&1
+  mv ~/bin $backup_dir/ > /dev/null 2>&1
+fi
+
+echo "Creating symlink to BIN directory"
+ln -s $dir/bin ~/bin
+
+if [ ! -d ~/bin.local ]
+then
+  mkdir ~/bin.local
 fi
 
 # INSTALL ZSH DOTFILES
