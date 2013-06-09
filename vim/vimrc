@@ -60,6 +60,9 @@ inoremap <Right> <NOP>
 vnoremap <Left> <NOP>
 vnoremap <Right> <NOP>
 " B-A-<start> almost a Konami code:)
+
+" Override read-only permissions with sudo password
+cmap w!! %!sudo tee > /dev/null %
 " }}}
 
 
