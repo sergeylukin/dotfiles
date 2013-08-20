@@ -112,7 +112,7 @@ then
   echo "Creating new GIT --global config file"
   # replace my credentials with current global credentials (usually set in
   # ~/.gitconfig
-  sed "s|Sergey Lukin|`git config --global user.name`|;s|contact@sergeylukin.com|`git config --global user.email`|;s|sergey|`whoami`|" < $dir/git/gitconfig > ~/.gitconfig
+  sed "s|VAR_NAME|`git config --global user.name`|;s|VAR_EMAIL|`git config --global user.email`|;s|VAR_USERNAME|`whoami`|" < $dir/git/gitconfig > ~/.gitconfig
 	echo "...done"
 fi
 

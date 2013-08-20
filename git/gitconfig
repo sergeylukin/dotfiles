@@ -1,6 +1,6 @@
 [user]
-  name = Sergey Lukin
-  email = contact@sergeylukin.com
+  name = VAR_NAME
+  email = VAR_EMAIL
 [color]
   ui = true
   interactive = true
@@ -21,7 +21,7 @@
   changed = green
   untracked = cyan
 [core]
-  excludesfile = /home/sergey/.gitignore_global
+  excludesfile = /home/VAR_USERNAME/.gitignore_global
   filemode = false
 [branch]
   autosetuprebase = always
