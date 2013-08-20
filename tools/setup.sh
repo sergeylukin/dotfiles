@@ -119,11 +119,11 @@ then
   GIT_NAME=`git config --global user.name`
   GIT_EMAIL=`git config --global user.email`
 
-  if [ "$NAME" = "" ]; then
+  if [ -z "$GIT_NAME" ]; then
     echo -n "Enter your Name to use in GIT and press [ENTER]: "
     read GIT_NAME
   fi
-  if [ "$EMAIL" = "" ]; then
+  if [ -z "$GIT_EMAIL" ]; then
     echo -n "Enter your Email to use in GIT and press [ENTER]: "
     read GIT_EMAIL
   fi
