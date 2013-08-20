@@ -5,6 +5,9 @@ Install ZSH and OH-MY-ZSH (make sure to switch your default shell to ZSH).
 
 ..and then..
 
+**Warning:** installation process may remove some of your files. Only install this
+software at your own risk.
+
 ``` html
 curl -L https://github.com/sergeylukin/dotfiles/raw/master/tools/install.sh | sh
 ```
