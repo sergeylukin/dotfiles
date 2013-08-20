@@ -8,21 +8,25 @@
 ########## Variables
 
 dir=~/.dotfiles                    # dotfiles directory
-backup_dir=$dir/backup             # old dotfiles backup directory
-
+timestamp=`date +%s`               # use timestamp in backup dir names to keep
+                                   # track of backups
+backup_dir=$dir/backup/$timestamp  # old dotfiles backup directory
 ##########
 
-# Install BIN directories
+# Create Backup dir
+mkdir -p $backup_dir
+
+# Backup directory with binaries
 if [ -d ~/bin ]
 then
-  # Make sure we don't get error on backing up current bin directory
-  rm -fr $backup_dir/bin > /dev/null 2>&1
+  echo "Backing up old ~/bin directory"
   mv ~/bin $backup_dir/ > /dev/null 2>&1
 fi
 
 echo "Creating symlink to BIN directory"
 ln -s $dir/bin ~/bin
 
+# Create directory for local binaries which shouldn't be part of Repository
 if [ ! -d ~/bin.local ]
 then
   mkdir ~/bin.local
