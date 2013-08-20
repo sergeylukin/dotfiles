@@ -66,6 +66,8 @@ then
   fi
 	echo "Adding local ZSH settings link to ~/.zshrc"
 	echo ". ~/.zshrc.local" >> ~/.zshrc
+	echo "# Remove duplicates in Paths" >> ~/.zshrc
+	echo "declare -U path" >> ~/.zshrc
 	echo "...done"
 fi
 
