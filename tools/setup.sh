@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 ############################
 # This script doesn't do any installations, it only creates symlinks/copies dotfiles for
 # ZSH, OH-MY-ZSH, VIM, GIT etc. and only if they are installed and have their configuration files present.
