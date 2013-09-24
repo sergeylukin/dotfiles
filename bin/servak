@@ -29,7 +29,11 @@ http.createServer(function(request, response) {
         return;
       }
  
-      response.writeHead(200);
+      if( filename.indexOf('.html') !== -1 ) {
+        response.writeHead(200, {"Content-Type": "text/html"});
+      } else {
+        response.writeHead(200);
+      }
       response.write(file, "binary");
       response.end();
     });
