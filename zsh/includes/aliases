@@ -61,6 +61,8 @@ alias push='git push '
 function spull() { git subtree pull --prefix=$1 $1 master }
 # Subtree Push upstream
 function spush() { git subtree push --prefix=$1 $1 master }
+# Subtree Add new one
+function sadd() { git subtree add --prefix=$1 $1 master }
 # Undo a `git push`
 alias undopush="git push -f origin HEAD~:master"
 alias lg='git log -p'
