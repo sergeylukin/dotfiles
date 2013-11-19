@@ -12,7 +12,7 @@ set fileencoding=utf-8 " encoding for writing to a file
 "----------------------"
 " Filetype {{{
 "----------------------"
-filetype on
+filetype off
 filetype indent on
 filetype plugin on
 syntax on
@@ -221,6 +221,40 @@ imap <S-Tab> <C-p>
 " inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
 "   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 " }}}
+
+
+"---------------------------"
+" Vundle - Plugins manager {{{
+"---------------------------"
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install (update) bundles
+" :BundleSearch(!) foo - search (or refresh cache first) for foo
+" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle commands are not allowed.
+" }}}
+
+"---------------------------"
+" Vundles {{{
+"---------------------------"
+Bundle 'tobyS/vmustache'
+Bundle 'SirVer/ultisnips'
+Bundle 'tobyS/pdv'
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
+nnoremap <buffer> <C-p> :call pdv#DocumentCurrentLine()<CR>
+" }}}
+
+
 
 
 "---------------------------"
