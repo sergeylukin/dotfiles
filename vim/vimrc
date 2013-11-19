@@ -63,6 +63,9 @@ vnoremap <Right> <NOP>
 
 " Override read-only permissions with sudo password
 cmap w!! %!sudo tee > /dev/null %
+
+" Check file for PHP syntax errors
+cmap ps !php -l %
 " }}}
 
 
