@@ -251,6 +251,7 @@ Bundle 'gmarik/vundle'
 " Vundles {{{
 "---------------------------"
 Bundle 'tobyS/vmustache'
+Bundle 'evidens/vim-twig'
 
 Bundle 'SirVer/ultisnips'
 let g:UltiSnipsExpandTrigger="<tab>"
