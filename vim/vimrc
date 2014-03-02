@@ -138,6 +138,10 @@ set mousehide
 set visualbell
 " Highlight current line
 set cursorline
+" Have some lines above/below the cursor when hitting the top or the bottom
+" edge of the screen while scrolling
+" source: https://coderwall.com/p/m6zz_w
+set scrolloff=5
 
 " Set font for graphical vim
 set guifont=Lucida_Console:h11
