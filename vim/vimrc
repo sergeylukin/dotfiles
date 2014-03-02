@@ -93,6 +93,12 @@ au BufNewFile,BufRead *.less, set filetype=css " Recognize .less files as .css
 au BufNewFile,BufRead *.scss set filetype=css " Recognize .scss files as .css
 " Shortcut for deleting all buffers
 nmap <silent> <leader>da :exec "1," . bufnr('$') . "bd"<cr>
+" Force spell check when writing a git commit
+" source: https://coderwall.com/p/kxps6g
+if  bufname("%")=="COMMIT_EDITMSG"
+  set spell 
+  set spelllang=en
+endif
 " }}}
 
 
