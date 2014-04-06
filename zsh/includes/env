@@ -9,3 +9,12 @@ export GPG_TTY
 
 # RVM - Ruby enVironment Manager - launch if it exists
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.  
+
+# Disable XON/XOFF flow control
+# By default Ctrl-s disables the flow control
+# which results in frozen terminal and it can
+# be unfrozen with Ctrl-q
+# However, we better disable this and use Ctrl-s
+# for more useful task like shell history forward
+# search, read more here: http://stackoverflow.com/a/791800/1832729
+stty -ixon
