@@ -82,3 +82,7 @@ alias t='~/bin/todo.txt_cli-2.9/todo.sh'
 
 # IRSSI draw fix - http://www.mindfuzz.net/?p=393
 alias irssi='TERM=screen-256color irssi'
+
+# Betty - Friendly English-like interface for CLI
+# More details: https://github.com/pickhardt/betty
+alias betty="~/.dotfiles/betty/main.rb"
