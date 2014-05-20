@@ -11,7 +11,7 @@ fi
 
 # Clone repository
 hash git >/dev/null && /usr/bin/env git clone https://github.com/sergeylukin/dotfiles.git ~/.dotfiles || {
-  echo "git not installed"
+  echo "You seriously expect me to do this without git? Fix that shit.\n"
   exit
 }
 
