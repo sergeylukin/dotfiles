@@ -107,7 +107,7 @@ endif
 "----------------------"
 set t_Co=256 " Enable 256 colors mode
 " Select colorscheme from ~/.vim/colors/
-colorscheme zenburn 
+colorscheme dante
 set background=light " Used by some colorschemes (for example Solarized theme may be 'dark' or 'light')
 " Show lines numbers
 set number
