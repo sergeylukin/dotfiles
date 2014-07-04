@@ -27,6 +27,7 @@ your system. Here is the full list of components:
 * GIT
 * SCREEN
 * TMUX
+* [rainbarf for TMUX](https://github.com/creaktive/rainbarf)
 
 Screenshots
 ===========
@@ -44,3 +45,15 @@ VIM
 ---
 
 ![dotfiles](https://raw.github.com/sergeylukin/dotfiles/master/img/screen-vim.jpg)
+
+Installation tips
+-----------------
+
+#### Rainbarf for TMUX
+
+On FreeBSD following works for me:
+
+```
+# cpan
+cpan> force install App::rainbarf
+```
