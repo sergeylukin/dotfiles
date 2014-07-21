@@ -44,6 +44,8 @@ imap jj <esc>
 nmap ; :
 " fast .VIMRC edit
 nmap <leader>ev :tabedit $MYVIMRC<cr>
+" reload .VIMRC without restarting VIM
+nmap <leader>so :so $MYVIMRC<cr>
 " Quickly cancel highlighted selection
 nmap <leader>h :nohlsearch<cr>
 " Reload files
