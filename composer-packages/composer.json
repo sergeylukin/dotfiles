@@ -2,7 +2,7 @@
   "require": {
     "phpunit/phpunit": "3.7.*",
     "codeception/codeception": "*",
-    "squizlabs/php_codesniffer": "1.*",
+    "squizlabs/php_codesniffer": "dev-master",
     "robmorgan/phinx": "*",
     "fabpot/php-cs-fixer": "@stable"
   }
