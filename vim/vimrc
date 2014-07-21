@@ -272,6 +272,16 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 Bundle 'tobyS/pdv'
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 nnoremap <buffer> <C-p> :call pdv#DocumentWithSnip()<CR>
+
+" PHP-CS-Fixer VIM plugin
+" Correct visual representation of code according to PSR standards
+"
+" To activate press <leader>pcd
+"
+" For more details:
+" https://github.com/stephpy/vim-php-cs-fixer
+"
+Bundle 'stephpy/vim-php-cs-fixer'
 " }}}
 
 
