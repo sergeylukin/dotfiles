@@ -109,8 +109,12 @@ endif
 "----------------------"
 set t_Co=256 " Enable 256 colors mode
 " Select colorscheme from ~/.vim/colors/
-colorscheme dante
-set background=light " Used by some colorschemes (for example Solarized theme may be 'dark' or 'light')
+if has('gui_running')
+  colorscheme solarized
+  set background=dark " Used by some colorschemes (for example Solarized theme may be 'dark' or 'light')
+else
+  colorscheme dante
+endif
 " Show lines numbers
 set number
 " show whitespace characters (tabs and line endings)
@@ -152,7 +156,7 @@ set cursorline
 set scrolloff=5
 
 " Set font for graphical vim
-set guifont=Lucida_Console:h11
+set guifont=Monaco:h18
 " Remove all toolbars/scrollbars from GUI version
 set guioptions=aAc
 set guioptions-=Be
