@@ -24,3 +24,7 @@ export GPG_TTY
 # for more useful task like shell history forward
 # search, read more here: http://stackoverflow.com/a/791800/1832729
 stty -ixon
+
+# That is amazing! Navigate using VI keystokes in the shell prompt
+# Press `Escape` to enter VI mode
+set -o vi
