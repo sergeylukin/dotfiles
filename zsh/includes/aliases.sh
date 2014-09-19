@@ -13,6 +13,9 @@ alias tm='top -o size' # memory
 # Tmux
 alias sc='tmux'
 
+# Apache
+alias restartApache="sudo apachectl restart"
+
 # Navigation
 alias ..='cd ..' # Go Up
 alias cdd='cd -' # Go Back
