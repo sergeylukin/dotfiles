@@ -20,6 +20,7 @@ alias restartApache="sudo apachectl restart"
 alias ..='cd ..' # Go Up
 alias cdd='cd -' # Go Back
 alias code='cd ~/code' # Shortcut to code dir
+alias sites='cd ~/Sites' # Shortcut to Sites dir
 alias dotfiles='cd ~/.dotfiles' # Shortcut to CLI dotfiles dir
 alias guifiles='cd ~/.dotfiles-xfce' # Shortcut to GUI dotfiles dir
 
