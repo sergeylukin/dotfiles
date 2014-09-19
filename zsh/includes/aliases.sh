@@ -18,7 +18,9 @@ alias restartApache="sudo apachectl restart"
 
 # Navigation
 alias ..='cd ..' # Go Up
+alias ...='cd ../../' # Go Up 2 levels
 alias cdd='cd -' # Go Back
+alias desk='cd ~/Desktop' # Shortcut to code dir
 alias code='cd ~/code' # Shortcut to code dir
 alias sites='cd ~/Sites' # Shortcut to Sites dir
 alias dotfiles='cd ~/.dotfiles' # Shortcut to CLI dotfiles dir
@@ -90,3 +92,6 @@ alias irssi='TERM=screen-256color irssi'
 # Betty - Friendly English-like interface for CLI
 # More details: https://github.com/pickhardt/betty
 alias betty="~/.dotfiles/betty/main.rb"
+
+# Fire up simple server and open it's root page in the browser
+alias server="open http://localhost:8000 && python -m SimpleHTTPServer"
