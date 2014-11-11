@@ -9,6 +9,11 @@ export PATH=/usr/local/heroku/bin:./node_modules/.bin:~/bin:~/bin.local:$GRAILS_
 # http://jordaneldredge.com/blog/globally-install-php-comand-line-tools-with-composer
 export PATH=~/.dotfiles/composer-packages/vendor/bin:$PATH
 
+# Add git-subrepo to $PATH
+# More details: https://github.com/ingydotnet/git-subrepo
+export PATH=~/bin/git-subrepo/lib:$PATH
+export MANPATH=~/bin/git-subrepo/man:$MANPATH
+
 # Vim gpg encryption
 GPG_TTY=`tty`
 export GPG_TTY
