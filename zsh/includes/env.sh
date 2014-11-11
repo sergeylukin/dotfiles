@@ -13,6 +13,8 @@ export PATH=~/.dotfiles/composer-packages/vendor/bin:$PATH
 # More details: https://github.com/ingydotnet/git-subrepo
 export PATH=~/bin/git-subrepo/lib:$PATH
 export MANPATH=~/bin/git-subrepo/man:$MANPATH
+# Enable git subrepo auto-completion
+fpath=('~/bin/git-subrepo/share/zsh-completion' $fpath)
 
 # Vim gpg encryption
 GPG_TTY=`tty`
