@@ -45,11 +45,16 @@ then
 fi
 
 # INSTALL OH-MY-ZSH
-if command -v zsh > /dev/null 2>&1 && [ -d ~/.oh-my-zsh ] # install oh-my-zsh files only if user already uses it and has ZSH installed
+if command -v zsh > /dev/null 2>&1
 then
-  echo "Backing up old OH-MY-ZSH files"
-  cp -pR ~/.oh-my-zsh $backup_dir/
-  echo "...done"
+  if [ ! -d ~/.oh-my-zsh ]; then
+    git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+  else
+    echo "Backing up old OH-MY-ZSH files"
+    cp -pR ~/.oh-my-zsh $backup_dir/
+    echo "...done"
+  fi
+
   echo "Overwriting old OH-MY-ZSH files with new files"
   cp -pr $dir/oh-my-zsh/. ~/.oh-my-zsh
   echo "...done"
@@ -59,6 +64,11 @@ then
   # $dir/zsh/zshrc is still in active use and all changes in it will take place
   echo ". $dir/zsh/includes/oh-my-zsh" >> ~/.zshrc
   echo "...done"
+
+  if [ ! -n "`$SHELL -c 'echo $ZSH_VERSION'`" ]; then
+    echo "Notice! Your current shell is NOT ZSH"
+    echo "I suggest you change your shell to ZSH with `chsh -s /bin/zsh`"
+  fi
 fi
 
 # Local ZSH settings

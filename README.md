@@ -1,7 +1,8 @@
 Quick Start
 ===========
 
-Install ZSH and OH-MY-ZSH (make sure to switch your default shell to ZSH).
+Install ZSH and OH-MY-ZSH (make sure to switch your default shell to ZSH using
+`chsh -s /bin/zsh`).
 
 ..and then..
 
