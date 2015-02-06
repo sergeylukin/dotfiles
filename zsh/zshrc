@@ -38,3 +38,10 @@ echo "      < <<\`       ||           "
 echo "       \`\\\         ||           "
 echo "        )\\        )\           "
 echo "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+
+# Print the TODO file
+export reminder_file="$HOME/.todo"
+if [ -s "$reminder_file" ] ; then
+  echo "TODO:"
+  cat "$reminder_file"
+fi
