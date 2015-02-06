@@ -25,6 +25,10 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git nyan vi-mode)
+plugins=(git nyan vi-mode history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
+
+# bind UP and DOWN arrow keys to history-substring-search plugin
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
