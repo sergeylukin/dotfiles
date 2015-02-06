@@ -1,7 +1,7 @@
 export EDITOR=vim
 export TERM=xterm-256color
 export GRAILS_HOME=~/bin/grails-2.2.1
-export PATH=/usr/local/heroku/bin:./node_modules/.bin:~/bin:~/bin.local:$GRAILS_HOME/bin:$PATH
+export PATH=/usr/local/sbin:/usr/local/heroku/bin:./node_modules/.bin:~/bin:~/bin.local:$GRAILS_HOME/bin:$PATH
 
 # Include composer packages in the PATH to use command line utilities like
 # `phpunit`, `phinx`, `phpcs` to name a few
