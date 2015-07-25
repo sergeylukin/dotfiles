@@ -146,6 +146,9 @@ set incsearch
 set hlsearch " use :nohlsearch to cancel highlighted selection
 " Hide mouse when typing
 set mousehide
+" Let mouse text selecting be aware of splits so that only text in
+" current split is selected
+set mouse=a
 " Flash screen instead of beeping
 set visualbell
 " Highlight current line
