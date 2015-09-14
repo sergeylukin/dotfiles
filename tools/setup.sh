@@ -44,6 +44,14 @@ then
   echo "...done"
 fi
 
+# INSTALL AUTO-COMPLETION FILES
+echo "Backing up auto-completion files"
+mv ~/.completion $backup_dir/ > /dev/null 2>&1
+echo "...done"
+echo "Creating symlink to new auto-completion files"
+ln -s $dir/completion ~/.completion
+echo "...done"
+
 # INSTALL OH-MY-ZSH
 if command -v zsh > /dev/null 2>&1
 then

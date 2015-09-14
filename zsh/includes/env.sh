@@ -34,3 +34,10 @@ export GPG_TTY
 # for more useful task like shell history forward
 # search, read more here: http://stackoverflow.com/a/791800/1832729
 stty -ixon
+
+# Autoload files with functions as described here:
+# http://zsh.sourceforge.net/Doc/Release/Functions.html
+fpath=(~/.dotfiles/zsh/autoload $fpath)
+
+# Enable git command auto-completion
+zstyle ':completion:*:*:git:*' script ~/.completion/git/git-completion.bash
