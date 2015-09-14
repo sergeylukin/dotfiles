@@ -68,6 +68,9 @@ cmap w!! %!sudo tee > /dev/null %
 
 " Prevent from entering Ex mode
 nnoremap Q <nop>
+
+map <Leader>p :set paste<CR>o<ESC>"*]p:set nopaste<CR>
+
 " }}}
 
 
