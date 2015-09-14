@@ -48,7 +48,7 @@ alias ev='vim ~/.vimrc' # Auto-recompiling is set in .vimrc itself
 alias h='history'
 
 # Git shortcuts
-alias git=hub # use ~/bin/hub as wrapper for git
+#alias git=hub # use ~/bin/hub as wrapper for git
 alias s='git status --short --branch '
 alias ss='git status '
 alias a='git add '
