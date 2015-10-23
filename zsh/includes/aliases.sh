@@ -95,3 +95,6 @@ alias betty="~/.dotfiles/betty/main.rb"
 
 # Fire up simple server and open it's root page in the browser
 alias server="open http://localhost:8000 && python -m SimpleHTTPServer"
+
+# Send OS X notification
+alias notify='terminal-notifier -message "Done" -activate com.googlecode.iterm2'
