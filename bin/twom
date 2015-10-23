@@ -1,0 +1,87 @@
+#!/bin/bash
+# Copyright (c) 2015 gruberator
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms are permitted
+# provided that the above copyright notice and this paragraph are
+# duplicated in all such forms and that any documentation,
+# advertising materials, and other materials related to such
+# distribution and use acknowledge that the software was developed
+# by the gruberator. The name of the
+# gruberator may not be used to endorse or promote products derived
+# from this software without specific prior written permission.
+# THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
+# IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+#
+# This is script to save and load This War of Mine state, if you think its noobish, then DONT USE IT!
+
+# This is path to This War of Mine save folder, if this script does not work for you change it to correct folder
+twom_save_folder="/Users/sergey/Library/Application Support/Steam/userdata/48998003/282070/remote"
+
+# This is folder where saves will be copied
+saveFolder=~/twom_save
+
+# This is default folder where save files will be stored and from where
+# save files will be restored if no store name will be given
+defaultFolder='default'
+
+# Remove trailing slashes from paths
+# It allows supporting paths with and without
+# trailing slash because by removing trailing
+# slash we "normalize" the path assuming
+# that it doesn't have one after this
+# normalization
+twom_save_folder=${twom_save_folder%/}
+saveFolder=${saveFolder%/}
+
+copyFolder=$saveFolder
+
+if [ ! -d "$saveFolder" ]; then
+  mkdir $saveFolder
+fi
+
+if (( $# > 0 )); then
+
+if [ "$1" = "-s" ]; then
+if (( $# > 1 )); then
+copyFolder=$copyFolder/$2
+else
+copyFolder=$copyFolder/$defaultFolder
+fi
+rm -rf $copyFolder
+cp -r "$twom_save_folder" $copyFolder
+echo 'This War of Mine saved to folder ' $copyFolder
+exit
+fi
+if [ "$1" = "-l" ]; then
+if (( $# > 1 )); then
+copyFolder=$copyFolder/$2
+else
+copyFolder=$copyFolder/$defaultFolder
+fi
+rm -rf "$twom_save_folder"
+cp -r $copyFolder "$twom_save_folder"
+echo 'This War of Mine save loaded from folder ' $copyFolder
+exit
+fi
+if [ "$1" = "-r" ]; then
+if (( $# > 1 )); then
+rmf=$saveFolder/$2
+echo $rmf
+rm -r $rmf
+echo 'Save ' $2 ' removed'
+exit
+fi
+fi
+echo "twom is script to save/load and list saves made in This War of Mine usage:"
+echo "-s [savename] saves game to savename (copies directory with saved game state)"
+echo "-l [savename] loads savegame (moves copied game state to the game save state directory)"
+echo "-r [savename] removes savegame"
+echo "no args lists folder with saves (this is your home/twom_save/ dir)"
+echo "NOTICE! if this script does not work try setting path to the steam directory with TWOM saves which has name twom_save_folder in this script"
+echo ""
+fi
+
+echo "List of This War of Mine saved games:"
+ls -l $saveFolder
