@@ -3,6 +3,10 @@ export TERM=xterm-256color
 export GRAILS_HOME=~/bin/grails-2.2.1
 export PATH=/usr/local/sbin:/usr/local/heroku/bin:./node_modules/.bin:~/bin:~/bin.local:$GRAILS_HOME/bin:$PATH
 
+# Use GNU SED instead of BSD SED installed on OS X by default
+export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
+export MANPATH=/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH
+
 # Include composer packages in the PATH to use command line utilities like
 # `phpunit`, `phinx`, `phpcs` to name a few
 # For more details read this awesome blog post by Jordan Eldredge:
