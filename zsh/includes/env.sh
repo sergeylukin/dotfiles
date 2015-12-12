@@ -45,3 +45,6 @@ fpath=(~/.dotfiles/zsh/autoload $fpath)
 
 # Enable git command auto-completion
 zstyle ':completion:*:*:git:*' script ~/.completion/git/git-completion.bash
+
+# Setup fasd (https://github.com/clvv/fasd)
+eval "$(fasd --init auto)"
