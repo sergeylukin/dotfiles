@@ -323,6 +323,13 @@ nmap <leader>n :NERDTreeToggle<cr>
 " }}}
 
 "----------------------"
+" PLUGIN - vim-jsx {{{
+"----------------------"
+" Enable JSX syntax highlighting in .js files as well as in .jsx files
+let g:jsx_ext_required = 0
+" }}}
+
+"----------------------"
 " PLUGIN - Sparkup (zencoding) {{{
 "----------------------"
 let g:sparkup = 'sparkup'
