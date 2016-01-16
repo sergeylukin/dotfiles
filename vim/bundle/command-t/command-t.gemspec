@@ -6,8 +6,8 @@ Gem::Specification.new do |s|
   v = `git describe --abbrev=0`.chomp
   s.version = v
 
-  s.authors = ['Wincent Colaiuta']
-  s.email = 'win@wincent.com'
+  s.authors = ['Greg Hurrell']
+  s.email = 'greg@hurrell.net'
 
   files =
     ['README.txt', 'LICENSE', 'Gemfile', 'Rakefile'] +
@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
   files = files.reject { |f| f =~ /\.(rbc|o|log|plist|dSYM)/ }
 
   s.files = files
+  s.license = 'BSD'
   s.require_path = 'ruby'
   s.extensions = 'ruby/command-t/extconf.rb'
 

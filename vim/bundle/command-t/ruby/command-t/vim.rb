@@ -1,63 +1,71 @@
-# Copyright 2010-2013 Wincent Colaiuta. All rights reserved.
-#
-# Redistribution and use in source and binary forms, with or without
-# modification, are permitted provided that the following conditions are met:
-#
-# 1. Redistributions of source code must retain the above copyright notice,
-#    this list of conditions and the following disclaimer.
-# 2. Redistributions in binary form must reproduce the above copyright notice,
-#    this list of conditions and the following disclaimer in the documentation
-#    and/or other materials provided with the distribution.
-#
-# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-# ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE
-# LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-# CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-# ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-# POSSIBILITY OF SUCH DAMAGE.
-
-require 'command-t/vim/screen'
-require 'command-t/vim/window'
+# Copyright 2010-present Greg Hurrell. All rights reserved.
+# Licensed under the terms of the BSD 2-clause license.
 
 module CommandT
   module VIM
-    def self.has_syntax?
-      ::VIM::evaluate('has("syntax")').to_i != 0
-    end
+    autoload :Screen, 'command-t/vim/screen'
+    autoload :Window, 'command-t/vim/window'
 
-    def self.exists? str
-      ::VIM::evaluate(%{exists("#{str}")}).to_i != 0
-    end
+    class << self
+      # Check for the existence of a feature such as "conceal" or "syntax".
+      def has?(feature)
+        ::VIM::evaluate(%{has("#{feature}")}).to_i != 0
+      end
 
-    def self.has_conceal?
-      ::VIM::evaluate('has("conceal")').to_i != 0
-    end
+      # Check for the presence of a setting such as:
+      #
+      #   - g:CommandTSmartCase (plug-in setting)
+      #   - &wildignore         (Vim setting)
+      #   - +cursorcolumn       (Vim setting, that works)
+      #
+      def exists?(str)
+        ::VIM::evaluate(%{exists("#{str}")}).to_i != 0
+      end
 
-    def self.pwd
-      ::VIM::evaluate 'getcwd()'
-    end
+      def get_number(name)
+        exists?(name) ? ::VIM::evaluate("#{name}").to_i : nil
+      end
 
-    def self.wild_ignore
-      exists?('&wildignore') && ::VIM::evaluate('&wildignore').to_s
-    end
+      def get_bool(name, default = nil)
+        exists?(name) ? ::VIM::evaluate("#{name}").to_i != 0 : default
+      end
 
-    # Execute cmd, capturing the output into a variable and returning it.
-    def self.capture cmd
-      ::VIM::command 'silent redir => g:command_t_captured_output'
-      ::VIM::command cmd
-      ::VIM::command 'silent redir END'
-      ::VIM::evaluate 'g:command_t_captured_output'
-    end
+      def get_string(name)
+        exists?(name) ? ::VIM::evaluate("#{name}").to_s : nil
+      end
 
-    # Escape a string for safe inclusion in a Vim single-quoted string
-    # (single quotes escaped by doubling, everything else is literal)
-    def self.escape_for_single_quotes str
-      str.gsub "'", "''"
+      # expect a string or a list of strings
+      def get_list_or_string(name)
+        return nil unless exists?(name)
+        list_or_string = ::VIM::evaluate("#{name}")
+        if list_or_string.kind_of?(Array)
+          list_or_string.map { |item| item.to_s }
+        else
+          list_or_string.to_s
+        end
+      end
+
+      def pwd
+        ::VIM::evaluate 'getcwd()'
+      end
+
+      def current_file_dir
+        ::VIM::evaluate 'expand("%:p:h")'
+      end
+
+      # Execute cmd, capturing the output into a variable and returning it.
+      def capture(cmd)
+        ::VIM::command 'silent redir => g:command_t_captured_output'
+        ::VIM::command cmd
+        ::VIM::command 'silent redir END'
+        ::VIM::evaluate 'g:command_t_captured_output'
+      end
+
+      # Escape a string for safe inclusion in a Vim single-quoted string
+      # (single quotes escaped by doubling, everything else is literal)
+      def escape_for_single_quotes(str)
+        str.gsub "'", "''"
+      end
     end
   end # module VIM
 end # module CommandT

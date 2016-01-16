@@ -1,27 +1,7 @@
-# Copyright 2010-2012 Wincent Colaiuta. All rights reserved.
-#
-# Redistribution and use in source and binary forms, with or without
-# modification, are permitted provided that the following conditions are met:
-#
-# 1. Redistributions of source code must retain the above copyright notice,
-#    this list of conditions and the following disclaimer.
-# 2. Redistributions in binary form must reproduce the above copyright notice,
-#    this list of conditions and the following disclaimer in the documentation
-#    and/or other materials provided with the distribution.
-#
-# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-# ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE
-# LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-# CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-# ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-# POSSIBILITY OF SUCH DAMAGE.
+# Copyright 2010-present Greg Hurrell. All rights reserved.
+# Licensed under the terms of the BSD 2-clause license.
 
-require 'command-t/ext' # CommandT::Matcher
+require 'command-t/ext' # CommandT::Matcher, CommandT::Watchman::Utils
 
 module CommandT
   # Encapsulates a Scanner instance (which builds up a list of available files
@@ -31,23 +11,35 @@ module CommandT
   # Specialized subclasses use different kinds of scanners adapted for
   # different kinds of search (files, buffers).
   class Finder
-    include VIM::PathUtilities
+    autoload :BufferFinder,    'command-t/finder/buffer_finder'
+    autoload :FileFinder,      'command-t/finder/file_finder'
+    autoload :JumpFinder,      'command-t/finder/jump_finder'
+    autoload :MRUBufferFinder, 'command-t/finder/mru_buffer_finder'
+    autoload :TagFinder,       'command-t/finder/tag_finder'
 
-    def initialize path = Dir.pwd, options = {}
+    include PathUtilities
+
+    def initialize(path = Dir.pwd, options = {})
+      raise RuntimeError, 'Subclass responsibility'
+    end
+
+    # Returns a human-readable name describing the finder, for display in the
+    # statusline attached to the MatchWindow buffer.
+    def name
       raise RuntimeError, 'Subclass responsibility'
     end
 
     # Options:
     #   :limit (integer): limit the number of returned matches
-    def sorted_matches_for str, options = {}
+    def sorted_matches_for(str, options = {})
       @matcher.sorted_matches_for str, options
     end
 
-    def open_selection command, selection, options = {}
+    def open_selection(command, selection, options = {})
       ::VIM::command "silent #{command} #{selection}"
     end
 
-    def path= path
+    def path=(path)
       @scanner.path = path
     end
   end # class Finder
