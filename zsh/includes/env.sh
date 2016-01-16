@@ -24,9 +24,6 @@ fpath=('~/bin/git-subrepo/share/zsh-completion' $fpath)
 GPG_TTY=`tty`
 export GPG_TTY
 
-# RVM - Ruby enVironment Manager - launch if it exists
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.  
-
 # PhpBrew - PHP envirionment Manager
 [[ -s "$HOME/.phpbrew/bashrc" ]] && source "$HOME/.phpbrew/bashrc"
 
