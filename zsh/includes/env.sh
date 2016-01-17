@@ -24,7 +24,11 @@ fpath=('~/bin/git-subrepo/share/zsh-completion' $fpath)
 GPG_TTY=`tty`
 export GPG_TTY
 
-# PhpBrew - PHP envirionment Manager
+# Rbenv - RUBY environment Manager
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+# PhpBrew - PHP environment Manager
 [[ -s "$HOME/.phpbrew/bashrc" ]] && source "$HOME/.phpbrew/bashrc"
 
 # Disable XON/XOFF flow control
