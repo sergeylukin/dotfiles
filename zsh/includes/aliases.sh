@@ -47,6 +47,9 @@ alias ev='vim ~/.vimrc' # Auto-recompiling is set in .vimrc itself
 
 alias h='history'
 
+# Use VIM as pager instead of LESS/MORE
+alias vmore="vim -u ~/.vimrc.more -"
+
 # Git shortcuts
 #alias git=hub # use ~/bin/hub as wrapper for git
 alias s='git status --short --branch '
