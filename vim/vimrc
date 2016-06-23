@@ -272,6 +272,11 @@ Bundle 'gmarik/vundle'
 "---------------------------"
 " Vundles {{{
 "---------------------------"
+
+" Neat theme
+Bundle 'dracula/vim'
+color dracula
+
 Bundle 'tobyS/vmustache'
 Bundle 'evidens/vim-twig'
 
