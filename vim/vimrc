@@ -4,8 +4,15 @@ set nocompatible
 "----------------------"
 " Encoding {{{
 "----------------------"
-set encoding=utf-8 " encoding for editing a file
-set fileencoding=utf-8 " encoding for writing to a file
+if has("multi_byte")
+  if &termencoding == ""
+    let &termencoding = &encoding
+  endif
+  set encoding=utf-8
+  setglobal fileencoding=utf-8
+  "setglobal bomb
+  set fileencodings=ucs-bom,utf-8,latin1
+endif
 " }}}
 
 
