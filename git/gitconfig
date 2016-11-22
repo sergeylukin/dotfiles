@@ -25,6 +25,13 @@
   filemode = false
 [branch]
   autosetuprebase = always
+[alias]
+  # switch to another branch
+  go = checkout
+  # show modified words
+  dw = diff --color-words
+  # show modified filenames
+  df = diff --name-only
 
 # Any GitHub repo with my username should be checked out r/w by default
 # http://rentzsch.tumblr.com/post/564806957/public-but-hackable-git-submodules

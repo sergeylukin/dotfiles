@@ -49,3 +49,11 @@ zstyle ':completion:*:*:git:*' script ~/.completion/git/git-completion.bash
 
 # Setup fasd (https://github.com/clvv/fasd)
 eval "$(fasd --init auto)"
+
+
+
+# Android studio PATHs on Mac
+if [ -d ~/Library/Android/sdk ]; then
+  export ANDROID_HOME=~/Library/Android/sdk
+  export PATH=${PATH}:${ANDROID_HOME}/tools
+fi

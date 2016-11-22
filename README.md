@@ -30,6 +30,12 @@ your system. Here is the full list of components:
 * TMUX
 * [rainbarf for TMUX](https://github.com/creaktive/rainbarf)
 
+`Git` configuration file is copied and not symlinked upon installation
+because your name and email should be hardcoded there without changing
+the dotfiles repo. So after pulling in new commits related to git
+configuration I do `sh ~/.dotfiles/tools/setup.sh` which syncs
+everything, including bringing in new git configuration file.
+
 Screenshots
 ===========
 

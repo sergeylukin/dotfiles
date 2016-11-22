@@ -59,11 +59,8 @@ alias b='git branch '
 alias c='git commit '
 alias t='git tag -n1'
 alias di='git diff'
-alias dw='git diff --color-words' # show modified words
-alias df='git diff --name-only' # show modified filenames
 alias m='git merge --no-ff' # Non-Fast-Forward merge
 alias mf='git merge --ff-only' # Fast-Forward merge
-alias go='git checkout '
 alias pull='git pull '
 alias push='git push '
 # Subtree Pull in
