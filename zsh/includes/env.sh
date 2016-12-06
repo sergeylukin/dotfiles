@@ -25,8 +25,11 @@ GPG_TTY=`tty`
 export GPG_TTY
 
 # Rbenv - RUBY environment Manager
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+if command -v rbenv > /dev/null 2>&1
+then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
 
 # PhpBrew - PHP environment Manager
 [[ -s "$HOME/.phpbrew/bashrc" ]] && source "$HOME/.phpbrew/bashrc"
