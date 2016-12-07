@@ -57,6 +57,7 @@ alias ss='git status '
 alias a='git add '
 alias b='git branch '
 alias c='git commit '
+alias dw='git diff --color-words'
 alias t='git tag -n1'
 alias di='git diff'
 alias m='git merge --no-ff' # Non-Fast-Forward merge
