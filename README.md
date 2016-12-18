@@ -51,6 +51,8 @@ ZSH + GIT
 VIM
 ---
 
+- Run `:BundleInstall` the first time you open VIM to install all plugins
+
 ![dotfiles](https://raw.github.com/sergeylukin/dotfiles/master/img/screen-vim.jpg)
 
 Installation tips
