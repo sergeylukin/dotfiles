@@ -310,6 +310,11 @@ Bundle 'stephpy/vim-php-cs-fixer'
 let g:php_cs_fixer_enable_default_mapping = 0
 nnoremap <silent><leader>fd :call PhpCsFixerFixDirectory()<CR>
 nnoremap <silent><leader>ff :call PhpCsFixerFixFile()<CR>
+
+" React JSX syntax highlight
+Bundle 'pangloss/vim-javascript'
+Bundle 'mxw/vim-jsx'
+let g:jsx_ext_required = 0
 " }}}
 
 
