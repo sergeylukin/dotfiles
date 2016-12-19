@@ -99,3 +99,7 @@ alias server="open http://localhost:8000 && python -m SimpleHTTPServer"
 
 # Send OS X notification
 alias notify='terminal-notifier -message "Done" -activate com.googlecode.iterm2'
+
+# c++11 installation
+# More info: http://sourabhbajaj.com/mac-setup/Cpp/README.html
+alias cppcompile='c++ -std=c++11 -stdlib=libc++'
