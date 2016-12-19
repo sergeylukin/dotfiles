@@ -67,6 +67,12 @@ On FreeBSD following works for me:
 cpan> force install App::rainbarf
 ```
 
+On OS X just:
+
+```
+brew install rainbarf
+```
+
 #### Font to use in terminal
 
 - [Source Code Pro](https://github.com/adobe-fonts/source-code-pro/releases)
