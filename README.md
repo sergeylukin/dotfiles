@@ -74,3 +74,8 @@ cpan> force install App::rainbarf
 - [Inconsolata](https://github.com/google/fonts/blob/master/ofl/inconsolata/Inconsolata-Regular.ttf)
 
 - [Consolas](http://ikato.com/blog/how-to-install-consolas-font-on-mac-os-x.html)
+
+#### iTerm2 color scheme
+
+Go to `iterm2` -> `Preferences` -> `Profiles` -> `Color Schemes`,  import
+scheme from `iterm/Dracula.itermcolors` and activate it
