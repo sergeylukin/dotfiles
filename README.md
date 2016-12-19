@@ -66,3 +66,11 @@ On FreeBSD following works for me:
 # cpan
 cpan> force install App::rainbarf
 ```
+
+#### Font to use in terminal
+
+- [Source Code Pro](https://github.com/adobe-fonts/source-code-pro/releases)
+
+- [Inconsolata](https://github.com/google/fonts/blob/master/ofl/inconsolata/Inconsolata-Regular.ttf)
+
+- [Consolas](http://ikato.com/blog/how-to-install-consolas-font-on-mac-os-x.html)
