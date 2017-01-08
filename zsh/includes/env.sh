@@ -60,3 +60,12 @@ if [ -d ~/Library/Android/sdk ]; then
   export ANDROID_HOME=~/Library/Android/sdk
   export PATH=${PATH}:${ANDROID_HOME}/tools
 fi
+
+# Create and configure GO lang workspace
+# More details: https://golang.org/doc/code.html#Workspaces
+if [ ! -d ~/code/GO ]; then
+  mkdir -p ~/code/GO
+fi
+export GOPATH=$HOME/code/GO
+# add the workspace's bin subdirectory to PATH
+export PATH=$PATH:$GOPATH/bin
