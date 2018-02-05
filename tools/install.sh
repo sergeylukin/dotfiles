@@ -10,7 +10,7 @@ then
 fi
 
 # Clone repository
-hash git >/dev/null && /usr/bin/env git clone git@github.com:sergeylukin/dotfiles.git ~/.dotfiles || {
+hash git >/dev/null && /usr/bin/env git clone https://github.com/sergeylukin/dotfiles.git ~/.dotfiles || {
   echo "You seriously expect me to do this without git? Fix that shit.\n"
   exit
 }
