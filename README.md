@@ -85,3 +85,39 @@ brew install rainbarf
 
 Go to `iterm2` -> `Preferences` -> `Profiles` -> `Color Schemes`,  import
 scheme from `iterm/Dracula.itermcolors` and activate it
+
+#### CentOS server setup
+
+On fresh CentOS machine I usually start by running following as `root` user.
+
+Install binaries
+
+```sh
+# yum -y update
+# yum -y install zsh git cpan
+# cpan -i App::rainbarf
+```
+
+Install latest TMUX (under root)
+
+```sh
+# yum -y install ncurses-devel glibc-static libevent-devel
+# git clone https://github.com/tmux/tmux.git
+# cd tmux
+# sh autogen.sh
+# ./configure && make install
+```
+
+Create user for myself
+
+```sh
+# useradd USERNAME
+# passwd USERNAME
+Changing password for user USERNAME.
+New password: 
+Retype new password: 
+passwd: all authentication tokens updated successfully.
+# usermod -aG wheel USERNAME
+# su USERNAME
+```
+
