@@ -93,20 +93,15 @@ On fresh CentOS machine I usually start by running following as `root` user.
 Install binaries
 
 ```sh
-# yum -y update
 # yum -y install zsh git cpan
 # cpan -i App::rainbarf
 ```
 
-Install latest TMUX (under root)
+Allow sudo for `wheel` users without password:
 
-```sh
-# yum -y install ncurses-devel glibc-static libevent-devel
-# git clone https://github.com/tmux/tmux.git
-# cd tmux
-# sh autogen.sh
-# ./configure && make install
-```
+- run `visudo`
+
+- comment out `%wheel  ALL=(ALL)       ALL` and uncomment `%wheel        ALL=(ALL)       NOPASSWD: ALL`
 
 Create user for myself
 
@@ -119,5 +114,16 @@ Retype new password:
 passwd: all authentication tokens updated successfully.
 # usermod -aG wheel USERNAME
 # su USERNAME
+# curl -L https://github.com/sergeylukin/dotfiles/raw/master/tools/install.sh | sh
 ```
+
+Edit ~/.gitconfig and enter proper name and email in relevant fields.
+
+Open `vim` and run `:BundleInstall`
+
+```sh
+# mkdir ~/.ssh && chmod 700 ~/.ssh && touch .ssh/authorized_keys && chmod 600 .ssh/authorized_keys
+```
+
+Edit `~/.ssh/authorized_keys` and insert your remote PC public SSH key there without line breaks
 
