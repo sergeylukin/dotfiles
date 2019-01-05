@@ -127,10 +127,13 @@ else
 endif
 " Show lines numbers
 set number
+" use unit file format for all files
+set ffs=unix,dos
+set ff=unix
 " show whitespace characters (tabs and line endings)
 set list
 " customize the way whitespace characters are shown
-set listchars=nbsp:¬,eol:¶,tab:>-,extends:»,precedes:«,trail:•
+set listchars=eol:*,tab:..,trail:_,extends:>,precedes:<,nbsp:~
 "set relativenumber " Relative line numbering, works in VIM version 7.3 and higher
 set linespace=3 " Higher line height - works only in GUI mode, not in terminal..
 set laststatus=2 " Show status line
