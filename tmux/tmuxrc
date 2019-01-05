@@ -19,9 +19,9 @@ bind h select-pane -L
 # v - vertical pane split
 # h - horizontal pane split
 unbind %
-bind H split-window -v
+bind H split-window -c "#{pane_current_path}" -v
 unbind '"'
-bind V split-window -h
+bind V split-window -c "#{pane_current_path}" -h
 
 # Resize panes
 bind-key C-h    resize-pane -L 5
@@ -38,6 +38,9 @@ bind -n C-L swap-window -t +1
 # Rename Window like in Screen
 unbind ,
 bind A command-prompt "rename-window %%"
+
+# Create new window in same directory
+bind c new-window -c "#{pane_current_path}"
 
 # Navigate between Next/Prev windows with Space/Backspace
 unbind n
