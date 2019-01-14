@@ -12,6 +12,8 @@ export MANPATH=/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH
 # For more details read this awesome blog post by Jordan Eldredge:
 # http://jordaneldredge.com/blog/globally-install-php-comand-line-tools-with-composer
 export PATH=~/.dotfiles/composer-packages/vendor/bin:$PATH
+export PATH=~/.composer/vendor/bin:$PATH
+
 
 # Add git-subrepo to $PATH
 # More details: https://github.com/ingydotnet/git-subrepo
