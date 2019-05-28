@@ -52,7 +52,7 @@ bind BSpace previous-window
 bind-key T swap-window -t 0
 
 # Enable mouse pointer actions
-set -g mouse on
+#set -g mouse on
 
 # colors
 set -g default-terminal "screen-256color"
