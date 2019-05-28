@@ -1,4 +1,5 @@
 . ~/.dotfiles/zsh/includes/env.sh
+. ~/.dotfiles/zsh/includes/functions.sh
 . ~/.dotfiles/zsh/includes/aliases.sh
 . ~/.dotfiles/zsh/includes/config.sh
 
