@@ -71,3 +71,6 @@ fi
 export GOPATH=$HOME/code/GO
 # add the workspace's bin subdirectory to PATH
 export PATH=$PATH:$GOPATH/bin
+
+# add Composer global binaries to the PATH
+export PATH=$PATH:$HOME/.config/composer/vendor/bin
