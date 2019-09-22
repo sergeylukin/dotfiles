@@ -1,6 +1,9 @@
 " Forget compatibility with VI 
 set nocompatible
 
+" set nolist
+"set nofixendofline
+
 "----------------------"
 " Encoding {{{
 "----------------------"
@@ -133,7 +136,7 @@ set ff=unix
 " show whitespace characters (tabs and line endings)
 set list
 " customize the way whitespace characters are shown
-set listchars=eol:*,tab:..,trail:_,extends:>,precedes:<,nbsp:~
+set listchars=tab:..,trail:_,extends:>,precedes:<,nbsp:~
 "set relativenumber " Relative line numbering, works in VIM version 7.3 and higher
 set linespace=3 " Higher line height - works only in GUI mode, not in terminal..
 set laststatus=2 " Show status line
@@ -287,6 +290,17 @@ Bundle 'gmarik/vundle'
 Bundle 'dracula/vim'
 color dracula
 
+" .eslint
+" https://medium.com/@jimeno0/eslint-and-prettier-in-vim-neovim-7e45f85cf8f9
+Bundle 'dense-analysis/ale'
+let g:ale_fixers = {
+ \ 'javascript': ['eslint']
+ \ }
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
+let g:ale_fix_on_save = 1
+let g:ale_open_list = 1
+
 Bundle 'tobyS/vmustache'
 Bundle 'evidens/vim-twig'
 
@@ -392,3 +406,9 @@ if filereadable(expand('$VIMHOME/.vimrc.local'))
   source $VIMHOME/.vimrc.local
 endif
 
+" Console log from insert mode; Puts focus inside parentheses
+imap cll console.log();<Esc>==f(a
+" Console log from visual mode on next line, puts visual selection inside parentheses
+vmap cll yocll<Esc>p
+" Console log from normal mode, inserted on next line with word your on inside parentheses
+nmap cll yiwocll<Esc>p
