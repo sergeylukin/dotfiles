@@ -93,6 +93,15 @@ then
   echo "...done"
 fi
 
+# Hammerspoon
+if [ ! -d ~/.hammerspoon ]; then
+  mkdir ~/.hammerspoon
+fi
+echo "Adding hammerspoon scripts"
+rm -f ~/.hammerspoon/init.lua
+ln -s $dir/hammerspoon/init.lua ~/.hammerspoon/init.lua
+echo "...done"
+
 # INSTALL VIM DOTFILES
 if command -v vim > /dev/null 2>&1
 then
