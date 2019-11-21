@@ -53,3 +53,13 @@ hs.hotkey.bind(hyper, "return", function()
   local win = hs.window.frontmostWindow()
   win:setFullscreen(not win:isFullscreen())
 end)
+
+wifiwatcher = hs.wifi.watcher.new(function ()
+    net = hs.wifi.currentNetwork()
+    if net=="HiredScore" then
+        hs.notify.show("Connected to Wi-Fi network","",net,"")
+        hs.application.launchOrFocus("Slack")
+    else
+    end
+end)
+wifiwatcher:start()
