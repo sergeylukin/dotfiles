@@ -55,7 +55,8 @@ alias vmore="vim -u ~/.vimrc.more -"
 alias s='git status --short --branch '
 alias ss='git status '
 alias a='git add '
-alias b='git branch '
+alias b="git for-each-ref --count=10 --sort=-committerdate --color=auto --format='%(refname:short)' refs/heads/ | less"
+alias bb='git branch '
 alias c='git commit '
 alias dw='git diff --color-words'
 alias t='git tag -n1'
