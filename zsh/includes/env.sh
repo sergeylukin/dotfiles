@@ -63,6 +63,9 @@ if [ -d ~/Library/Android/sdk ]; then
   export PATH=${PATH}:${ANDROID_HOME}/tools
 fi
 
+# Make sure GO is runnable on OS X if installed
+# More details: https://golang.org/doc/install
+export PATH=$PATH:/usr/local/go/bin
 # Create and configure GO lang workspace
 # More details: https://golang.org/doc/code.html#Workspaces
 if [ ! -d ~/code/GO ]; then
