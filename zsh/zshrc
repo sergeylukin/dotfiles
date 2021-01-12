@@ -47,3 +47,4 @@ if [ -s "$reminder_file" ] ; then
   echo "TODO:"
   cat "$reminder_file"
 fi
+
