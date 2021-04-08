@@ -398,6 +398,14 @@ map <leader>s :RunSpec<cr>
 nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags<cr>
 " }}}
 
+"----------------------"
+" Prettier {{{
+"----------------------"
+nmap <Leader>f <Plug>(Prettier)
+" when running at every change you may want to disable quickfix
+let g:prettier#quickfix_enabled = 0
+autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+" }}}
 
 " Any local customizations should be made in .vimrc.local file
 " you would most likely create .vimrc.local in the same dir with your $MYVIMRC file
