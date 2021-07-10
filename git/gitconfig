@@ -1,6 +1,8 @@
 [user]
   name = VAR_NAME
   email = VAR_EMAIL
+[init]
+  defaultBranch main
 [color]
   ui = true
   interactive = true
