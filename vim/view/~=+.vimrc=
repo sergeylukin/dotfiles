@@ -8,7 +8,6 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-lcd ~/
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :
