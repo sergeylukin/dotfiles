@@ -106,6 +106,7 @@ autocmd BufEnter * silent! lcd %:p:h " Better alternative to `autochdir`
 " Custom Filetypes
 au BufNewFile,BufRead *.less, set filetype=css " Recognize .less files as .css
 au BufNewFile,BufRead *.scss set filetype=css " Recognize .scss files as .css
+au BufNewFile,BufRead *.mdx set filetype=mdx
 " Shortcut for deleting all buffers
 nmap <silent> <leader>da :exec "1," . bufnr('$') . "bd"<cr>
 " Force spell check when writing a git commit
@@ -294,7 +295,8 @@ color dracula
 " https://medium.com/@jimeno0/eslint-and-prettier-in-vim-neovim-7e45f85cf8f9
 Bundle 'dense-analysis/ale'
 let g:ale_fixers = {
- \ 'javascript': ['eslint']
+ \ 'javascript': ['prettier', 'eslint'],
+ \ 'mdx': ['prettier', 'eslint']
  \ }
 let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '⚠️'
