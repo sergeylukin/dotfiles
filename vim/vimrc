@@ -1,6 +1,10 @@
 " Forget compatibility with VI 
 set nocompatible
 
+" Make buffer modifiable
+" https://stackoverflow.com/questions/5745506/vim-modifiable-is-off
+set modifiable
+
 " set nolist
 "set nofixendofline
 
@@ -293,15 +297,15 @@ color dracula
 
 " .eslint
 " https://medium.com/@jimeno0/eslint-and-prettier-in-vim-neovim-7e45f85cf8f9
-Bundle 'dense-analysis/ale'
-let g:ale_fixers = {
- \ 'javascript': ['prettier', 'eslint'],
- \ 'mdx': ['prettier', 'eslint']
- \ }
-let g:ale_sign_error = '❌'
-let g:ale_sign_warning = '⚠️'
-let g:ale_fix_on_save = 1
-let g:ale_open_list = 1
+" Bundle 'dense-analysis/ale'
+" let g:ale_fixers = {
+"  \ 'javascript': ['prettier', 'eslint'],
+"  \ 'mdx': ['prettier', 'eslint']
+"  \ }
+" let g:ale_sign_error = '❌'
+" let g:ale_sign_warning = '⚠️'
+" let g:ale_fix_on_save = 1
+" let g:ale_open_list = 1
 
 Bundle 'tobyS/vmustache'
 Bundle 'evidens/vim-twig'
@@ -329,14 +333,73 @@ Bundle 'stephpy/vim-php-cs-fixer'
 let g:php_cs_fixer_enable_default_mapping = 0
 nnoremap <silent><leader>fd :call PhpCsFixerFixDirectory()<CR>
 nnoremap <silent><leader>ff :call PhpCsFixerFixFile()<CR>
-
-" React JSX syntax highlight
-Bundle 'pangloss/vim-javascript'
-Bundle 'mxw/vim-jsx'
-let g:jsx_ext_required = 0
 " }}}
 
 
+"---------------------------"
+" Plug
+" https://github.com/junegunn/vim-plug {{{
+"---------------------------"
+" Install vim-plug if not found
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
+
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
+" }}}
+
+"---------------------------"
+" Plugs {{{
+
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes
+
+" Shorthand notation `Plug '{USER}/{REPO}' - fetches
+" https://github.com/{USER}/{REPO}
+
+" Support JS/JSX highlighting etc.
+Plug 'sheerun/vim-polyglot'
+" Plug 'pangloss/vim-javascript'
+" Plug 'mxw/vim-jsx'
+" Used previously:
+" Plug 'yuezk/vim-js'
+" Plug 'maxmellon/vim-jsx-pretty'
+" Prettier
+" Use release branch (recommend)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+let g:coc_global_extensions = [
+  \ 'coc-tsserver'
+  \ ]
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+endif
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+  let g:coc_global_extensions += ['coc-eslint']
+endif
+" Plug 'dense-analysis/ale'
+" let g:ale_fixers = {
+"  \ 'javascript': ['prettier', 'eslint'],
+"  \ 'mdx': ['prettier', 'eslint']
+"  \ }
+" let g:ale_sign_error = '❌'
+" let g:ale_sign_warning = '⚠️'
+" let g:ale_fix_on_save = 1
+" let g:ale_open_list = 1
+
+" Initialize plugin system
+call plug#end()
+
+" }}}
 
 
 "---------------------------"
@@ -356,13 +419,6 @@ let NERDTreeHightlightCursorline=1
 let NERDTreeShowHidden=1 " Show hidden files
 " Map NERDTreeToggle to convenient key
 nmap <leader>n :NERDTreeToggle<cr>
-" }}}
-
-"----------------------"
-" PLUGIN - vim-jsx {{{
-"----------------------"
-" Enable JSX syntax highlighting in .js files as well as in .jsx files
-let g:jsx_ext_required = 0
 " }}}
 
 "----------------------"
@@ -398,12 +454,6 @@ map <leader>s :RunSpec<cr>
 "----------------------"
 " Markdown to HTML - make sure to download Markdown.pl to /usr/local/bin
 nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags<cr>
-" }}}
-
-"----------------------"
-" Prettier {{{
-"----------------------"
-nmap <Leader>f <Plug>(Prettier)
 " }}}
 
 " Any local customizations should be made in .vimrc.local file

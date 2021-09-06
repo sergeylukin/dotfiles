@@ -1,5 +1,6 @@
 let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-1 siso=-1
 argglobal
+balt ~/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend/src/components/flamegraph/FgLegendBox.stories.mdx
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -8,7 +9,16 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
+23
+normal! zo
+88
+normal! zo
+122
+normal! zo
+287
+normal! zo
+362
+normal! zo
 let &g:so = s:so_save | let &g:siso = s:siso_save
-nohlsearch
 doautoall SessionLoadPost
 " vim: set ft=vim :
