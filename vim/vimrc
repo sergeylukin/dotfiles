@@ -65,6 +65,9 @@ nmap <leader>h :nohlsearch<cr>
 " Reload files
 nmap <leader>r :checktime<cr>
 
+nnoremap gf <C-W>gf
+vnoremap gf <C-W>gf
+
 " Disable arrow keys to improve moving around with h,j,k,l
 " Taken from http://bit.ly/10Fvzgn
 inoremap <Up> <NOP>
