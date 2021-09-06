@@ -372,6 +372,7 @@ Plug 'sheerun/vim-polyglot'
 " Used previously:
 " Plug 'yuezk/vim-js'
 " Plug 'maxmellon/vim-jsx-pretty'
+
 " Prettier
 " Use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -395,6 +396,11 @@ endif
 " let g:ale_sign_warning = '⚠️'
 " let g:ale_fix_on_save = 1
 " let g:ale_open_list = 1
+
+" Fuzzy search
+Plug 'ctrlpvim/ctrlp.vim'
+let g:ctrlp_map = '<leader>f'
+let g:ctrlp_custom_ignore = '\v[\/](\.git|node_modules|.*\-static|dist|build)$'
 
 " Initialize plugin system
 call plug#end()
