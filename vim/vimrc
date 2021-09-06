@@ -110,7 +110,7 @@ autocmd BufEnter * silent! lcd %:p:h " Better alternative to `autochdir`
 " Custom Filetypes
 au BufNewFile,BufRead *.less, set filetype=css " Recognize .less files as .css
 au BufNewFile,BufRead *.scss set filetype=css " Recognize .scss files as .css
-au BufNewFile,BufRead *.mdx set filetype=mdx
+" au BufNewFile,BufRead *.mdx set filetype=mdx
 " Shortcut for deleting all buffers
 nmap <silent> <leader>da :exec "1," . bufnr('$') . "bd"<cr>
 " Force spell check when writing a git commit
@@ -372,6 +372,8 @@ Plug 'sheerun/vim-polyglot'
 " Used previously:
 " Plug 'yuezk/vim-js'
 " Plug 'maxmellon/vim-jsx-pretty'
+
+Plug 'jxnblk/vim-mdx-js'
 
 " Prettier
 " Use release branch (recommend)
