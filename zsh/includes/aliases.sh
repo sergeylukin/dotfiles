@@ -34,6 +34,7 @@ alias la='ls -lAGh'
 alias ld='ls -lF | grep "^d"'
 # list all directories
 alias lad='ls -la | grep "^d"'
+alias tree='tree -C'
 
 # `cat` with beautiful colors. requires Pygments installed
 # inspired by [Paul Irish](https://github.com/paulirish/dotfiles)
