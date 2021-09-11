@@ -53,6 +53,7 @@ alias vmore="vim -u ~/.vimrc.more -"
 
 # Git shortcuts
 alias git=hub # use ~/bin/hub as wrapper for git
+alias gitsh='gitsh --git $(which hub)'
 alias s='git status --short --branch '
 alias ss='git status '
 alias a='git add '
