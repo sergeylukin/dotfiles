@@ -1,0 +1,8 @@
+#/bin/ksh
+countdown=1*60*20
+while [[ ${countdown} -ge 0 ]]
+do
+        echo ${countdown}
+        sleep 1
+        countdown=$(( ${countdown} - 1 ))
+done
