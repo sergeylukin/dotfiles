@@ -34,6 +34,8 @@
   dw = diff --color-words
   # show modified filenames
   df = diff --name-only
+  # navigate to the root of a repository
+  root = rev-parse --show-toplevel
 
 # Any GitHub repo with my username should be checked out r/w by default
 # http://rentzsch.tumblr.com/post/564806957/public-but-hackable-git-submodules
