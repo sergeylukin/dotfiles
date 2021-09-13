@@ -433,6 +433,11 @@ nnoremap <Leader>/ :Ack!<Space>
 nnoremap <silent> [q :cprevious<CR>
 nnoremap <silent> ]q :cnext<CR>
 
+
+Plug 'tpope/vim-fugitive'
+
+
+
 " Initialize plugin system
 call plug#end()
 
