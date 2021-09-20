@@ -405,7 +405,7 @@ endif
 " Rooter changes the working directory to the project root when you open a file or directory.
 " It's required for Files search and Find in files features to allow
 " project-wide search
-Plug 'airblade/vim-rooter'
+" Plug 'airblade/vim-rooter'
 
 " Fuzzy search
 Plug 'ctrlpvim/ctrlp.vim'
@@ -431,8 +431,8 @@ let g:ack_use_cword_for_empty_search = 1
 cnoreabbrev Ack Ack!
 
 " Maps <leader>/ so we're ready to type the search keyword
-nnoremap <Leader>/ :Ack!<Space>
-noremap <Leader>a :Ack!<Space><cword><cr>
+nnoremap <Leader>/ :Gcd <bar> Ack!<Space>
+noremap <Leader>a :Gcd <bar> Ack!<Space><cword><cr>
 
 " open new files from quickfix window in new tab 
 set switchbuf+=usetab,newtab
