@@ -402,6 +402,11 @@ endif
 " let g:ale_fix_on_save = 1
 " let g:ale_open_list = 1
 
+" Rooter changes the working directory to the project root when you open a file or directory.
+" It's required for Files search and Find in files features to allow
+" project-wide search
+Plug 'airblade/vim-rooter'
+
 " Fuzzy search
 Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_map = '<leader>f'
