@@ -432,6 +432,7 @@ cnoreabbrev Ack Ack!
 
 " Maps <leader>/ so we're ready to type the search keyword
 nnoremap <Leader>/ :Ack!<Space>
+noremap <Leader>a :Ack!<Space><cword><cr>
 " }}}
 
 " Navigate quickfix list with ease
