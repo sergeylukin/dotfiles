@@ -11,35 +11,25 @@ setlocal fdn=20
 setlocal fen
 27
 normal! zo
-37
+39
 normal! zo
-95
+97
 normal! zo
-203
+131
 normal! zo
-273
+205
 normal! zo
-294
+275
 normal! zo
-344
+296
 normal! zo
-432
-normal! zc
-439
-normal! zc
-359
+346
 normal! zo
-449
+361
 normal! zo
-462
+473
 normal! zo
-471
-normal! zo
-477
-normal! zo
-484
-normal! zo
-490
+486
 normal! zo
 let &g:so = s:so_save | let &g:siso = s:siso_save
 doautoall SessionLoadPost

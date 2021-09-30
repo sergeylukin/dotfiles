@@ -32,6 +32,8 @@ filetype plugin on
 syntax on
 " }}}
 
+highlight ColorColumn ctermbg=cyan ctermfg=blue
+call matchadd('ColorColumn', '\%81v', 100)
 
 "-----------------------------"
 " Abbreviations and Shortcuts {{{
@@ -401,6 +403,14 @@ endif
 " let g:ale_sign_warning = '⚠️'
 " let g:ale_fix_on_save = 1
 " let g:ale_open_list = 1
+
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['html'] }
+let g:prettier#autoformat_config_present = 1
+let g:prettier#autoformat_require_pragma = 0
+nmap <Leader>py <Plug>(Prettier)
 
 " Rooter changes the working directory to the project root when you open a file or directory.
 " It's required for Files search and Find in files features to allow
