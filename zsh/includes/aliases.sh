@@ -107,3 +107,7 @@ alias notify='terminal-notifier -message "Done" -activate com.googlecode.iterm2'
 # c++11 installation
 # More info: http://sourabhbajaj.com/mac-setup/Cpp/README.html
 alias cppcompile='c++ -std=c++11 -stdlib=libc++'
+
+# Visual Studio Code shortcut
+# Taken from https://stackoverflow.com/a/33303456
+code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
