@@ -454,6 +454,12 @@ nnoremap <silent> ]q :cnext<CR>
 
 
 Plug 'tpope/vim-fugitive'
+" Fugitive Conflict Resolution
+nnoremap <leader>gd :Gvdiffsplit!<CR>
+nnoremap gdh :diffget 4<CR>
+nnoremap gdl :diffget 6<CR>
+nmap <leader>gs :G<CR>
+set diffopt=filler,context:4
 
 
 
