@@ -1,8 +1,10 @@
 #!/usr/bin/env sh
 ############################
-# This script doesn't do any installations, it only creates symlinks/copies dotfiles for
+# This script creates symlinks/copies dotfiles for
 # ZSH, OH-MY-ZSH, VIM, GIT etc. and only if they are installed and have their configuration files present.
 # Old configuration files are backed up in ~/.dotfiles_old
+#
+# In addition it installs software if OS is recognized and installation method is available
 ############################
 
 ########## Variables
@@ -12,6 +14,41 @@ timestamp=`date +%s`               # use timestamp in backup dir names to keep
 # track of backups
 backup_dir=$dir/backup/$timestamp  # old dotfiles backup directory
 ##########
+
+
+########## Detect OS
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  platform="linux"
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  platform="osx"
+elif [[ "$OSTYPE" == "cygwin" ]]; then
+  # POSIX compatibility layer and Linux environment emulation for Windows
+  platform="windows-linux"
+elif [[ "$OSTYPE" == "msys" ]]; then
+  # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
+  platform="windows-gnu"
+elif [[ "$OSTYPE" == "win32" ]]; then
+  platform="windows"
+elif [[ "$OSTYPE" == "freebsd"* ]]; then
+  platform="freebsd"
+else
+  platform="unknown"
+fi
+
+if ! command -v rg > /dev/null 2>&1; then
+  if [[ "$platform" -eq "osx" ]]; then
+    read -p "We need to install 'rg' Are you OK with that? " -n 1 -r
+    echo    # (optional) move to a new line
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+      # do dangerous stuff
+      brew install rg
+    else
+      echo "Please install 'rg' and retry";
+      exit 1;
+    fi
+  fi
+fi
 
 # Create Backup dir
 mkdir -p $backup_dir
