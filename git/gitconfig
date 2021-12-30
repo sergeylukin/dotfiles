@@ -36,6 +36,11 @@
   df = diff --name-only
   # navigate to the root of a repository
   root = rev-parse --show-toplevel
+  # checks out master, pulls, then checks back out our feature branch:
+  # more details in https://thoughtbot.com/upcase/videos/git-thoughtbot-git-flow
+  mup = !git checkout master && git pull && git checkout -
+  # use VIM with special plugin for git conflicts resolving
+  conflicted = !vim +Conflicted
 
 # Any GitHub repo with my username should be checked out r/w by default
 # http://rentzsch.tumblr.com/post/564806957/public-but-hackable-git-submodules
