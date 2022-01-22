@@ -204,6 +204,7 @@ then
   echo "...done"
   echo "Creating symlink to new TMUX files"
   ln -s $dir/tmux/tmuxrc ~/.tmux.conf
+  ln -s $dir/tmux ~/.tmux
   echo "...done"
 fi
 
