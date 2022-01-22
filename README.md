@@ -73,7 +73,7 @@ On OS X just:
 brew install rainbarf
 ```
 
-#### Font to use in terminal
+## Font to use in terminal
 
 - [Source Code Pro](https://github.com/adobe-fonts/source-code-pro/releases)
 
@@ -81,12 +81,24 @@ brew install rainbarf
 
 - [Consolas](http://ikato.com/blog/how-to-install-consolas-font-on-mac-os-x.html)
 
-#### iTerm2 color scheme
+## iTerm2
+
+### Color scheme
 
 Go to `iterm2` -> `Preferences` -> `Profiles` -> `Color Schemes`,  import
 scheme from `iterm/Dracula.itermcolors` and activate it
 
-#### CentOS server setup
+### TMUX integration
+
+Go to `Preferences` -> `Profiles` -> `Advanced` -> `Semantic History`
+
+and set `Run command...` - `/Users/{user}/.tmux/iterm_click_file_open_in_vim.sh \1 \2`
+
+replace `{user}` with your user account name
+
+![iterm2 tmux integration](https://raw.github.com/sergeylukin/dotfiles/master/img/iterm2-tmux.png)
+
+## CentOS server setup
 
 On fresh CentOS machine I usually start by running following as `root` user.
 
