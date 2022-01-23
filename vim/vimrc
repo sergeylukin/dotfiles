@@ -115,6 +115,12 @@ autocmd BufEnter * silent! lcd %:p:h " Better alternative to `autochdir`
 " Custom Filetypes
 au BufNewFile,BufRead *.less, set filetype=css " Recognize .less files as .css
 au BufNewFile,BufRead *.scss set filetype=css " Recognize .scss files as .css
+au BufNewFile,BufRead *.mdx set filetype=mdx
+
+" Spellcheck me
+autocmd FileType gitcommit setlocal spell
+autocmd FileType markdown,md,mdx setlocal spell
+
 " au BufNewFile,BufRead *.mdx set filetype=mdx
 " Shortcut for deleting all buffers
 nmap <silent> <leader>da :exec "1," . bufnr('$') . "bd"<cr>
