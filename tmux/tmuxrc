@@ -11,7 +11,6 @@ bind C-a send-prefix
 # force a reload of the config file
 unbind r
 bind r source-file ~/.tmux.conf
-
 # move around panes like in vim (only in tmux 1.6)
 bind j select-pane -D
 bind k select-pane -U
@@ -96,6 +95,11 @@ bind - \
   last-window \;\
   swap-pane -s tmux-zoom.0 \;\
   kill-window -t tmux-zoom
+
+# Type in multiple panes simultaneously
+# LIVE demo: https://youtu.be/-K9whwVkdRU
+bind \\ setw synchronize-panes 1
+bind | setw synchronize-panes 0
 
 # Add rainbarf panel
 set -g status-right '#(rainbarf --rgb)'
