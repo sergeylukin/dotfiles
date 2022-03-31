@@ -1,0 +1,15 @@
+pane	base	0	0	:	0	:/Users/sergey	1	zsh	:
+pane	base	1	0	:	0	:/Users/sergey/code/performance-studio.wiki	1	zsh	:
+pane	base	2	0	:	0	:/Users/sergey/code/fem-enterprise-patterns	1	zsh	:
+pane	base	3	0	:	0	:/Users/sergey/code/chat-room/apps/api/src/app	1	zsh	:
+pane	base	7	0	:-	0	:/Users/sergey/code/grow/pres1/src	0	vim	:vim src
+pane	base	7	0	:-	1	:/Users/sergey/code/grow/pres1	1	zsh	:
+pane	base	8	1	:*	0	:/Users/sergey/code/nestjs-task-management	0	zsh	:
+pane	base	8	1	:*	1	:/Users/sergey/code/nestjs-task-management/src/tasks	1	vim	:vim src/app.module.ts
+window	base	0	:zsh	0	:	b43d,178x41,0,0,0	:
+window	base	1	:WIKI	0	:	b43e,178x41,0,0,1	off
+window	base	2	:zsh	0	:	b43f,178x41,0,0,2	:
+window	base	3	:WEBSOCKET	0	:	b440,178x41,0,0,3	off
+window	base	7	:PRES1	0	:-	8e0e,178x41,0,0[178x20,0,0,7,178x20,0,21,8]	off
+window	base	8	:zsh	1	:*	f5a8,178x41,0,0{89x41,0,0,10,88x41,90,0,11}	:
+state	base	

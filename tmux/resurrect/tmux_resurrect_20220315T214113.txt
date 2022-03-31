@@ -1,0 +1,22 @@
+pane	base	0	0	:	0	:/Users/sergey/code/fullstackapp/nxtest	1	zsh	:
+pane	base	1	0	:	0	:/Users/sergey/code/dsr	1	zsh	:
+pane	base	1	0	:	1	:/Users/sergey/code/convention.run	0	zsh	:
+pane	base	4	1	:*	0	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend/src/components/flamegraph/newFlameGraph	0	vim	:vim src
+pane	base	4	1	:*	1	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend	0	node	:node /Users/sergey/.nvm/versions/node/v14.17.3/bin/yarn start-with-mock-api
+pane	base	4	1	:*	2	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend	1	zsh	:
+pane	base	5	0	:-	0	:/Users/sergey/code/src/github.com/Granulate/gflame/src/engines	0	vim	:vim src
+pane	base	5	0	:-	1	:/Users/sergey/code/src/github.com/Granulate/gflame	0	node	:node /Users/sergey/.nvm/versions/node/v16.13.1/bin/yarn watch
+pane	base	5	0	:-	2	:/Users/sergey/code/src/github.com/Granulate/gflame	1	zsh	:
+pane	base	6	0	:	0	:/Users/sergey/code/grow/pres1/src	0	vim	:vim src
+pane	base	6	0	:	1	:/Users/sergey/code/grow/pres1	1	zsh	:
+pane	base	8	0	:	0	:/Users/sergey/code/nestjs-task-management	0	vim	:vim
+pane	base	8	0	:	1	:/Users/sergey/code/nestjs-task-management	0	vim	:vim package.json
+pane	base	8	0	:	2	:/Users/sergey/code/nestjs-task-management/src/tasks	0	vim	:vim src/app.module.ts
+pane	base	8	0	:	3	:/Users/sergey/code/nestjs-task-management	1	zsh	:
+window	base	0	:NX	0	:	b43e,178x41,0,0,1	off
+window	base	1	:CONV	0	:	c54d,178x41,0,0[178x21,0,0,38,178x19,0,22,41]	off
+window	base	4	:FRONTEND	1	:*	4204,178x41,0,0[178x20,0,0,5,178x20,0,21{84x20,0,21,31,93x20,85,21,43}]	off
+window	base	5	:gFlame	0	:-	115d,178x41,0,0[178x26,0,0,6,178x14,0,27{89x14,0,27,8,88x14,90,27,44}]	off
+window	base	6	:PRES1	0	:	8752,178x41,0,0[178x20,0,0,9,178x20,0,21,19]	off
+window	base	8	:zsh	0	:	4886,178x41,0,0[178x16,0,0,12,178x14,0,17{89x14,0,17,13,88x14,90,17,14},178x9,0,32,15]	:
+state	base	

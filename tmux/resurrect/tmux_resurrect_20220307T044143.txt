@@ -1,0 +1,23 @@
+pane	base	0	0	:	0	:/Users/sergey/code/fullstackapp/nxtest	1	zsh	:
+pane	base	2	0	:	0	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend/src/components/profiles/header	1	vim	:vim ProfilesTopPanel.jsx
+pane	base	3	0	:-	0	:/Users/sergey/.dotfiles	1	zsh	:
+pane	base	4	1	:*	0	:/Users/sergey/.dotfiles/tmux	1	vim	:vim /Users/sergey/.tmux.conf
+pane	base	5	0	:	0	:/Users/sergey/code/src/github.com/Granulate/gflame/example/dist	0	zsh	:
+pane	base	5	0	:	1	:/Users/sergey/code/src/github.com/Granulate/gflame/example/dist	1	zsh	:
+pane	base	6	0	:	0	:/Users/sergey/code/testapp	1	zsh	:
+pane	base	7	0	:	0	:/Users/sergey/code/testapp/src/http/get-index	1	zsh	:
+pane	base	8	0	:	0	:/Users/sergey/code/nestjs-task-management	0	zsh	:
+pane	base	8	0	:	1	:/Users/sergey/code/nestjs-task-management	1	vim	:vim package.json
+pane	base	8	0	:	2	:/Users/sergey/code/nestjs-task-management/src/tasks	0	vim	:vim src/app.module.ts
+pane	base	8	0	:	3	:/Users/sergey/code/nestjs-task-management	0	zsh	:
+pane	base	9	0	:	0	:/Users/sergey/code/nestjs-task-management/src/tasks	1	vim	:vim tasks/task.model.ts tasks/tasks.controller.ts tasks/tasks.module.ts tasks/tasks.service.ts
+window	base	0	:zsh	0	:	b43e,178x41,0,0,1	:
+window	base	2	:vim	0	:	da53,178x41,0,0,24	:
+window	base	3	:tmux-zoom	0	:-	da54,178x41,0,0,25	off
+window	base	4	:vim	1	:*	b444,178x41,0,0,7	:
+window	base	5	:zsh	0	:	dac8,162x49,0,0[162x24,0,0,8,162x24,0,25,9]	:
+window	base	6	:zsh	0	:	68af,162x49,0,0,10	:
+window	base	7	:zsh	0	:	68b0,162x49,0,0,11	:
+window	base	8	:vim	0	:	da25,178x41,0,0[178x6,0,0,12,178x24,0,7{89x24,0,7,13,88x24,90,7,14},178x9,0,32,15]	:
+window	base	9	:vim	0	:	5a55,178x41,0,0,16	:
+state	base	

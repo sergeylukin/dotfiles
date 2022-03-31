@@ -1,0 +1,22 @@
+pane	base	1	0	:	0	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend/.storybook	1	vim	:vim src
+pane	base	1	0	:	1	:/Users/sergey/code/src/github.com/Granulate/performance-studio	0	git	:/usr/local/bin/git diff --color-words HEAD~~~ HEAD
+pane	base	2	0	:-	0	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend	1	node	:node /Users/sergey/.nvm/versions/node/v14.17.3/bin/yarn storybook
+pane	base	3	0	:	0	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend	1	zsh	:
+pane	base	4	0	:	0	:/Users/sergey/code/src/github.com/Granulate/gflame	1	zsh	:
+pane	base	4	0	:	1	:/Users/sergey/.dotfiles/tmux/plugins-local	0	zsh	:
+pane	base	5	0	:	0	:/Users/sergey/code/src/github.com/Granulate/gflame/example/dist	0	zsh	:
+pane	base	5	0	:	1	:/Users/sergey/code/src/github.com/Granulate/gflame/example/dist	1	zsh	:
+pane	base	6	0	:	0	:/Users/sergey/code/testapp	1	zsh	:
+pane	base	7	0	:	0	:/Users/sergey/code/testapp/src/http/get-index	1	zsh	:
+pane	base	8	1	:*	0	:/Users/sergey/code/designsystem.run	1	node	:node /Users/sergey/.nvm/versions/node/v16.13.1/bin/yarn global add @nestjs/cli
+pane	base	9	0	:	0	:/Users/sergey/.dotfiles/tmux	1	vim	:vim
+window	base	1	:vim	0	:	a30f,178x49,0,0[178x34,0,0,3,178x14,0,35,26]	:
+window	base	2	:node	0	:-	ea57,178x49,0,0,28	:
+window	base	3	:tmux-zoom	0	:	d441,178x49,0,0,4	off
+window	base	4	:zsh	0	:	ca87,178x49,0,0[178x25,0,0,11,178x23,0,26,12]	:
+window	base	5	:zsh	0	:	b90a,178x49,0,0[178x24,0,0,13,178x24,0,25,14]	:
+window	base	6	:zsh	0	:	6a54,178x49,0,0,15	:
+window	base	7	:zsh	0	:	6a55,178x49,0,0,16	:
+window	base	8	:node	1	:*	6a56,178x49,0,0,17	:
+window	base	9	:vim	0	:	6a58,178x49,0,0,19	:
+state	base	

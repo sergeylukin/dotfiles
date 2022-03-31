@@ -11,7 +11,7 @@ alias tu='top -o cpu' # cpu
 alias tm='top -o size' # memory
 
 # Tmux
-alias sc='tmux'
+alias sc='tmux -2'
 
 # Apache
 alias restartApache="sudo apachectl restart"
@@ -19,7 +19,7 @@ alias restartApache="sudo apachectl restart"
 # Navigation
 alias ..='cd ..' # Go Up
 alias ...='cd ../../' # Go Up 2 levels
-alias cdd='cd -' # Go Back
+alias -- -="cd -" # Go Back
 alias desk='cd ~/Desktop' # Shortcut to code dir
 alias codes='cd ~/code' # Shortcut to code dir
 alias sites='cd ~/Sites' # Shortcut to Sites dir

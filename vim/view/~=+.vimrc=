@@ -1,5 +1,6 @@
-let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-1 siso=-1
 argglobal
+balt /usr/share/vim/vim82/syntax/colortest.vim
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -8,28 +9,16 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-27
+40
 normal! zo
-39
+98
 normal! zo
-97
+136
 normal! zo
-131
+302
 normal! zo
-205
+352
 normal! zo
-275
-normal! zo
-296
-normal! zo
-346
-normal! zo
-361
-normal! zo
-474
-normal! zo
-480
-normal! zo
-let &so = s:so_save | let &siso = s:siso_save
+let &g:so = s:so_save | let &g:siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

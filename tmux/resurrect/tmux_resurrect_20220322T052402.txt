@@ -1,0 +1,32 @@
+pane	base	0	0	:-	0	:/Users/sergey/code/weski/exam2/weski/apps/front-website/src/app	1	vim	:vim app/app.tsx
+pane	base	0	0	:-	1	:/Users/sergey/code/weski/exam2/weski/.storybook	0	zsh	:
+pane	base	1	1	:*	0	:/Users/sergey/code/weski/exam2/weski	1	node	:node ./node_modules/.bin/nx run shared-ui:storybook
+pane	base	1	1	:*	1	:/Users/sergey/code/weski/exam2/weski/.storybook	0	vim	:vim main.js
+pane	base	2	0	:	0	:/Users/sergey/code/fem-enterprise-patterns	1	zsh	:
+pane	base	3	0	:	0	:/Users/sergey/code/chat-room/apps/api/src/app	1	vim	:vim apps/api/src/main.ts
+pane	base	4	0	:	0	:/Users/sergey/code/realtime-form/apps/api/src	1	vim	:vim apps/api/src/main.ts
+pane	base	5	0	:	0	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend/.storybook	1	vim	:vim .storybook/main.js
+pane	base	5	0	:	1	:/Users/sergey/code/src/github.com/Granulate/performance-studio	0	zsh	:
+pane	base	5	0	:	2	:/Users/sergey/code/src/github.com/Granulate/performance-studio	0	zsh	:
+pane	base	6	0	:	0	:/Users/sergey/code/src/github.com/Granulate/gflame/src/engines	0	zsh	:
+pane	base	6	0	:	1	:/Users/sergey/code/src/github.com/Granulate/gflame	0	zsh	:
+pane	base	6	0	:	2	:/Users/sergey/code/src/github.com/Granulate/gflame	1	zsh	:
+pane	base	7	0	:	0	:/Users/sergey/code/grow/pres1/src	0	vim	:vim src
+pane	base	7	0	:	1	:/Users/sergey/code/grow/pres1	1	zsh	:
+pane	base	8	0	:	0	:/Users/sergey/code/nestjs-task-management	0	vim	:vim
+pane	base	8	0	:	1	:/Users/sergey/code/nestjs-task-management	0	zsh	:
+pane	base	8	0	:	2	:/Users/sergey/code/nestjs-task-management/src/tasks	0	vim	:vim src/app.module.ts
+pane	base	8	0	:	3	:/Users/sergey/code/nestjs-task-management	1	zsh	:
+pane	base	10	0	:	0	:/Users/sergey/code/weski/exam	0	vim	:vim exam/init.sh
+pane	base	10	0	:	1	:/Users/sergey/code/weski/exam/test/libs/ui/src/lib/button	1	zsh	:
+window	base	0	:WESKI	0	:-	e580,178x41,0,0[178x22,0,0,1,178x18,0,23,4]	off
+window	base	1	:WESKI	1	:*	1c93,178x41,0,0[178x9,0,0,5,178x31,0,10,24]	off
+window	base	2	:zsh	0	:	b443,178x41,0,0,6	:
+window	base	3	:WEBSOCKET	0	:	b444,178x41,0,0,7	off
+window	base	4	:WEBSOCKER_SRC	0	:	b445,178x41,0,0,8	off
+window	base	5	:FRONTEND	0	:	5e64,178x41,0,0[178x20,0,0,9,178x20,0,21{89x20,0,21,10,88x20,90,21,11}]	off
+window	base	6	:gFlame	0	:	5cbe,178x41,0,0[178x26,0,0,12,178x14,0,27{104x14,0,27,13,73x14,105,27,14}]	off
+window	base	7	:PRES1	0	:	1455,80x24,0,0[80x11,0,0,15,80x12,0,12,16]	off
+window	base	8	:zsh	0	:	0b13,178x41,0,0[178x16,0,0,17,178x14,0,17{89x14,0,17,18,88x14,90,17,19},178x9,0,32,20]	:
+window	base	10	:CONV	0	:	2f06,178x41,0,0[178x20,0,0,21,178x20,0,21,22]	off
+state	base	

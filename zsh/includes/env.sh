@@ -1,5 +1,7 @@
 export EDITOR=vim
-export TERM=xterm-256color
+if [[ ${TERM} != *"256color"* ]];then
+    export TERM=xterm-256color
+fi
 export GRAILS_HOME=~/bin/grails-2.2.1
 export PATH=/usr/local/sbin:/usr/local/heroku/bin:./node_modules/.bin:~/bin:~/bin.local:$GRAILS_HOME/bin:$PATH
 
@@ -109,3 +111,5 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

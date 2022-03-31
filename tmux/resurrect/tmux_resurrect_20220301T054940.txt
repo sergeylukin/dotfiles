@@ -1,0 +1,34 @@
+pane	base	0	0	:	0	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend	1	zsh	:
+pane	base	0	0	:	1	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend	0	zsh	:
+pane	base	1	0	:-	0	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend	1	zsh	:
+pane	base	1	0	:-	1	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend	0	zsh	:
+pane	base	2	1	:*	0	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend/.storybook	0	vim	:vim src
+pane	base	2	1	:*	1	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend/src	0	zsh	:
+pane	base	2	1	:*	2	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend	0	zsh	:
+pane	base	2	1	:*	3	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend	1	zsh	:
+pane	base	3	0	:	0	:/Users/sergey/.dotfiles/tmux	1	vim	:vim /Users/sergey/.vimrc
+pane	base	3	0	:	1	:/Users/sergey/.dotfiles	0	git	:/usr/local/bin/git diff --color-words
+pane	base	4	0	:	0	:/Users/sergey/code/src/github.com/Granulate/gflame	1	zsh	:
+pane	base	4	0	:	1	:/Users/sergey/.dotfiles/tmux/plugins-local	0	zsh	:
+pane	base	5	0	:	0	:/Users/sergey/code/src/github.com/Granulate/gflame/example/dist	0	zsh	:
+pane	base	5	0	:	1	:/Users/sergey/code/src/github.com/Granulate/gflame/example/dist	1	zsh	:
+pane	base	6	0	:	0	:/Users/sergey/code/testapp	1	zsh	:
+pane	base	7	0	:	0	:/Users/sergey/code/testapp/src/http/get-index	1	vim	:vim src/http/get-index/index.js
+pane	base	8	0	:	0	:/Users/sergey/code/dsr-cli	1	zsh	:
+pane	base	9	0	:	0	:/Users/sergey/code/designsystem.run	1	zsh	:
+pane	base	9	0	:	1	:/Users/sergey/code/designsystem.run	0	zsh	:
+pane	base	10	0	:	0	:/Users/sergey/code/design-systems-cli	1	zsh	:
+pane	base	10	0	:	1	:/Users/sergey/code/design-systems-cli	0	vim	:vim package.json
+pane	base	10	0	:	2	:/Users/sergey/code/design-systems-cli	0	zsh	:
+window	base	0	:zsh	0	:	ce87,178x49,0,0[178x29,0,0,1,178x19,0,30,2]	:
+window	base	1	:zsh	0	:-	458d,178x49,0,0[178x34,0,0,3,178x14,0,35,4]	:
+window	base	2	:zsh	1	:*	c99c,178x49,0,0[178x27,0,0{89x27,0,0,5,88x27,90,0,6},178x21,0,28{79x21,0,28,7,98x21,80,28,8}]	:
+window	base	3	:vim	0	:	2792,178x49,0,0[178x29,0,0,9,178x19,0,30,10]	:
+window	base	4	:zsh	0	:	ca87,178x49,0,0[178x25,0,0,11,178x23,0,26,12]	:
+window	base	5	:zsh	0	:	b90a,178x49,0,0[178x24,0,0,13,178x24,0,25,14]	:
+window	base	6	:zsh	0	:	6a54,178x49,0,0,15	:
+window	base	7	:vim	0	:	6a55,178x49,0,0,16	:
+window	base	8	:zsh	0	:	6a56,178x49,0,0,17	:
+window	base	9	:zsh	0	:	3912,178x49,0,0[178x24,0,0,18,178x24,0,25,19]	:
+window	base	10	:zsh	0	:	37af,178x49,0,0[178x14,0,0{89x14,0,0,20,88x14,90,0,21},178x34,0,15,22]	:
+state	base	

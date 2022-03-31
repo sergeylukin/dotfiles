@@ -30,10 +30,11 @@ filetype off
 filetype indent on
 filetype plugin on
 syntax on
+set re=0
 " }}}
 
-highlight ColorColumn ctermbg=cyan ctermfg=blue
-call matchadd('ColorColumn', '\%81v', 100)
+" highlight ColorColumn ctermbg=cyan ctermfg=blue
+" call matchadd('ColorColumn', '\%81v', 100)
 
 "-----------------------------"
 " Abbreviations and Shortcuts {{{
@@ -108,8 +109,6 @@ set noswapfile
 "   third and subsequent will cycle through completion options
 set wildmode=longest,list,full
 set wildmenu
-" Apply new configuration after .VIMRC is saved
-autocmd! bufwritepost .vimrc source %
 " Automatically change current directory to that of the file in the buffer
 autocmd BufEnter * silent! lcd %:p:h " Better alternative to `autochdir`
 " Custom Filetypes
@@ -138,12 +137,13 @@ endif
 "----------------------"
 set t_Co=256 " Enable 256 colors mode
 " Select colorscheme from ~/.vim/colors/
-if has('gui_running')
-  colorscheme solarized
+" if has('gui_running')
+"   colorscheme solarized
   set background=dark " Used by some colorschemes (for example Solarized theme may be 'dark' or 'light')
-else
-  colorscheme dante
-endif
+" else
+"   colorscheme dante
+" endif
+ let &t_ut=''
 " Show lines numbers
 set number
 " use unit file format for all files
@@ -303,8 +303,8 @@ Bundle 'gmarik/vundle'
 "---------------------------"
 
 " Neat theme
-Bundle 'dracula/vim'
-color dracula
+" Bundle 'dracula/vim'
+" color dracula
 
 " .eslint
 " https://medium.com/@jimeno0/eslint-and-prettier-in-vim-neovim-7e45f85cf8f9
@@ -363,9 +363,6 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 \| endif
 " }}}
 
-"---------------------------"
-" Plugs {{{
-
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
@@ -376,6 +373,13 @@ call plug#begin('~/.vim/plugged')
 " Shorthand notation `Plug '{USER}/{REPO}' - fetches
 " https://github.com/{USER}/{REPO}
 
+Plug 'Rigellute/shades-of-purple.vim'
+Plug 'cocopon/iceberg.vim'
+Plug 'joshdick/onedark.vim'
+
+
+"---------------------------"
+" Plug - File types {{{
 " Support JS/JSX highlighting etc.
 Plug 'sheerun/vim-polyglot'
 " Plug 'pangloss/vim-javascript'
@@ -384,13 +388,22 @@ Plug 'sheerun/vim-polyglot'
 " Plug 'yuezk/vim-js'
 " Plug 'maxmellon/vim-jsx-pretty'
 
-Plug 'jxnblk/vim-mdx-js'
+" Plug 'jxnblk/vim-mdx-js'
+Plug 'pappasam/vim-filetype-formatter'
+" ~/.vimrc
+nnoremap <silent> <leader>p :FiletypeFormat<cr>
+vnoremap <silent> <leader>p :FiletypeFormat<cr>
 
+" }}}
+
+"---------------------------"
+" Plug - file formtting (Prettier, etc.) {{{
 " Prettier
 " Use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions = [
-  \ 'coc-tsserver'
+  \ 'coc-tsserver',
+  \ 'coc-json'
   \ ]
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
   let g:coc_global_extensions += ['coc-prettier']
@@ -400,9 +413,12 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
   let g:coc_global_extensions += ['coc-eslint']
 endif
+let g:coc_filetype_map = { 'markdown.mdx': 'mdx' }
+
+Plug 'neoclide/coc-highlight', {'branch': 'release'} " color highlighting
 " Plug 'dense-analysis/ale'
+" let g:ale_linters_explicit = 1
 " let g:ale_fixers = {
-"  \ 'javascript': ['prettier', 'eslint'],
 "  \ 'mdx': ['prettier', 'eslint']
 "  \ }
 " let g:ale_sign_error = '❌'
@@ -417,12 +433,16 @@ Plug 'prettier/vim-prettier', {
 let g:prettier#autoformat_config_present = 1
 let g:prettier#autoformat_require_pragma = 0
 nmap <Leader>py <Plug>(Prettier)
+" }}}
 
 " Rooter changes the working directory to the project root when you open a file or directory.
 " It's required for Files search and Find in files features to allow
 " project-wide search
 " Plug 'airblade/vim-rooter'
 
+
+"---------------------------"
+" Plug - fuzzy search {{{
 " Fuzzy search
 Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_map = '<leader>f'
@@ -452,13 +472,17 @@ noremap <Leader>a :Gcd <bar> Ack!<Space><cword><cr>
 
 " open new files from quickfix window in new tab 
 set switchbuf+=usetab,newtab
-" }}}
 
 " Navigate quickfix list with ease
 nnoremap <silent> [q :cprevious<CR>
 nnoremap <silent> ]q :cnext<CR>
 
+set rtp+=/usr/local/opt/fzf
+" }}}
 
+
+"---------------------------"
+" Plug - git {{{
 Plug 'tpope/vim-fugitive'
 " Fugitive Conflict Resolution
 " nnoremap <leader>gd :Gvdiffsplit!<CR>
@@ -468,12 +492,93 @@ Plug 'tpope/vim-fugitive'
 " set diffopt=filler,context:4
 
 Plug 'christoomey/vim-conflicted'
+" }}}
 
+"---------------------------"
+" Plug - sessions {{{
+" Auto save sessions
+Plug 'tpope/vim-obsession'
+let g:sessions_dir = '~/vim-sessions'
+
+" Remaps for Sessions
+exec 'nnoremap <Leader>ss :Obsession ' . g:sessions_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
+exec 'nnoremap <Leader>sr :so ' . g:sessions_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
+nnoremap <Leader>sp :Obsession<CR>
+
+" Our custom TabLine function
+function MyTabLine()
+  let s = ''
+  for i in range(tabpagenr('$'))
+    " select the highlighting
+    if i + 1 == tabpagenr()
+      let s .= '%#TabLineSel#'
+    else
+      let s .= '%#TabLine#'
+    endif
+
+    " set the tab page number (for mouse clicks)
+    let s .= '%' . (i + 1) . 'T'
+
+    " the label is made by MyTabLabel()
+    let s .= ' %{MyTabLabel(' . (i + 1) . ')} '
+  endfor
+
+  " after the last tab fill with TabLineFill and reset tab page nr
+  let s .= '%#TabLineFill#%T'
+
+    let s .= '%=' " Right-align after this
+
+    if exists('g:this_obsession')
+        let s .= '%#diffadd#' " Use the "DiffAdd" color if in a session
+    endif
+
+    " add vim-obsession status if available
+    if exists(':Obsession')
+        let s .= "%{ObsessionStatus()}"
+        if exists('v:this_session') && v:this_session != ''
+            let s:obsession_string = v:this_session
+            let s:obsession_parts = split(s:obsession_string, '/')
+            let s:obsession_filename = s:obsession_parts[-1]
+            let s .= ' ' . s:obsession_filename . ' '
+            let s .= '%*' " Restore default color
+        endif
+    endif
+
+  return s
+endfunction
+
+" Required for MyTabLine()
+function MyTabLabel(n)
+  let buflist = tabpagebuflist(a:n)
+  let winnr = tabpagewinnr(a:n)
+  return bufname(buflist[winnr - 1])
+endfunction
+
+set tabline=%!MyTabLine()
+set showtabline=1
+" }}}
+
+"---------------------------"
+" Plug - Babel {{{
+Plug 'jbgutierrez/vim-babel'
+Plug 'mattn/webapi-vim'
+" }}}
+
+"---------------------------"
+" Plug - DocumentGenerator {{{
+Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
+" }}}
+
+Plug 'guns/xterm-color-table.vim', {'branch': 'release'}
+
+Plug 'ernstwi/vim-secret'
+nmap <leader>se <Plug>SecretToggle
 
 " Initialize plugin system
 call plug#end()
 
-" }}}
+syn match MyPassword /\%(^\s*pass:\s*\)\@<=\S\+/ conceal cchar=*
+setl conceallevel=2 concealcursor=nv
 
 
 "---------------------------"
@@ -542,4 +647,76 @@ imap cll console.log();<Esc>==f(a
 " Console log from visual mode on next line, puts visual selection inside parentheses
 vmap cll yocll<Esc>p
 " Console log from normal mode, inserted on next line with word your on inside parentheses
-nmap cll yiwocll<Esc>p
+map cll yiwocll<Esc>p
+
+" Colors
+"""" enable 24bit true color
+" If you have vim >=8.0 or Neovim >= 0.1.5
+ set termguicolors
+if (has("termguicolors"))
+ set termguicolors
+endif
+function! IcebergColorsCustomization() abort
+  " Makes the floating window more readable
+  highlight Pmenu ctermbg=237 ctermfg=white
+  highlight PmenuSel ctermbg=220 ctermfg=black
+  highlight PmenuSbar ctermbg=233
+  highlight PmenuThumb ctermbg=7
+
+  highlight CocHighlightText term=underline cterm=underline ctermbg=117  ctermfg=17 gui=underline guibg=#cccccc guifg=#1E1E3F
+  highlight CocHighlightRead term=underline cterm=underline ctermbg=117  ctermfg=17 gui=underline guibg=#cccccc guifg=#1E1E3F
+  highlight CocWarningHighlight term=underline cterm=underline ctermbg=LightBlue  ctermfg=DarkGreen gui=underline guibg=#cccccc guifg=#1E1E3F
+  highlight CocWarningLine term=underline cterm=underline ctermbg=182 ctermfg=53 gui=underline guibg=NONE guifg=#FF0000
+  highlight CocWarningSign term=underline cterm=underline ctermbg=NONE  ctermfg=red  gui=underline guibg=NONE guifg=#FF0000
+  highlight CursorLine term=underline cterm=underline ctermbg=NONE  ctermfg=NONE  gui=underline guibg=NONE guifg=#FF0000
+  highlight Normal ctermbg=None ctermfg=252 guibg=#161821 guifg=#c6c8d1
+  highlight Visual ctermbg=197 ctermfg=252 guibg=#161821 guifg=#c6c8d1
+  highlight LineNr ctermbg=234 ctermfg=9
+endfunction
+
+function! OnedarkColorsCustomization() abort
+  highlight LineNr ctermbg=234 ctermfg=9
+endfunction
+
+augroup MyColors
+    autocmd!
+    autocmd ColorScheme iceberg call IcebergColorsCustomization()
+    autocmd ColorScheme onedark call OnedarkColorsCustomization()
+augroup END
+"""" enable the theme
+colorscheme onedark
+colorscheme iceberg
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+autocmd MyColors BufWritePost $MYVIMRC nested source $MYVIMRC
+
+" Apply new configuration after .VIMRC is saved
+autocmd! BufWritePost .vimrc tabdo source $MYVIMRC
+
+
+
+
+
+
+
+
+
+
+
+
+
+" Returns true if the color hex value is light
+function! IsHexColorLight(color) abort
+  let l:raw_color = trim(a:color, '#')
+
+  let l:red = str2nr(substitute(l:raw_color, '(.{2}).{4}', '1', 'g'), 16)
+  let l:green = str2nr(substitute(l:raw_color, '.{2}(.{2}).{2}', '1',
+  'g'), 16)
+  let l:blue = str2nr(substitute(l:raw_color, '.{4}(.{2})', '1', 'g'),
+  16)
+
+  let l:brightness = ((l:red * 299) + (l:green * 587) + (l:blue *
+  114)) / 1000
+
+  return l:brightness > 155
+endfunction

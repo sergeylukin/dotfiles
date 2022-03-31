@@ -1,0 +1,30 @@
+pane	base	0	0	:	0	:/Users/sergey/code/weski/exam2/weski	1	zsh	:
+pane	base	0	0	:	1	:/Users/sergey/code/weski/exam2	0	git	:/usr/local/bin/git diff --color-words
+pane	base	1	0	:	0	:/Users/sergey/code/weski/exam2/weski	1	zsh	:
+pane	base	1	0	:	1	:/Users/sergey/code/weski/exam2/weski	0	zsh	:
+pane	base	2	0	:	0	:/Users/sergey/code/fem-enterprise-patterns	1	zsh	:
+pane	base	3	0	:	0	:/Users/sergey/code/chat-room/apps/api/src/app	1	zsh	:
+pane	base	4	0	:	0	:/Users/sergey/code/realtime-form/apps/api/src	1	vim	:vim apps/api/src/main.ts
+pane	base	5	1	:*	0	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend	0	node	:node ./node_modules/.bin/yarn start-with-mock-api
+pane	base	5	1	:*	1	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend	1	zsh	:/usr/local/bin/git checkout master
+pane	base	5	1	:*	2	:/Users/sergey/code/src/github.com/Granulate/performance-studio	0	git	:/usr/local/bin/git diff --color-words
+pane	base	6	0	:-	0	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend/src/components/common/selectors/select	1	vim	:vim src
+pane	base	7	0	:	0	:/Users/sergey/code/grow/pres1/src	0	vim	:vim src
+pane	base	7	0	:	1	:/Users/sergey/code/grow/pres1	1	zsh	:
+pane	base	8	0	:	0	:/Users/sergey/code/nestjs-task-management	0	vim	:vim
+pane	base	8	0	:	1	:/Users/sergey/code/nestjs-task-management	0	zsh	:
+pane	base	8	0	:	2	:/Users/sergey/code/nestjs-task-management/src/tasks	0	vim	:vim src/app.module.ts
+pane	base	8	0	:	3	:/Users/sergey/code/nestjs-task-management	1	zsh	:
+pane	base	10	0	:	0	:/Users/sergey/code/weski/exam	0	vim	:vim exam/init.sh
+pane	base	10	0	:	1	:/Users/sergey/code/nx/packages/storybook/src/generators/configuration	1	zsh	:
+window	base	0	:WESKI	0	:	8173,178x41,0,0[178x32,0,0,1,178x8,0,33,4]	off
+window	base	1	:WESKI	0	:	208b,178x41,0,0[178x19,0,0,25,178x21,0,20,24]	off
+window	base	2	:zsh	0	:	b443,178x41,0,0,6	:
+window	base	3	:WEBSOCKET	0	:	b444,178x41,0,0,7	off
+window	base	4	:WEBSOCKER_SRC	0	:	b445,178x41,0,0,8	off
+window	base	5	:FRONTEND	1	:*	a235,178x41,0,0[178x25,0,0{74x25,0,0,9,103x25,75,0,27},178x15,0,26,10]	off
+window	base	6	:gFlame	0	:-	5a52,178x41,0,0,13	off
+window	base	7	:PRES1	0	:	6f0b,178x41,0,0[178x20,0,0,15,178x20,0,21,16]	off
+window	base	8	:zsh	0	:	0b13,178x41,0,0[178x16,0,0,17,178x14,0,17{89x14,0,17,18,88x14,90,17,19},178x9,0,32,20]	:
+window	base	10	:CONV	0	:	2f06,178x41,0,0[178x20,0,0,21,178x20,0,21,22]	off
+state	base	

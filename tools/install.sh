@@ -11,9 +11,12 @@ fi
 
 # Clone repository
 hash git >/dev/null && /usr/bin/env git clone https://github.com/sergeylukin/dotfiles.git ~/.dotfiles || {
-  echo "You seriously expect me to do this without git? Fix that shit.\n"
+  echo "Please install Git.\n"
   exit
 }
+
+# install dependencies
+. ~/.dotfiles/tools/install-deps.sh
 
 # Run setup script
 . ~/.dotfiles/tools/setup.sh

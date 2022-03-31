@@ -56,7 +56,7 @@ bind-key T swap-window -t 0
 #set -g mouse on
 
 # colors
-set -g default-terminal "screen-256color"
+# set -g default-terminal "screen-256color"
 
 # adjust copy/paste keystrokes
 # read more at http://jasonwryan.com/blog/2011/06/07/copy-and-paste-in-tmux/
@@ -104,5 +104,36 @@ bind | setw synchronize-panes 0
 # Add rainbarf panel
 set -g status-right '#(rainbarf --rgb)'
 
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+# sane TMUX condifuration
+set -g @plugin 'tmux-plugins/tmux-sensible'
+# save/restore TMUX session (including VIM sessions) on disk
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @resurrect-capture-pane-contents 'on'
+set -g @resurrect-strategy-vim 'session'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g status-right 'Continuum status: #{continuum_status}'
+set -g @continuum-restore 'on'
+set -g @continuum-save-interval '1'
+# iceberg colorscheme
+# source-file ~/.tmux/iceberg_minimal.tmux.conf
+source-file ~/.tmux/iceberg.tmux.conf
+# set -g @plugin 'gkeep/iceberg-dark'
+# source-file ~/.tmux/iceberg_minimal.tmux.conf
+
+# set -g @plugin 'laktak/extrakto'
+
+bind -T copy-mode-vi v send -X begin-selection
+bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "pbcopy"
+bind P paste-buffer
+bind -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-
+
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
+
+set -g @extrakto_insert_key 'ctrl-i'
+run-shell ~/.tmux/plugins-local/extrakto/extrakto.tmux
+
+set -g default-terminal "tmux-256color"
+set -ga terminal-overrides ",*256col*:Tc"

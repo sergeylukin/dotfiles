@@ -1,0 +1,30 @@
+pane	base	0	0	:-	0	:/Users/sergey/code/fullstackapp/nxtest	1	zsh	:
+pane	base	1	1	:*	0	:/Users/sergey/.ssh	1	ssh	:ssh -i ./growor.cer ubuntu@ec2-3-141-194-103.us-east-2.compute.amazonaws.com
+pane	base	2	0	:	0	:/Users/sergey/code/grow/pres2/src	0	vim	:vim src
+pane	base	2	0	:	1	:/Users/sergey/code/grow/pres2/src	1	zsh	:
+pane	base	2	0	:	2	:/Users/sergey/code/grow/pres2	0	node	:node /Users/sergey/.nvm/versions/node/v16.13.1/bin/yarn start
+pane	base	4	0	:	0	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend/src/api/hooks	0	vim	:vim src
+pane	base	4	0	:	1	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend/src/api/hooks	1	zsh	:
+pane	base	4	0	:	2	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend	0	node	:node /Users/sergey/.nvm/versions/node/v14.17.3/bin/yarn start-with-mock-api
+pane	base	5	0	:	0	:/Users/sergey/.dotfiles/zsh/includes	1	vim	:vim includes/aliases.sh
+pane	base	5	0	:	1	:/Users/sergey	0	vim	:vim /Users/sergey/.vimrc
+pane	base	6	0	:	0	:/Users/sergey/code/grow/pres1/src	0	vim	:vim src
+pane	base	6	0	:	1	:/Users/sergey/code/grow/pres1	1	zsh	:
+pane	base	7	0	:	0	:/Users/sergey/code/grow/pres2	0	node	:npm start  
+pane	base	7	0	:	1	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend	0	vim	:vim package.json
+pane	base	7	0	:	2	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend	1	zsh	:
+pane	base	8	0	:	0	:/Users/sergey/code/nestjs-task-management	1	vim	:vim
+pane	base	8	0	:	1	:/Users/sergey/code/nestjs-task-management	0	vim	:vim package.json
+pane	base	8	0	:	2	:/Users/sergey/code/nestjs-task-management/src/tasks	0	vim	:vim src/app.module.ts
+pane	base	8	0	:	3	:/Users/sergey/code/nestjs-task-management	0	zsh	:
+pane	base	9	0	:	0	:/Users/sergey/code/src/github.com/Granulate/gflame	1	zsh	:
+window	base	0	:zsh	0	:-	b43e,178x41,0,0,1	:
+window	base	1	:ssh	1	:*	da56,178x41,0,0,27	:
+window	base	2	:PRES2	0	:	4a1c,178x41,0,0[178x20,0,0{89x20,0,0,2,88x20,90,0,37},178x20,0,21,35]	off
+window	base	4	:zsh	0	:	ca1d,178x41,0,0[178x20,0,0{89x20,0,0,5,88x20,90,0,32},178x20,0,21,31]	:
+window	base	5	:gFlame	0	:	be8c,178x41,0,0[178x21,0,0,6,178x19,0,22,8]	off
+window	base	6	:gFlame	0	:	8752,178x41,0,0[178x20,0,0,9,178x20,0,21,19]	off
+window	base	7	:gFlame	0	:	4eff,178x41,0,0[178x1,0,0,23,178x19,0,2,25,178x19,0,22,26]	off
+window	base	8	:vim	0	:	4886,178x41,0,0[178x16,0,0,12,178x14,0,17{89x14,0,17,13,88x14,90,17,14},178x9,0,32,15]	:
+window	base	9	:zsh	0	:	5a55,178x41,0,0,16	:
+state	base	

@@ -1,0 +1,34 @@
+pane	base	0	0	:	0	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend	1	zsh	:
+pane	base	0	0	:	1	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend	0	zsh	:
+pane	base	1	0	:	0	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend	1	node	:node ./node_modules/.bin/yarn test
+pane	base	1	0	:	1	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend	0	zsh	:
+pane	base	2	1	:*	0	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend/.storybook	0	vim	:vim .storybook/preview.js
+pane	base	2	1	:*	1	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend/src	1	zsh	:
+pane	base	2	1	:*	2	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend	0	node	:node ./node_modules/.bin/yarn start-with-mock-api
+pane	base	2	1	:*	3	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend	0	node	:node ./node_modules/.bin/yarn storybook
+pane	base	3	0	:-	0	:/Users/sergey/.dotfiles/tmux	0	vim	:vim tmuxrc
+pane	base	3	0	:-	1	:/Users/sergey/.dotfiles/tmux/plugins-local/extrakto	1	vim	:vim extrakto.conf
+pane	base	4	0	:	0	:/Users/sergey/code/src/github.com/Granulate/gflame	1	zsh	:
+pane	base	4	0	:	1	:/Users/sergey/code/src/github.com/Granulate/gflame	0	zsh	:
+pane	base	5	0	:	0	:/Users/sergey/code/src/github.com/Granulate/gflame/example/dist	0	zsh	:
+pane	base	5	0	:	1	:/Users/sergey/code/src/github.com/Granulate/gflame/example/dist	1	zsh	:
+pane	base	6	0	:	0	:/Users/sergey/code/testapp	1	zsh	:
+pane	base	7	0	:	0	:/Users/sergey/code/testapp/src/http/get-index	1	vim	:vim src/http/get-index/index.js
+pane	base	8	0	:	0	:/Users/sergey/code/dsr-cli	1	zsh	:
+pane	base	9	0	:	0	:/Users/sergey/code/designsystem.run	1	zsh	:
+pane	base	9	0	:	1	:/Users/sergey/code/designsystem.run	0	zsh	:
+pane	base	10	0	:	0	:/Users/sergey/code/design-systems-cli	1	zsh	:
+pane	base	10	0	:	1	:/Users/sergey/code/design-systems-cli	0	vim	:vim package.json
+pane	base	10	0	:	2	:/Users/sergey/code/design-systems-cli	0	zsh	:
+window	base	0	:zsh	0	:	ce8c,178x49,0,0[178x29,0,0,3,178x19,0,30,4]	:
+window	base	1	:node	0	:	4592,178x49,0,0[178x34,0,0,5,178x14,0,35,6]	:
+window	base	2	:zsh	1	:*	e922,178x49,0,0[178x19,0,0{89x19,0,0,0,88x19,90,0,21},178x29,0,20{79x29,0,20,1,98x29,80,20,2}]	:
+window	base	3	:vim	0	:-	ce96,178x49,0,0[178x29,0,0,7,178x19,0,30,8]	:
+window	base	4	:zsh	0	:	7692,178x49,0,0[178x35,0,0,9,178x13,0,36,10]	:
+window	base	5	:zsh	0	:	b907,178x49,0,0[178x24,0,0,11,178x24,0,25,12]	:
+window	base	6	:zsh	0	:	6a52,178x49,0,0,13	:
+window	base	7	:vim	0	:	6a53,178x49,0,0,14	:
+window	base	8	:zsh	0	:	6a54,178x49,0,0,15	:
+window	base	9	:zsh	0	:	f90b,178x49,0,0[178x24,0,0,16,178x24,0,25,20]	:
+window	base	10	:zsh	0	:	866d,178x49,0,0[178x9,0,0{89x9,0,0,17,88x9,90,0,19},178x39,0,10,18]	:
+state	base	

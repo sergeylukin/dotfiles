@@ -1,0 +1,26 @@
+pane	base	0	0	:	0	:/Users/sergey/code/fullstackapp/nxtest	1	zsh	:
+pane	base	2	0	:	0	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend	1	zsh	:
+pane	base	3	0	:	0	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend/src/components/flamegraph/newFlameGraph	1	vim	:vim src
+pane	base	3	0	:	1	:/Users/sergey/code/src/github.com/Granulate/performance-studio	0	git	:/usr/local/bin/git diff --color-words 948ffd99~ 948ffd99
+pane	base	4	0	:	0	:/Users/sergey/code/src/github.com/Granulate/performance-studio/src/gprofiler/frontend	1	node	:node ./node_modules/.bin/yarn start-with-mock-api
+pane	base	5	0	:	0	:/Users/sergey/code/src/github.com/Granulate/gflame/example/dist	0	zsh	:
+pane	base	5	0	:	1	:/Users/sergey/code/src/github.com/Granulate/gflame	0	node	:node /Users/sergey/.nvm/versions/node/v16.13.1/bin/yarn watch
+pane	base	5	0	:	2	:/Users/sergey/code/src/github.com/Granulate/gflame/example	1	zsh	:
+pane	base	6	0	:	0	:/Users/sergey/code/src/github.com/Granulate/gflame	1	zsh	:
+pane	base	7	0	:	0	:/Users/sergey/code/src/github.com/Granulate/gflame/src/plugins/utils	1	vim	:vim src/plugins/utils/tree-clusters.js
+pane	base	7	0	:	1	:/Users/sergey/code/src/github.com/Granulate/gflame/src/plugins/utils	0	zsh	:
+pane	base	8	0	:-	0	:/Users/sergey/code/nestjs-task-management	0	zsh	:
+pane	base	8	0	:-	1	:/Users/sergey/code/nestjs-task-management	1	vim	:vim package.json
+pane	base	8	0	:-	2	:/Users/sergey/code/nestjs-task-management/src/tasks	0	vim	:vim src/app.module.ts
+pane	base	8	0	:-	3	:/Users/sergey/code/nestjs-task-management	0	zsh	:
+pane	base	9	1	:*	0	:/Users/sergey/code/nestjs-task-management/src/tasks	1	vim	:vim tasks/task.model.ts tasks/tasks.controller.ts tasks/tasks.module.ts tasks/tasks.service.ts
+window	base	0	:zsh	0	:	b43e,178x41,0,0,1	:
+window	base	2	:zsh	0	:	da53,178x41,0,0,24	:
+window	base	3	:tmux-zoom	0	:	ef09,178x41,0,0[178x20,0,0,25,178x20,0,21,31]	off
+window	base	4	:node	0	:	b444,178x41,0,0,7	:
+window	base	5	:gFlame	0	:	f48d,178x41,0,0[178x10,0,0,8,178x15,0,11,9,178x14,0,27,29]	off
+window	base	6	:gFlame	0	:	5a4f,178x41,0,0,10	off
+window	base	7	:gFlame	0	:	ef04,178x41,0,0[178x20,0,0,11,178x20,0,21,30]	off
+window	base	8	:vim	0	:-	da25,178x41,0,0[178x6,0,0,12,178x24,0,7{89x24,0,7,13,88x24,90,7,14},178x9,0,32,15]	:
+window	base	9	:vim	1	:*	5a55,178x41,0,0,16	:
+state	base	
