@@ -137,3 +137,16 @@ Open `vim` and run `:BundleInstall`
 ```
 
 Edit `~/.ssh/authorized_keys` and insert your remote PC public SSH key there without line breaks
+
+
+## Installation for maintaners
+
+```
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+```
+cat ~/.ssh/id_*** | pbcopy
+```
+
+paste buffer in https://github.com/settings/ssh/new
