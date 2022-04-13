@@ -2,7 +2,7 @@
   name = VAR_NAME
   email = VAR_EMAIL
 [init]
-  defaultBranch main
+  defaultBranch = main
 [color]
   ui = true
   interactive = true

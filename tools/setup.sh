@@ -192,7 +192,7 @@ then
     read GIT_EMAIL
   fi
 
-  sed "s|VAR_NAME|$GIT_NAME|;s|VAR_EMAIL|$GIT_EMAIL|;s|VAR_USERNAME|`whoami`|" < $dir/git/gitconfig > ~/.gitconfig
+  sed "s|VAR_NAME|\"$GIT_NAME\"|;s|VAR_EMAIL|$GIT_EMAIL|;s|VAR_USERNAME|`whoami`|" < $dir/git/gitconfig > ~/.gitconfig
   echo "...done"
 fi
 

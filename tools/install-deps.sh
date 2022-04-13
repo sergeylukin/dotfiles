@@ -8,9 +8,13 @@ chmod +x ~/code/z/z.sh
 # rebuild :)
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
+  git clone https://github.com/Homebrew/brew ~/homebrew
+  eval "$(~/homebrew/bin/brew shellenv)"
+  brew update --force --quiet
+  chmod -R go-w "$(brew --prefix)/share/zsh"
   brew tap homebrew/cask-fonts
+  brew install fzf ripgrep cowsay
   brew install --cask font-fira-code
-  brew install fzf
   /usr/local/opt/fzf/install
 fi
 
