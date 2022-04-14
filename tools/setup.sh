@@ -92,13 +92,14 @@ echo "...done"
 # INSTALL OH-MY-ZSH
 if command -v zsh > /dev/null 2>&1
 then
-  if [ ! -d ~/.oh-my-zsh ]; then
-    git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-  else
+  if [ -d ~/.oh-my-zsh ]; then
     echo "Backing up old OH-MY-ZSH files"
     cp -pR ~/.oh-my-zsh $backup_dir/
     echo "...done"
   fi
+
+  rm -fr ~/.oh-my-zsh
+  git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
   echo "Overwriting old OH-MY-ZSH files with new files"
   cp -pr $dir/oh-my-zsh/. ~/.oh-my-zsh
