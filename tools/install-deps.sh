@@ -14,7 +14,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   chmod -R go-w "$(brew --prefix)/share/zsh"
   brew tap homebrew/cask-fonts
   brew install fzf ripgrep cowsay
-  brew install --cask font-fira-code
+  brew install --cask font-fira-code brave-browser google-chrome iterm2
   /usr/local/opt/fzf/install
 fi
 
