@@ -14,8 +14,11 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew update --force --quiet
   chmod -R go-w "$(brew --prefix)/share/zsh"
   brew tap homebrew/cask-fonts
-  brew install fzf ripgrep cowsay
+  brew install fzf ripgrep cowsay tmux
   brew install --cask --force font-fira-code brave-browser google-chrome iterm2
   /usr/local/opt/fzf/install
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+  nvm install node
+
 fi
 
