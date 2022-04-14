@@ -9,6 +9,7 @@ chmod +x ~/code/z/z.sh
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   git clone https://github.com/Homebrew/brew ~/homebrew
+  export PATH=~/homebrew/bin/:$PATH
   eval "$(~/homebrew/bin/brew shellenv)"
   brew update --force --quiet
   chmod -R go-w "$(brew --prefix)/share/zsh"
