@@ -38,6 +38,9 @@ fi
 # PhpBrew - PHP environment Manager
 [[ -s "$HOME/.phpbrew/bashrc" ]] && source "$HOME/.phpbrew/bashrc"
 
+# homebrew
+eval "$(~/homebrew/bin/brew shellenv)"
+
 # Disable XON/XOFF flow control
 # By default Ctrl-s disables the flow control
 # which results in frozen terminal and it can
