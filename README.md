@@ -71,6 +71,9 @@ brew install rainbarf
 
 ## Font to use in terminal
 
+- [Meslo Nerd Font
+    patched](https://github.com/romkatv/powerlevel10k/blob/master/font.md)
+
 - [Source Code Pro](https://github.com/adobe-fonts/source-code-pro/releases)
 
 - [Inconsolata](https://github.com/google/fonts/blob/master/ofl/inconsolata/Inconsolata-Regular.ttf)
