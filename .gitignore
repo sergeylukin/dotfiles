@@ -19,3 +19,5 @@ Thumbs.db
 *~
 # Generic files not to ignore
 !.gitkeep
+
+vim/plugged/*
