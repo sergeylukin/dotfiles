@@ -8,6 +8,9 @@ chmod +x ~/code/z/z.sh
 # rebuild :)
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
+  # Make sure OS X development bundle is in place
+  xcode-select --install
+
   git clone https://github.com/Homebrew/brew ~/homebrew
   export PATH=~/homebrew/bin/:$PATH
   eval "$(~/homebrew/bin/brew shellenv)"
@@ -26,3 +29,5 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   /usr/bin/tic -xe tmux-256color terminfo.src
 fi
 
+# install vim plugins
+vim +PlugInstall +qall
