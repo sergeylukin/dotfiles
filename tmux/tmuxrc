@@ -137,3 +137,4 @@ run-shell ~/.tmux/plugins-local/extrakto/extrakto.tmux
 
 set -g default-terminal "tmux-256color"
 set -ga terminal-overrides ",*256col*:Tc"
+set -ga terminal-overrides ",*256col*:RGB"
