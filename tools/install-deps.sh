@@ -22,7 +22,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # JSON viewer
   brew install jq
 
-  brew install --cask --force font-fira-code brave-browser google-chrome iterm2
+  brew install --cask font-fira-code brave-browser google-chrome iterm2
   /usr/local/opt/fzf/install
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
   nvm install node
@@ -31,6 +31,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # https://gist.github.com/bbqtd/a4ac060d6f6b9ea6fe3aabe735aa9d95
   curl -LO https://invisible-island.net/datafiles/current/terminfo.src.gz && gunzip terminfo.src.gz
   /usr/bin/tic -xe tmux-256color terminfo.src
+  rm -f terminfo.src
 fi
 
 # install vim plugins
