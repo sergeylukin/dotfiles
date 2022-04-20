@@ -18,6 +18,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   chmod -R go-w "$(brew --prefix)/share/zsh"
   brew tap homebrew/cask-fonts
   brew install fzf ripgrep cowsay tmux htop
+
+  # JSON viewer
+  brew install jq
+
   brew install --cask --force font-fira-code brave-browser google-chrome iterm2
   /usr/local/opt/fzf/install
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
