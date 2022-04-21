@@ -21,8 +21,20 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   # JSON viewer
   brew install jq
+   
+  # better cat
+  # https://github.com/sharkdp/bat
+  brew install bat
+
+  # better ls
+  # https://the.exa.website/
+  brew install exa
+
+  # todo tasks management
+  brew install task
 
   brew install --cask font-fira-code brave-browser google-chrome iterm2
+  brew install --cask karabiner-elements
   /usr/local/opt/fzf/install
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
   nvm install node

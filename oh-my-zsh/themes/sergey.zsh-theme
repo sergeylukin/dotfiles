@@ -30,7 +30,7 @@ print -rP '
 $fg[yellow]$(get_pwd) ⌚ %{$fg_bold[red]%}%*%{$reset_color%}$(put_spacing)$(git_prompt_info)'
 }
 
-PROMPT='%{$reset_color%}→ '
+PROMPT="%{$reset_color%}→ "
 
 ZSH_THEME_GIT_PROMPT_PREFIX="[git:"
 ZSH_THEME_GIT_PROMPT_SUFFIX="]$reset_color"

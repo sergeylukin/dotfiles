@@ -35,6 +35,14 @@ alias ld='ls -lF | grep "^d"'
 # list all directories
 alias lad='ls -la | grep "^d"'
 alias tree='tree -C'
+alias lll="exa -l -g --icons"
+alias lss="exa --icons"
+alias lt="exa --tree --icons -a -I '.git|__pycache__|.mypy_cache|.ipynb_checkpoints'"
+
+
+# show file previews for fzf using bat
+alias fp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+
 
 # `cat` with beautiful colors. requires Pygments installed
 # inspired by [Paul Irish](https://github.com/paulirish/dotfiles)
