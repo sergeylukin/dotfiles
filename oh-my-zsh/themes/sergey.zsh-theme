@@ -16,7 +16,7 @@ function put_spacing() {
   fi
 
   local termwidth
-  (( termwidth = ${COLUMNS} - 14 - ${#HOST} - ${#$(get_pwd)} - ${git} ))
+  (( termwidth = ${COLUMNS} - 0 - ${#HOST} - ${#$(get_pwd)} - ${git} ))
 
   local spacing=""
   for i in {1..$termwidth}; do
@@ -27,7 +27,7 @@ function put_spacing() {
 
 function precmd() {
 print -rP '
-$fg[cyan]%n@%m: $fg[yellow]$(get_pwd)$(put_spacing)$(git_prompt_info)'
+$fg[yellow]$(get_pwd) ⌚ %{$fg_bold[red]%}%*%{$reset_color%}$(put_spacing)$(git_prompt_info)'
 }
 
 PROMPT='%{$reset_color%}→ '
