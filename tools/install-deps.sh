@@ -11,6 +11,13 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # Make sure OS X development bundle is in place
   xcode-select --install
 
+  # install iterm2 shell integration
+  if [ "$TERM_PROGRAM" = "iTerm.app" ]; then
+    echo "Running in iTerm2 - installing shell integration\n"
+    curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
+  fi
+
+
   git clone https://github.com/Homebrew/brew ~/homebrew
   export PATH=~/homebrew/bin/:$PATH
   eval "$(~/homebrew/bin/brew shellenv)"
