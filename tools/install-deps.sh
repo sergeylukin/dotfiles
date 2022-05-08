@@ -28,6 +28,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   # JSON viewer
   brew install jq
+
+  # FTP & friends
+  brew install inetutils
    
   # better cat
   # https://github.com/sharkdp/bat
