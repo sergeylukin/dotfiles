@@ -4,11 +4,18 @@
 [init]
   defaultBranch = main
 [color]
-  ui = true
-  interactive = true
-  branch = true
-  diff = true
-  status = true
+  ui = always
+  interactive = always
+  branch = always
+  diff = always
+  status = always
+  advice = always
+  grep = always
+  push = always
+  remote = always
+  showBranch = always
+  transport = always
+  ui = always
 [color "branch"]
   current = yellow reverse
   local = yellow 
