@@ -31,6 +31,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   # FTP & friends
   brew install inetutils
+
+  # better diff
+  # https://github.com/ymattw/ydiff
+  brew install ydiff
    
   # better cat
   # https://github.com/sharkdp/bat
@@ -54,6 +58,15 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   curl -LO https://invisible-island.net/datafiles/current/terminfo.src.gz && gunzip terminfo.src.gz
   /usr/bin/tic -xe tmux-256color terminfo.src
   rm -f terminfo.src
+
+  # Install GNU utilities with "g" prefix
+  # For example, if you find a great StackOverflow answer containing
+  # GNU awk or sed solution then you could test it by running `gawk` and `gsed`
+  # respectively
+  #
+  # More details:
+  # https://apple.stackexchange.com/a/69332
+  brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt grep
 fi
 
 # install vim plugins
