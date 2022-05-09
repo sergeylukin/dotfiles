@@ -67,6 +67,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # More details:
   # https://apple.stackexchange.com/a/69332
   brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt grep
+
+
+  # MySQL client
+  brew install mysql
 fi
 
 # install vim plugins
