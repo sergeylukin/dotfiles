@@ -49,6 +49,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   brew install --cask font-fira-code brave-browser google-chrome iterm2
   brew install --cask karabiner-elements
+  brew install --cask visual-studio-code
   /usr/local/opt/fzf/install
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
   nvm install node
