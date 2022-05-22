@@ -19,6 +19,10 @@ normal! zo
 normal! zo
 352
 normal! zo
+382
+normal! zo
+400
+normal! zo
 let &g:so = s:so_save | let &g:siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :
