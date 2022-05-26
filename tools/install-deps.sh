@@ -51,8 +51,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install --cask karabiner-elements
   brew install --cask visual-studio-code
   /usr/local/opt/fzf/install
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-  nvm install node
+
+  # insatll Volta - favorite Node versions Managercurl
+  curl https://get.volta.sh | bash
+  volta install node
 
   # ncurses to fix keyboard behavior
   # https://gist.github.com/bbqtd/a4ac060d6f6b9ea6fe3aabe735aa9d95
