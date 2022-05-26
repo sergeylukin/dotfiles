@@ -102,7 +102,8 @@ then
   git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
   echo "Overwriting old OH-MY-ZSH files with new files"
-  cp -pr $dir/oh-my-zsh/. ~/.oh-my-zsh
+  ln -s ${MY_DOTFILES_DIR}/oh-my-zsh/plugins ~/.oh-my-zsh/custom/
+  ln -s ${MY_DOTFILES_DIR}/oh-my-zsh/themes ~/.oh-my-zsh/custom/
   echo "...done"
   echo "Adding OH-MY-ZSH configuration file link to ~/.zshrc"
   # because we don't want to change anything like that in repo

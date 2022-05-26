@@ -60,7 +60,7 @@ alias h='history'
 alias vmore="vim -u ~/.vimrc.more -"
 
 # Git shortcuts
-alias git=hub # use ~/bin/hub as wrapper for git
+# alias git=hub # use ~/bin/hub as wrapper for git
 alias gitsh='gitsh --git $(which hub)'
 alias grcd='cd $(git root)'
 alias s='git status --short --branch '

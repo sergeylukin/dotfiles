@@ -24,7 +24,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew update --force --quiet
   chmod -R go-w "$(brew --prefix)/share/zsh"
   brew tap homebrew/cask-fonts
-  brew install fzf ripgrep cowsay tmux htop tree wget
+  brew install fzf ripgrep cowsay tmux htop tree wget gh
 
   # JSON viewer
   brew install jq
@@ -69,7 +69,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   #
   # More details:
   # https://apple.stackexchange.com/a/69332
-  brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt grep
+  brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt grep zsh-completions
 
 
   # MySQL client

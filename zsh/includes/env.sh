@@ -1,6 +1,6 @@
 export EDITOR=vim
 if [[ ${TERM} != *"256color"* ]];then
-    export TERM=xterm-256color
+  export TERM=xterm-256color
 fi
 export GRAILS_HOME=~/bin/grails-2.2.1
 export PATH=/usr/local/sbin:/usr/local/heroku/bin:./node_modules/.bin:~/bin:~/bin.local:$GRAILS_HOME/bin:$PATH
@@ -90,3 +90,9 @@ fi
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  autoload -Uz compinit
+  compinit
+fi

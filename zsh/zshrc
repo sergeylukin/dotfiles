@@ -1,3 +1,4 @@
+export MY_DOTFILES_DIR=$(dirname $(dirname ${BASH_SOURCE:-$0}))
 . ~/.dotfiles/zsh/includes/env.sh
 . ~/.dotfiles/zsh/includes/functions.sh
 . ~/.dotfiles/zsh/includes/aliases.sh
