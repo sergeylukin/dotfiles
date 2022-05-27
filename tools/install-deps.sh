@@ -76,5 +76,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install mysql
 fi
 
+# Install Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 # install vim plugins
 vim +PlugInstall +qall
