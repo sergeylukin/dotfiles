@@ -24,7 +24,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew update --force --quiet
   chmod -R go-w "$(brew --prefix)/share/zsh"
   brew tap homebrew/cask-fonts
-  brew install fzf ripgrep cowsay tmux htop tree wget gh
+  brew install fzf ripgrep cowsay tmux htop tree wget
+
+  # Github CLI
+  brew install gh
 
   # JSON viewer
   brew install jq
