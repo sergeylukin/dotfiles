@@ -77,6 +77,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   # MySQL client
   brew install mysql
+
+  brew install brevdev/homebrew-brev/brev
 fi
 
 # Install Rust
