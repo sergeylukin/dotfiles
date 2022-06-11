@@ -89,10 +89,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   brew install neovim
 
+  brew install jesseduffield/lazydocker/lazydocker
+
   # install GO
   brew install golang
 
-  # insatll cheat (enhancement to man command) command
+  # install cheat (enhancement to man command) command
   go install github.com/cheat/cheat/cmd/cheat@latest
 fi
 
