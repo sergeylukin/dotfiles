@@ -7,6 +7,9 @@ chmod +x ~/code/z/z.sh
 # also consider moving over your current .z file if possible. it's painful to
 # rebuild :)
 
+# Install pnpm
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # Make sure OS X development bundle is in place
   xcode-select --install
@@ -59,6 +62,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   curl https://get.volta.sh | bash
   volta install node
 
+  npm install -g rayli
+
   # ncurses to fix keyboard behavior
   # https://gist.github.com/bbqtd/a4ac060d6f6b9ea6fe3aabe735aa9d95
   curl -LO https://invisible-island.net/datafiles/current/terminfo.src.gz && gunzip terminfo.src.gz
@@ -79,6 +84,16 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install mysql
 
   brew install brevdev/homebrew-brev/brev
+
+  brew install jesseduffield/lazydocker/lazydocker
+
+  brew install neovim
+
+  # install GO
+  brew install golang
+
+  # insatll cheat (enhancement to man command) command
+  go install github.com/cheat/cheat/cmd/cheat@latest
 fi
 
 # Install Rust
