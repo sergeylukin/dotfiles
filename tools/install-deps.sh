@@ -26,7 +26,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   eval "$(~/homebrew/bin/brew shellenv)"
   brew update --force --quiet
   chmod -R go-w "$(brew --prefix)/share/zsh"
-  brew tap homebrew/cask-fonts
   brew install fzf ripgrep cowsay tmux htop tree wget
 
   # Github CLI
@@ -53,7 +52,15 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # todo tasks management
   brew install task
 
-  brew install --cask font-fira-code brave-browser google-chrome iterm2
+  # Fonts
+  brew tap homebrew/cask-fonts
+  brew install --cask font-fira-code font-Fira-Code-nerd-font
+
+  # Starship shell
+  # https://starship.rs/guide/#%F0%9F%9A%80-installation
+  brew install starship
+
+  brew install --cask brave-browser google-chrome iterm2
   brew install --cask karabiner-elements
   brew install --cask visual-studio-code
   /usr/local/opt/fzf/install
@@ -93,6 +100,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   # install GO
   brew install golang
+
+  # QT for this cool term:
+  # https://github.com/sergeylukin/cool-retro-term
+  brew install qt
 
   # install cheat (enhancement to man command) command
   go install github.com/cheat/cheat/cmd/cheat@latest
