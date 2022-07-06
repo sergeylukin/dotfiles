@@ -110,6 +110,11 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # https://github.com/sergeylukin/cool-retro-term
   brew install qt
 
+  brew install opencv tesseract
+
+  brew tap ethereum/ethereum
+  brew install solidity
+
   # install cheat (enhancement to man command) command
   go install github.com/cheat/cheat/cmd/cheat@latest
 fi
