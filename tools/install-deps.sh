@@ -65,6 +65,11 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install --cask visual-studio-code
   /usr/local/opt/fzf/install
 
+  # install torrent client
+  brew install --cask deluge
+  [ -d ~/torrents ] || mkdir ~/torrents
+  [ -d ~/torrents_downloaded ] || mkdir ~/torrents_downloaded
+
   # insatll Volta - favorite Node versions Managercurl
   curl https://get.volta.sh | bash
   volta install node
