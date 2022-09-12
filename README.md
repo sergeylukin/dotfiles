@@ -9,14 +9,13 @@ Install ZSH and OH-MY-ZSH (make sure to switch your default shell to ZSH using
 software at your own risk.
 
 ```html
-curl -L https://github.com/sergeylukin/dotfiles/raw/master/tools/install.sh | sh
+curl -L https://github.com/sergeylukin/dotfiles/raw/master/tools/install.sh | bash
 ```
 
 or
 
 ```html
-wget --no-check-certificate
-https://github.com/sergeylukin/dotfiles/raw/master/tools/install.sh -O - | sh
+wget --no-check-certificate https://github.com/sergeylukin/dotfiles/raw/master/tools/install.sh -O - | bash
 ```
 
 Installation script installs only dotfiles for the components that are installed on
@@ -72,7 +71,7 @@ brew install rainbarf
 ## Font to use in terminal
 
 - [Meslo Nerd Font
-    patched](https://github.com/romkatv/powerlevel10k/blob/master/font.md)
+  patched](https://github.com/romkatv/powerlevel10k/blob/master/font.md)
 
 - [Source Code Pro](https://github.com/adobe-fonts/source-code-pro/releases)
 
@@ -140,7 +139,6 @@ Open `vim` and run `:BundleInstall`
 ```
 
 Edit `~/.ssh/authorized_keys` and insert your remote PC public SSH key there without line breaks
-
 
 ## Installation for maintaners
 

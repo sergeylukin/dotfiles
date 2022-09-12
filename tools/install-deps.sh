@@ -1,5 +1,3 @@
-#!/usr/bin/env sh
-
 # https://github.com/rupa/z
 mkdir -p ~/code/z
 curl https://raw.github.com/rupa/z/master/z.sh > ~/code/z/z.sh
@@ -7,10 +5,8 @@ chmod +x ~/code/z/z.sh
 # also consider moving over your current .z file if possible. it's painful to
 # rebuild :)
 
-# Install pnpm
-curl -fsSL https://get.pnpm.io/install.sh | sh -
-
 if [[ "$OSTYPE" == "darwin"* ]]; then
+
   # Make sure OS X development bundle is in place
   xcode-select --install
 
@@ -127,6 +123,13 @@ fi
 if [ ! command -v rustc > /dev/null 2>&1 ]
 then
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+fi
+
+
+if [ ! command -v pnpm > /dev/null 2>&1 ]
+then
+  # Install pnpm
+  curl -fsSL https://get.pnpm.io/install.sh | sh -
 fi
 
 # install vim plugins

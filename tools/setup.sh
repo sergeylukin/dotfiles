@@ -1,4 +1,3 @@
-#!/usr/bin/env sh
 ############################
 # This script creates symlinks/copies dotfiles for
 # ZSH, OH-MY-ZSH, VIM, GIT etc. and only if they are installed and have their configuration files present.
@@ -11,10 +10,10 @@
 
 dir=~/.dotfiles                    # dotfiles directory
 timestamp=`date +%s`               # use timestamp in backup dir names to keep
+MY_DOTFILES_DIR=$(realpath $(dirname $(dirname ${BASH_SOURCE:-$0})))
 # track of backups
-backup_dir=$dir/backup/$timestamp  # old dotfiles backup directory
+backup_dir=$MY_DOTFILES_DIR/backup/$timestamp  # old dotfiles backup directory
 ##########
-
 
 ########## Detect OS
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -36,7 +35,7 @@ else
 fi
 
 if ! command -v rg > /dev/null 2>&1; then
-  if [[ "$platform" -eq "osx" ]]; then
+  if [[ "$platform" == "osx" ]]; then
     read -p "We need to install 'rg' Are you OK with that? " -n 1 -r
     echo    # (optional) move to a new line
     if [[ $REPLY =~ ^[Yy]$ ]]
@@ -61,7 +60,7 @@ then
 fi
 
 echo "Creating symlink to BIN directory"
-ln -s $dir/bin ~/bin
+ln -Fs $MY_DOTFILES_DIR/bin ~
 
 # Create directory for local binaries which shouldn't be part of Repository
 if [ ! -d ~/bin.local ]
@@ -77,7 +76,7 @@ then
   echo "...done"
   echo "Creating symlink to new ZSH files"
   touch ~/.zshrc
-  echo ". $dir/zsh/zshrc" >> ~/.zshrc
+  echo ". $MY_DOTFILES_DIR/zsh/zshrc" >> ~/.zshrc
   echo "...done"
 fi
 
@@ -86,7 +85,7 @@ echo "Backing up auto-completion files"
 mv ~/.completion $backup_dir/ > /dev/null 2>&1
 echo "...done"
 echo "Creating symlink to new auto-completion files"
-ln -s $dir/completion ~/.completion
+ln -s $MY_DOTFILES_DIR/completion ~/.completion
 echo "...done"
 
 # INSTALL OH-MY-ZSH
@@ -94,7 +93,7 @@ if command -v zsh > /dev/null 2>&1
 then
   if [ -d ~/.oh-my-zsh ]; then
     echo "Backing up old OH-MY-ZSH files"
-    cp -pR ~/.oh-my-zsh $backup_dir/
+    mv ~/.oh-my-zsh $backup_dir/
     echo "...done"
   fi
 
@@ -102,14 +101,14 @@ then
   git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
   echo "Overwriting old OH-MY-ZSH files with new files"
-  ln -s ${MY_DOTFILES_DIR}/oh-my-zsh/plugins ~/.oh-my-zsh/custom/
-  ln -s ${MY_DOTFILES_DIR}/oh-my-zsh/themes ~/.oh-my-zsh/custom/
+  rm -fr ~/.oh-my-zsh/custom
+  ln -s $MY_DOTFILES_DIR/oh-my-zsh ~/.oh-my-zsh/custom
   echo "...done"
   echo "Adding OH-MY-ZSH configuration file link to ~/.zshrc"
   # because we don't want to change anything like that in repo
   # we do it in ~/.zshrc
-  # $dir/zsh/zshrc is still in active use and all changes in it will take place
-  echo ". $dir/zsh/includes/oh-my-zsh" >> ~/.zshrc
+  # $MY_DOTFILES_DIR/zsh/zshrc is still in active use and all changes in it will take place
+  echo ". $MY_DOTFILES_DIR/zsh/includes/oh-my-zsh" >> ~/.zshrc
   echo "...done"
 
   if [ ! -n "`$SHELL -c 'echo $ZSH_VERSION'`" ]; then
@@ -138,7 +137,7 @@ if [ ! -d ~/.hammerspoon ]; then
 fi
 echo "Adding hammerspoon scripts"
 rm -f ~/.hammerspoon/init.lua
-ln -s $dir/hammerspoon/init.lua ~/.hammerspoon/init.lua
+ln -s $MY_DOTFILES_DIR/hammerspoon/init.lua ~/.hammerspoon/init.lua
 echo "...done"
 
 # INSTALL VIM DOTFILES
@@ -149,8 +148,8 @@ then
   mv ~/.vimrc $backup_dir/ > /dev/null 2>&1
   echo "...done"
   echo "Creating symlink to new VIM files"
-  ln -s $dir/vim ~/.vim
-  ln -s $dir/vim/vimrc ~/.vimrc
+  ln -s $MY_DOTFILES_DIR/vim ~/.vim
+  ln -s $MY_DOTFILES_DIR/vim/vimrc ~/.vimrc
   echo "...done"
 fi
 
@@ -176,7 +175,7 @@ then
   fi
 
   echo "Creating symlink to new --global .gitignore file"
-  ln -s $dir/git/gitignore_global ~/.gitignore_global
+  ln -s $MY_DOTFILES_DIR/git/gitignore_global ~/.gitignore_global
   echo "...done"
 
   echo "Creating new GIT --global config file"
@@ -194,7 +193,7 @@ then
     read GIT_EMAIL
   fi
 
-  sed "s|VAR_NAME|\"$GIT_NAME\"|;s|VAR_EMAIL|$GIT_EMAIL|;s|VAR_USERNAME|`whoami`|" < $dir/git/gitconfig > ~/.gitconfig
+  sed "s|VAR_NAME|\"$GIT_NAME\"|;s|VAR_EMAIL|$GIT_EMAIL|;s|VAR_USERNAME|`whoami`|" < $MY_DOTFILES_DIR/git/gitconfig > ~/.gitconfig
   echo "...done"
 fi
 
@@ -205,8 +204,8 @@ then
   mv ~/.tmux.conf $backup_dir/ > /dev/null 2>&1
   echo "...done"
   echo "Creating symlink to new TMUX files"
-  ln -s $dir/tmux/tmuxrc ~/.tmux.conf
-  ln -s $dir/tmux ~/.tmux
+  ln -s $MY_DOTFILES_DIR/tmux/tmuxrc ~/.tmux.conf
+  ln -s $MY_DOTFILES_DIR/tmux ~/.tmux
   echo "...done"
 fi
 
@@ -217,7 +216,7 @@ then
   mv ~/.screenrc $backup_dir/ > /dev/null 2>&1
   echo "...done"
   echo "Creating symlink to new SCREEN files"
-  ln -s $dir/screen/screenrc ~/.screenrc
+  ln -s $MY_DOTFILES_DIR/screen/screenrc ~/.screenrc
   echo "...done"
 fi
 
