@@ -117,10 +117,17 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   # install cheat (enhancement to man command) command
   go install github.com/cheat/cheat/cmd/cheat@latest
+
+  # https://cbrgm.net/post/2021-05-5-setup-macos/
+  brew install koekeishiya/formulae/yabai
+  brew services start yabai
 fi
 
 # Install Rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+if [ ! command -v rustc > /dev/null 2>&1 ]
+then
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+fi
 
 # install vim plugins
 vim +PlugInstall +qall
