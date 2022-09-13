@@ -1,3 +1,7 @@
+# Setting for the new UTF-8 terminal support
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 export MY_DOTFILES_DIR=$(dirname $(dirname ${BASH_SOURCE:-$0}))
 . ~/.dotfiles/zsh/includes/env.sh
 . ~/.dotfiles/zsh/includes/functions.sh
