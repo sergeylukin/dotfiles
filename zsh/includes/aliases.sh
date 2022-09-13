@@ -119,3 +119,6 @@ alias cppcompile='c++ -std=c++11 -stdlib=libc++'
 # Visual Studio Code shortcut
 # Taken from https://stackoverflow.com/a/33303456
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+
+alias bashsc="SHELL=$(which bash) && tmux -L bash-tmux-socket new -s bash-session"
+alias bashsca="SHELL=$(which bash) && tmux -L bash-tmux-socket attach -t bash-session"
