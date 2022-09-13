@@ -119,14 +119,24 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew services start yabai
 fi
 
+# Install Cowsay
+if ! command -v cowsay > /dev/null 2>&1
+then
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install cowsay
+  elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    sudo apt install cowsay -y
+  fi
+fi
+
 # Install Rust
-if [ ! command -v rustc > /dev/null 2>&1 ]
+if ! command -v rustc > /dev/null 2>&1
 then
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 fi
 
 
-if [ ! command -v pnpm > /dev/null 2>&1 ]
+if ! command -v pnpm > /dev/null 2>&1
 then
   # Install pnpm
   curl -fsSL https://get.pnpm.io/install.sh | sh -
