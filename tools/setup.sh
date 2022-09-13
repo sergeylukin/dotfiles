@@ -16,26 +16,26 @@ backup_dir=$MY_DOTFILES_DIR/backup/$timestamp  # old dotfiles backup directory
 ##########
 
 ########## Detect OS
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+if [[ $OSTYPE == "linux-gnu"* ]]; then
   platform="linux"
-elif [[ "$OSTYPE" == "darwin"* ]]; then
+elif [[ $OSTYPE == "darwin"* ]]; then
   platform="osx"
-elif [[ "$OSTYPE" == "cygwin" ]]; then
+elif [[ $OSTYPE == "cygwin" ]]; then
   # POSIX compatibility layer and Linux environment emulation for Windows
   platform="windows-linux"
-elif [[ "$OSTYPE" == "msys" ]]; then
+elif [[ $OSTYPE == "msys" ]]; then
   # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
   platform="windows-gnu"
-elif [[ "$OSTYPE" == "win32" ]]; then
+elif [[ $OSTYPE == "win32" ]]; then
   platform="windows"
-elif [[ "$OSTYPE" == "freebsd"* ]]; then
+elif [[ $OSTYPE == "freebsd"* ]]; then
   platform="freebsd"
 else
   platform="unknown"
 fi
 
 if ! command -v rg > /dev/null 2>&1; then
-  if [[ "$platform" == "osx" ]]; then
+  if [[ $platform == "osx" ]]; then
     read -p "We need to install 'rg' Are you OK with that? " -n 1 -r
     echo    # (optional) move to a new line
     if [[ $REPLY =~ ^[Yy]$ ]]
@@ -112,8 +112,12 @@ then
   echo "...done"
 
   if [ ! -n "`$SHELL -c 'echo $ZSH_VERSION'`" ]; then
-    echo "Notice! Your current shell is NOT ZSH"
-    echo "I suggest you change your shell to ZSH with `chsh -s /bin/zsh`"
+    echo "Notice! Your current shell is NOT ZSH, let's try to autofix it:"
+    if [[ $platform == "osx" ]]; then
+      chsh -s /bin/zsh
+    elif [[ $platform == "linux" ]]; then
+      sudo usermod -s /usr/bin/zsh $(whoami)
+    fi
   fi
 fi
 
@@ -175,6 +179,7 @@ then
   fi
 
   echo "Creating symlink to new --global .gitignore file"
+  rm -f ~/.gitignore_global
   ln -s $MY_DOTFILES_DIR/git/gitignore_global ~/.gitignore_global
   echo "...done"
 
@@ -205,6 +210,7 @@ then
   echo "...done"
   echo "Creating symlink to new TMUX files"
   ln -s $MY_DOTFILES_DIR/tmux/tmuxrc ~/.tmux.conf
+  mv ~/.tmux $backup_dir/ > /dev/null 2>&1
   ln -s $MY_DOTFILES_DIR/tmux ~/.tmux
   echo "...done"
 fi

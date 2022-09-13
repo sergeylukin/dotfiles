@@ -39,7 +39,9 @@ fi
 [[ -s "$HOME/.phpbrew/bashrc" ]] && source "$HOME/.phpbrew/bashrc"
 
 # homebrew
-eval "$(~/homebrew/bin/brew shellenv)"
+if [[ $OSTYPE == "darwin"* ]]; then
+  eval "$(~/homebrew/bin/brew shellenv)"
+fi
 
 # Disable XON/XOFF flow control
 # By default Ctrl-s disables the flow control
