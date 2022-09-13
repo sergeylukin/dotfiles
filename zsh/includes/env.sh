@@ -16,6 +16,11 @@ export MANPATH=/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH
 export PATH=~/.dotfiles/composer-packages/vendor/bin:$PATH
 export PATH=~/.composer/vendor/bin:$PATH
 
+# Linux games
+if [ -d /usr/games ]; then
+  export PATH=${PATH}:/usr/games
+fi
+
 
 # Add git-subrepo to $PATH
 # More details: https://github.com/ingydotnet/git-subrepo
@@ -98,3 +103,4 @@ if type brew &>/dev/null; then
   autoload -Uz compinit
   compinit
 fi
+
