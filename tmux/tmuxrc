@@ -3,6 +3,12 @@ set -g @plugin 'tmux-plugins/tpm'
 # use vi mode
 setw -g mode-keys vi
 
+# reset the shell DISPLAY variable in a tmux session over ssh
+# more details:
+# https://unix.stackexchange.com/a/475884/39019
+# https://goosebearingbashshell.github.io/2017/12/07/reset-display-variable-in-tmux.html
+set-option -g update-environment "SSH_ASKPASS SSH_AUTH_SOCK SSH_AGENT_PID SSH_CONNECTION WINDOWID XAUTHORITY"
+
 # remap prefix to Control + a
 set -g prefix C-a
 unbind C-b
