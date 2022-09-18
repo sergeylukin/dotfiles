@@ -9,13 +9,13 @@ Install ZSH and OH-MY-ZSH (make sure to switch your default shell to ZSH using
 software at your own risk.
 
 ```html
-curl -L https://github.com/sergeylukin/dotfiles/raw/master/tools/install.sh | bash
+curl -L https://github.com/sergeylukin/dotfiles/raw/master/tools/install.sh | zsh
 ```
 
 or
 
 ```html
-wget --no-check-certificate https://github.com/sergeylukin/dotfiles/raw/master/tools/install.sh -O - | bash
+wget --no-check-certificate https://github.com/sergeylukin/dotfiles/raw/master/tools/install.sh -O - | zsh
 ```
 
 Installation script installs only dotfiles for the components that are installed on

@@ -1,3 +1,7 @@
+if [ ! -n "${DF_FLAGS_COLLECTED+1}" ]; then
+  source ./collect-flags.sh
+fi
+
 # https://github.com/rupa/z
 mkdir -p ~/code/z
 curl https://raw.github.com/rupa/z/master/z.sh > ~/code/z/z.sh
@@ -5,7 +9,7 @@ chmod +x ~/code/z/z.sh
 # also consider moving over your current .z file if possible. it's painful to
 # rebuild :)
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
+if [[ $DF_PLATFORM == "osx" ]]; then
 
   # Make sure OS X development bundle is in place
   xcode-select --install
@@ -57,14 +61,18 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install starship
 
   brew install --cask brave-browser google-chrome iterm2
-  brew install --cask karabiner-elements
+  if [ "$DF_HOME_MODE" = true ]; then
+    brew install --cask karabiner-elements
+  fi
   brew install --cask visual-studio-code
   /usr/local/opt/fzf/install
 
-  # install torrent client
-  brew install --cask deluge
-  [ -d ~/torrents ] || mkdir ~/torrents
-  [ -d ~/torrents_downloaded ] || mkdir ~/torrents_downloaded
+  if [ "$DF_HOME_MODE" = true ]; then
+    # install torrent client
+    brew install --cask deluge
+    [ -d ~/torrents ] || mkdir ~/torrents
+    [ -d ~/torrents_downloaded ] || mkdir ~/torrents_downloaded
+  fi
 
   # insatll Volta - favorite Node versions Managercurl
   curl https://get.volta.sh | bash
@@ -88,8 +96,19 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt grep zsh-completions
 
 
-  # MySQL client
-  brew install mysql
+  # all the stuff I definitely don't need at work
+  if [ "$DF_HOME_MODE" = true ]; then
+    brew install mysql
+    brew install golang
+    brew install opencv tesseract
+
+    brew tap ethereum/ethereum
+    brew install solidity
+
+    # https://cbrgm.net/post/2021-05-5-setup-macos/
+    brew install koekeishiya/formulae/yabai
+    brew services start yabai
+  fi
 
   brew install brevdev/homebrew-brev/brev
 
@@ -99,32 +118,20 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   brew install jesseduffield/lazydocker/lazydocker
 
-  # install GO
-  brew install golang
-
   # QT for this cool term:
   # https://github.com/sergeylukin/cool-retro-term
   brew install qt
 
-  brew install opencv tesseract
-
-  brew tap ethereum/ethereum
-  brew install solidity
-
   # install cheat (enhancement to man command) command
   go install github.com/cheat/cheat/cmd/cheat@latest
-
-  # https://cbrgm.net/post/2021-05-5-setup-macos/
-  brew install koekeishiya/formulae/yabai
-  brew services start yabai
 fi
 
 # Install Cowsay
 if ! command -v cowsay > /dev/null 2>&1
 then
-  if [[ "$OSTYPE" == "darwin"* ]]; then
+  if [[ "$DF_PLATFORM" == "osx" ]]; then
     brew install cowsay
-  elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  elif [[ "$DF_PLATFORM" == "linux" ]]; then
     sudo apt install cowsay -y
   fi
 fi
@@ -140,6 +147,11 @@ if ! command -v pnpm > /dev/null 2>&1
 then
   # Install pnpm
   curl -fsSL https://get.pnpm.io/install.sh | sh -
+fi
+
+if ! command -v nvm > /dev/null 2>&1
+then
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 fi
 
 # install vim plugins

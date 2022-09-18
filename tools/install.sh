@@ -1,3 +1,4 @@
+#!/bin/zsh
 ############################
 # Fetch repo and run setup script
 ############################
@@ -14,6 +15,8 @@ hash git >/dev/null && git clone https://github.com/sergeylukin/dotfiles.git ~/.
   echo "Please install Git.\n"
   exit
 }
+
+. ~/.dotfiles/tools/collect-flags.sh
 
 # install dependencies
 . ~/.dotfiles/tools/install-deps.sh
