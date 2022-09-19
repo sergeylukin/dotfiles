@@ -85,7 +85,7 @@ function sadd() { git subtree add --prefix=$1 $1 master }
 # Undo a `git push`
 alias undopush="git push -f origin HEAD~:master"
 alias lg='git log -p'
-alias lol='git log --graph --decorate --abbrev-commit --date=relative --pretty=format:"%C(yellow)%h%C(reset) %C(black)%ad%C(reset) %C(blue)%an%C(reset)%C(red)%d%C(reset) %s"'
+alias lol='git log --graph --decorate --abbrev-commit --date=relative --pretty=format:"%C(yellow)%h%C(reset) %C(black)%ad%C(reset) %C(blue)%an%C(reset)%C(red)%d%C(reset) %B"'
 alias lola='lol --all'
 # Show files ignored by git
 alias ign='git ls-files -o -i --exclude-standard'
@@ -120,5 +120,10 @@ alias cppcompile='c++ -std=c++11 -stdlib=libc++'
 # Taken from https://stackoverflow.com/a/33303456
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
-alias bashsc="SHELL=$(which bash) && tmux -L bash-tmux-socket new -s bash-session"
-alias bashsca="SHELL=$(which bash) && tmux -L bash-tmux-socket attach -t bash-session"
+alias bashsc="SHELL=$(which bash) && tmux -L bash-tmux-socket new -s bash-tmux"
+alias bashsca="SHELL=$(which bash) && tmux -L bash-tmux-socket attach -t bash-tmux"
+
+alias lzd='lazydocker'
+
+# https://dns.toys
+function dy { dig +noall +answer +additional "$1" @dns.toys; }

@@ -139,13 +139,15 @@ set t_Co=256 " Enable 256 colors mode
 " Select colorscheme from ~/.vim/colors/
 " if has('gui_running')
 "   colorscheme solarized
-  set background=dark " Used by some colorschemes (for example Solarized theme may be 'dark' or 'light')
+set background=dark " Used by some colorschemes (for example Solarized theme may be 'dark' or 'light')
 " else
 "   colorscheme dante
 " endif
- let &t_ut=''
+let &t_ut=''
 " Show lines numbers
 set number
+" use cursor relative line numbers
+set relativenumber
 " use unit file format for all files
 set ffs=unix,dos
 set ff=unix
@@ -318,19 +320,6 @@ Bundle 'gmarik/vundle'
 " let g:ale_fix_on_save = 1
 " let g:ale_open_list = 1
 
-Bundle 'tobyS/vmustache'
-Bundle 'evidens/vim-twig'
-
-Bundle 'SirVer/ultisnips'
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsListSnippets="<c-t>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-Bundle 'tobyS/pdv'
-let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
-nnoremap <buffer> <C-p> :call pdv#DocumentWithSnip()<CR>
-
 " PHP-CS-Fixer VIM plugin
 " Correct visual representation of code according to PSR standards
 "
@@ -347,6 +336,9 @@ nnoremap <silent><leader>ff :call PhpCsFixerFixFile()<CR>
 " }}}
 
 
+" Source Vim configuration file and install plugins
+nnoremap <silent><leader>1 :source ~/.vimrc \| :PlugInstall<CR>
+
 "---------------------------"
 " Plug
 " https://github.com/junegunn/vim-plug {{{
@@ -354,13 +346,13 @@ nnoremap <silent><leader>ff :call PhpCsFixerFixFile()<CR>
 " Install vim-plug if not found
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
 
 " Run PlugInstall if there are missing plugins
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \| PlugInstall --sync | source $MYVIMRC
-\| endif
+      \| PlugInstall --sync | source $MYVIMRC
+      \| endif
 " }}}
 
 " Specify a directory for plugins
@@ -378,6 +370,44 @@ Plug 'cocopon/iceberg.vim'
 Plug 'joshdick/onedark.vim'
 
 
+
+Plug 'pangloss/vim-javascript'    " JavaScript support
+Plug 'leafgarland/typescript-vim' " TypeScript syntax
+Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
+" Plug 'jparise/vim-graphql'        " GraphQL syntax
+
+Plug 'tomtom/tcomment_vim'
+map <leader>c <C-_><C-_>
+
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+
+" Expand
+imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
+smap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
+
+" Expand or jump
+imap <expr> <C-k>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-k>'
+smap <expr> <C-k>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-k>'
+
+" Jump forward or backward
+imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
+smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
+imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+
+" Select or cut text to use as $TM_SELECTED_TEXT in the next snippet.
+" See https://github.com/hrsh7th/vim-vsnip/pull/50
+nmap        s   <Plug>(vsnip-select-text)
+xmap        s   <Plug>(vsnip-select-text)
+nmap        S   <Plug>(vsnip-cut-text)
+xmap        S   <Plug>(vsnip-cut-text)
+
+" If you want to use snippet for multiple filetypes, you can `g:vsnip_filetypes` for it.
+let g:vsnip_filetypes = {}
+let g:vsnip_filetypes.javascriptreact = ['javascript']
+let g:vsnip_filetypes.typescriptreact = ['typescript']
+
 "---------------------------"
 " Plug - File types {{{
 " Support JS/JSX highlighting etc.
@@ -393,6 +423,7 @@ Plug 'editorconfig/editorconfig-vim'
 
 " Plug 'jxnblk/vim-mdx-js'
 Plug 'pappasam/vim-filetype-formatter'
+Plug 'TovarishFin/vim-solidity'
 " ~/.vimrc
 nnoremap <silent> <leader>p :FiletypeFormat<cr>
 vnoremap <silent> <leader>p :FiletypeFormat<cr>
@@ -405,9 +436,20 @@ vnoremap <silent> <leader>p :FiletypeFormat<cr>
 " Use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions = [
-  \ 'coc-tsserver',
-  \ 'coc-json'
-  \ ]
+      \ 'coc-tsserver',
+      \ 'coc-graphql',
+      \ 'coc-json',
+      \ 'coc-prisma',
+      \ 'coc-explorer',
+      \ 'coc-solidity'
+      \ ]
+nmap <space>e <Cmd>CocCommand explorer<CR>
+nmap <space>] <Cmd>CocCommand explorer --preset buffer<CR>
+" use <tab> for trigger completion and navigate to the next complete item
+nmap <leader>i :CocCommand tsserver.organizeImports<cr>
+" use <c-space>for trigger completion
+inoremap <silent><expr> <c-q> coc#refresh()
+
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
   let g:coc_global_extensions += ['coc-prettier']
 endif
@@ -417,6 +459,39 @@ if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
   let g:coc_global_extensions += ['coc-eslint']
 endif
 let g:coc_filetype_map = { 'markdown.mdx': 'mdx' }
+" Find all occurrences in project
+nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
+
+" The following are just some of the suggested settings from CoC's README.md {{{
+
+set shortmess+=c
+
+" Enable auto completion menu after pressing TAB.
+set wildmenu
+
+" Make wildmenu behave like similar to Bash completion.
+set wildmode=list:longest
+
+" There are certain files that we would never want to edit with Vim.
+" Wildmenu will ignore files with these extensions.
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+
+set omnifunc=syntaxcomplete#Complete
+set complete-=i
+set complete-=t
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+Plug 'pantharshit00/vim-prisma'
 
 Plug 'neoclide/coc-highlight', {'branch': 'release'} " color highlighting
 
@@ -436,8 +511,8 @@ nmap <silent> <Leader>k <Plug>(coc-diagnostic-prev-error)
 
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['html'] }
+      \ 'do': 'yarn install',
+      \ 'for': ['html'] }
 let g:prettier#autoformat_config_present = 1
 let g:prettier#autoformat_require_pragma = 0
 nmap <Leader>py <Plug>(Prettier)
@@ -622,12 +697,6 @@ let g:sparkup = 'sparkup'
 let g:sparkupArgs = '--no-last-newline'
 let g:sparkupExecuteMapping = '<leader>e'
 let g:sparkupNextMapping = '<C-n>'
-" }}}
-
-"----------------------"
-" PLUGIN - tComment {{{
-"----------------------"
-map <leader>c <C-_><C-_>
 " }}}
 
 "----------------------"

@@ -4,5 +4,7 @@
   "eslint.probe": ["javascript", "javascriptreact", "typescript", "typescriptreact", "html", "vue", "markdown", "mdx", "markdown.mdx"],
   "eslint.format.enable": true,
   "coc.preferences.formatOnSaveFiletypes": ["javascript", "javascriptreact", "typescript", "typescriptreact", "html", "vue", "markdown", "mdx", "markdown.mdx"],
-  "coc.preferences.jumpCommand": "vsplit"
+  "coc.preferences.jumpCommand": "vsplit",
+  "javascript.suggest.autoImports": true, 
+  "typescript.suggest.autoImports": true
 }
