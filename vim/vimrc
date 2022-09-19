@@ -388,6 +388,9 @@ Plug 'sheerun/vim-polyglot'
 " Plug 'yuezk/vim-js'
 " Plug 'maxmellon/vim-jsx-pretty'
 
+
+Plug 'editorconfig/editorconfig-vim'
+
 " Plug 'jxnblk/vim-mdx-js'
 Plug 'pappasam/vim-filetype-formatter'
 " ~/.vimrc
