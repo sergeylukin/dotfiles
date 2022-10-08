@@ -209,6 +209,22 @@ then
   echo "...done"
 fi
 
+
+if command -v yabai > /dev/null 2>&1
+then
+  if [ -f ~/.yabairc ]
+  then
+    echo "Backing up .yabairc"
+    mv ~/.yabairc $backup_dir/
+    echo "...done"
+  fi
+
+  echo "Creating symlink to new .yabairc file"
+  rm -f ~/.yabairc
+  ln -s $DF_MY_DOTFILES_DIR/yabai/yabairc ~/.yabairc
+  echo "...done"
+fi
+
 echo "     _                  _ "
 echo "  __| | ___  _ __   ___| |"
 echo " / _  |/ _ \|  _ \ / _ \ |"
