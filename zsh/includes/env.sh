@@ -104,3 +104,8 @@ if type brew &>/dev/null; then
   compinit
 fi
 
+
+# Unlimited ZSH history, more details:
+# https://www.soberkoder.com/better-zsh-history
+export HISTFILESIZE=
+export HISTSIZE=
