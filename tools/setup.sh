@@ -84,8 +84,11 @@ then
   git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
   echo "Overwriting old OH-MY-ZSH files with new files"
-  rm -fr ~/.oh-my-zsh/custom
-  ln -s $DF_MY_DOTFILES_DIR/oh-my-zsh ~/.oh-my-zsh/custom
+  ln -s $DF_MY_DOTFILES_DIR/oh-my-zsh/themes/sergey.zsh-theme ~/.oh-my-zsh/custom/themes/sergey.zsh-theme
+  ln -s $DF_MY_DOTFILES_DIR/oh-my-zsh/themes/dracula.zsh-theme ~/.oh-my-zsh/custom/themes/dracula.zsh-theme
+  ln -s $DF_MY_DOTFILES_DIR/oh-my-zsh/themes/shades-of-purple.zsh-theme ~/.oh-my-zsh/custom/themes/shades-of-purple.zsh-theme
+
+  ln -s $DF_MY_DOTFILES_DIR/oh-my-zsh/plugins/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
   echo "...done"
   echo "Adding OH-MY-ZSH configuration file link to ~/.zshrc"
   # because we don't want to change anything like that in repo
