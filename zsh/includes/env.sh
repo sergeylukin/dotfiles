@@ -109,3 +109,7 @@ fi
 # https://www.soberkoder.com/better-zsh-history
 export HISTFILESIZE=
 export HISTSIZE=
+
+# begin.com
+export BEGIN_INSTALL="${HOME}/.begin"
+export PATH=${BEGIN_INSTALL}:${PATH}
