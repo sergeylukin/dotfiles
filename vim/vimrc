@@ -374,6 +374,8 @@ Plug 'joshdick/onedark.vim'
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
 Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
+Plug 'wuelnerdotexe/vim-astro'    " Astro.build syntax
+let g:astro_typescript = 'enable'
 " Plug 'jparise/vim-graphql'        " GraphQL syntax
 
 Plug 'tomtom/tcomment_vim'
