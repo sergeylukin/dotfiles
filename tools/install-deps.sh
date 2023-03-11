@@ -115,6 +115,9 @@ if [[ $DF_PLATFORM == "osx" ]]; then
     # https://cbrgm.net/post/2021-05-5-setup-macos/
     brew install koekeishiya/formulae/yabai
     brew services start yabai
+
+    brew install koekeishiya/formulae/skhd
+    brew services start skhd
   fi
 
   brew install brevdev/homebrew-brev/brev
