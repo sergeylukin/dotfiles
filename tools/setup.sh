@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 ############################
 # This script creates symlinks/copies dotfiles for
 # ZSH, OH-MY-ZSH, VIM, GIT etc. and only if they are installed and have their configuration files present.
@@ -8,8 +10,10 @@
 
 ########## Variables
 
+BASEDIR=$(dirname "$0")
+
 if [ ! -n "${DF_FLAGS_COLLECTED+1}" ]; then
-  source ./collect-flags.sh
+  source ${BASEDIR}/collect-flags.sh
 fi
 
 timestamp=`date +%s`               # use timestamp in backup dir names to keep

@@ -1,5 +1,9 @@
+#!/usr/bin/env bash
+
+BASEDIR=$(dirname "$0")
+
 if [ ! -n "${DF_FLAGS_COLLECTED+1}" ]; then
-  source ./collect-flags.sh
+  source ${BASEDIR}/collect-flags.sh
 fi
 
 # https://github.com/rupa/z
