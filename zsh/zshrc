@@ -52,3 +52,6 @@ if [ -s "$reminder_file" ] ; then
   echo "TODO:"
   cat "$reminder_file"
 fi
+
+export PNPM_HOME="/Users/sergey/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
