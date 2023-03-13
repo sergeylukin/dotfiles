@@ -127,3 +127,7 @@ alias lzd='lazydocker'
 
 # https://dns.toys
 function dy { dig +noall +answer +additional "$1" @dns.toys; }
+
+# https://stackoverflow.com/a/70266473/1832729
+alias pnpx='pnpm dlx'
+
