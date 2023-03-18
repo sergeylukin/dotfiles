@@ -533,6 +533,11 @@ nmap <Leader>py <Plug>(Prettier)
 Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_map = '<leader>f'
 let g:ctrlp_custom_ignore = '\v[\/](\.git|node_modules|.*\-static|dist|build)$'
+" Bust ctrlp cache and open search dialog
+" basically cache-busting replacement for <leader>f
+" See more details here:
+" https://stackoverflow.com/a/40029712/1832729
+nnoremap <c-p> :CtrlPClearCache<bar>CtrlP<cr>
 let g:ctrlp_show_hidden = 1
 nnoremap <Leader>fr :CtrlPClearCache<CR>
 " let g:ctrlp_working_path_mode = 'ra'
