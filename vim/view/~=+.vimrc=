@@ -1,7 +1,7 @@
 let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-1 siso=-1
 argglobal
 balt /usr/share/vim/vim82/syntax/colortest.vim
-setlocal fdm=manual
+setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
@@ -9,36 +9,15 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-silent! normal! zE
-12,23fold
-27,34fold
-40,94fold
-98,132fold
-136,209fold
-213,240fold
-249,249fold
-244,263fold
-267,279fold
-283,301fold
-304,336fold
-344,356fold
-414,433fold
-467,521fold
-530,577fold
-581,591fold
-594,655fold
-658,661fold
-664,666fold
-681,684fold
-687,697fold
-700,706fold
-709,713fold
-716,719fold
-722,726fold
-436,813fold
+244
+normal! zo
+244
+normal! zc
 304
 normal! zo
 436
+normal! zo
+467
 normal! zo
 530
 normal! zo

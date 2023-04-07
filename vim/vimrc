@@ -671,6 +671,8 @@ Plug 'guns/xterm-color-table.vim', {'branch': 'release'}
 Plug 'ernstwi/vim-secret'
 nmap <leader>se <Plug>SecretToggle
 
+Plug 'tpope/vim-surround'
+
 " Initialize plugin system
 call plug#end()
 

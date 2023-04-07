@@ -1,9 +1,9 @@
 {
   "suggest.noselect": false,
   "eslint.autoFixOnSave": true,
-  "eslint.probe": ["javascript", "javascriptreact", "typescript", "typescriptreact", "html", "vue", "markdown", "mdx", "markdown.mdx"],
+  "eslint.probe": ["javascript", "javascriptreact", "typescript", "typescriptreact", "html", "vue", "markdown", "mdx", "markdown.mdx", "astro"],
   "eslint.format.enable": true,
-  "coc.preferences.formatOnSaveFiletypes": ["javascript", "javascriptreact", "typescript", "typescriptreact", "html", "vue", "markdown", "mdx", "markdown.mdx"],
+  "coc.preferences.formatOnSaveFiletypes": ["javascript", "javascriptreact", "typescript", "typescriptreact", "html", "vue", "markdown", "mdx", "markdown.mdx", "astro"],
   "coc.preferences.jumpCommand": "vsplit",
   "javascript.suggest.autoImports": true, 
   "typescript.suggest.autoImports": true
