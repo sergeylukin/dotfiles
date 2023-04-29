@@ -140,13 +140,13 @@ if [[ $DF_PLATFORM == "osx" ]]; then
   go install github.com/cheat/cheat/cmd/cheat@latest
 fi
 
-# Install Cowsay
+# Install Cowsay lolcat and fortune
 if ! command -v cowsay > /dev/null 2>&1
 then
   if [[ "$DF_PLATFORM" == "osx" ]]; then
-    brew install cowsay
+    brew install fortune cowsay lolcat
   elif [[ "$DF_PLATFORM" == "linux" ]]; then
-    sudo apt install cowsay -y
+    sudo apt install cowsay cowsay lolcat -y
   fi
 fi
 

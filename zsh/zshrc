@@ -44,7 +44,8 @@ man() {
 # echo "       \`\\\         ||           "
 # echo "        )\\        )\           "
 # echo "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
-cowsay "What did you learn today?"
+# cowsay "What did you learn today?"
+fortune | cowsay | lolcat
 
 # Print the TODO file
 export reminder_file="$HOME/.todo"
