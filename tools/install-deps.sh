@@ -32,6 +32,13 @@ if [[ $DF_PLATFORM == "osx" ]]; then
   chmod -R go-w "$(brew --prefix)/share/zsh"
   brew install fzf ripgrep cowsay tmux htop tree wget
 
+
+  # turso.io
+  brew install chiselstrike/tap/turso
+
+  # View JSON
+  brew install jless
+
   # Github CLI
   brew install gh
 
