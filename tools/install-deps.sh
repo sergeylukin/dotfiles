@@ -175,5 +175,11 @@ then
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 fi
 
+if ! command -v php > /dev/null 2>&1
+then
+  brew install shivammathur/php/php@8.0
+fi
+
+
 # install vim plugins
 vim +PlugInstall +qall
