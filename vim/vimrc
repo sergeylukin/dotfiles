@@ -778,8 +778,8 @@ augroup MyColors
 augroup END
 """" enable the theme
 "colorscheme onedark
-"colorscheme iceberg
-colorscheme lucius
+colorscheme iceberg
+"colorscheme lucius
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 autocmd MyColors BufWritePost $MYVIMRC nested source $MYVIMRC
