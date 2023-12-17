@@ -177,7 +177,7 @@ fi
 
 if ! command -v php > /dev/null 2>&1
 then
-  brew install shivammathur/php/php@8.0
+  brew install shivammathur/php/php
 fi
 
 
