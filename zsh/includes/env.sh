@@ -43,6 +43,9 @@ fi
 # PhpBrew - PHP environment Manager
 [[ -s "$HOME/.phpbrew/bashrc" ]] && source "$HOME/.phpbrew/bashrc"
 
+export PATH="$HOME/homebrew/opt/php@7.4/bin:$PATH"
+export PATH="$HOME/homebrew/opt/php@7.4/sbin:$PATH"
+
 # homebrew
 if [[ $OSTYPE == "darwin"* ]]; then
   eval "$(~/homebrew/bin/brew shellenv)"
