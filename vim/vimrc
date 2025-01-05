@@ -111,6 +111,8 @@ set wildmode=longest,list,full
 set wildmenu
 " Automatically change current directory to that of the file in the buffer
 autocmd BufEnter * silent! lcd %:p:h " Better alternative to `autochdir`
+" set autochdir
+set tags+=./tags;
 " Custom Filetypes
 au BufNewFile,BufRead *.less, set filetype=css " Recognize .less files as .css
 au BufNewFile,BufRead *.scss set filetype=css " Recognize .scss files as .css
